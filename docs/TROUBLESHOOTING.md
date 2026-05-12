@@ -6,7 +6,7 @@ Install Python 3.10 or newer and reopen your terminal. On macOS/Linux, try `pyth
 
 ## Node.js or npm Is Not Found
 
-Install Node.js 20.19 or newer from https://nodejs.org/ and reopen your terminal.
+Install Node.js 22 LTS or newer from https://nodejs.org/ and reopen your terminal. Node.js 22 ships with npm 10+, which is what the project's `package-lock.json` was generated against.
 
 ## Dependency Install Fails
 

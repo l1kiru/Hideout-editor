@@ -5,8 +5,8 @@ This project is intended to run locally from the repository or from a release ar
 ## Requirements
 
 - Python 3.10+
-- Node.js 20.19+
-- npm
+- Node.js 22 LTS or newer
+- npm 10 or newer (ships with Node.js 22)
 
 ## Windows
 
@@ -26,7 +26,7 @@ Open http://localhost:5173 after the script reports that both servers are runnin
 ## macOS and Linux
 
 1. Install Python 3.10+ with your system package manager or from https://www.python.org/.
-2. Install Node.js 20.19+ from https://nodejs.org/ or with your system package manager.
+2. Install Node.js 22 LTS or newer from https://nodejs.org/ or with your system package manager.
 3. Download or clone the project.
 4. From the project root, run:
 

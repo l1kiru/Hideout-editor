@@ -13,8 +13,8 @@
 ## What you need
 
 - Python 3.10 or newer
-- Node.js 20.19 or newer
-- npm, installed together with Node.js
+- Node.js 22 (LTS) or newer — CI is pinned to Node 22
+- npm 10 or newer — ships together with Node.js 22
 - Git, only if you want to update the project with `git pull`
 
 ## How to start

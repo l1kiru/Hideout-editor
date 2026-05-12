@@ -329,7 +329,7 @@ def assert_node_toolchain() -> None:
     if not shutil.which("node") or not shutil.which("npm"):
         fatal(
             "Node.js / npm not found in PATH. "
-            "Install Node.js 20.19+ (LTS recommended) from https://nodejs.org/ "
+            "Install Node.js 22 LTS or newer from https://nodejs.org/ "
             "and reopen the terminal."
         )
     node_ver = _try_capture(["node", "--version"]) or "?"
