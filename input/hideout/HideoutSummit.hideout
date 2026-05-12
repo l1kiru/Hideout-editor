@@ -1,0 +1,225 @@
+﻿{
+  "version": 1,
+  "language": "English",
+  "hideout_name": "Plateau of the Gods Hideout",
+  "hideout_hash": 59052,
+  "doodads": {
+    "Stash": {
+      "hash": 3230065491,
+      "x": 870,
+      "y": 1378,
+      "r": 65019,
+      "fv": 0
+    },
+    "Guild Stash": {
+      "hash": 139228481,
+      "x": 884,
+      "y": 1377,
+      "r": 32738,
+      "fv": 0
+    },
+    "Waypoint": {
+      "hash": 1224707366,
+      "x": 735,
+      "y": 1397,
+      "r": 0,
+      "fv": 2
+    },
+    "Ziggurat Map Device": {
+      "hash": 76459657,
+      "x": 721,
+      "y": 1403,
+      "r": 0,
+      "fv": 0
+    },
+    "Relic Locker": {
+      "hash": 12969733,
+      "x": 957,
+      "y": 1341,
+      "r": 49152,
+      "fv": 0
+    },
+    "Reforging Bench": {
+      "hash": 3263423625,
+      "x": 959,
+      "y": 1274,
+      "r": 56063,
+      "fv": 0
+    },
+    "Salvage Bench": {
+      "hash": 3734046884,
+      "x": 720,
+      "y": 1377,
+      "r": 23105,
+      "fv": 0
+    },
+    "Well": {
+      "hash": 2057229261,
+      "x": 796,
+      "y": 1414,
+      "r": 49152,
+      "fv": 1
+    },
+    "Recombinator": {
+      "hash": 4243958141,
+      "x": 838,
+      "y": 1038,
+      "r": 43035,
+      "fv": 0
+    },
+    "Wardrobe Decoration": {
+      "hash": 2914603195,
+      "x": 846,
+      "y": 1417,
+      "r": 49152,
+      "fv": 0
+    },
+    "Alva": {
+      "hash": 2115859440,
+      "x": 838,
+      "y": 1079,
+      "r": 61968,
+      "fv": 0
+    },
+    "Zelina": {
+      "hash": 1023253651,
+      "x": 846,
+      "y": 1396,
+      "r": 50941,
+      "fv": 0
+    },
+    "Zolin": {
+      "hash": 2204408127,
+      "x": 844,
+      "y": 1404,
+      "r": 59721,
+      "fv": 0
+    },
+    "Doryani": {
+      "hash": 3673653565,
+      "x": 839,
+      "y": 1065,
+      "r": 51381,
+      "fv": 0
+    },
+    "Rog": {
+      "hash": 408811958,
+      "x": 610,
+      "y": 1247,
+      "r": 43076,
+      "fv": 0
+    },
+    "Tujen": {
+      "hash": 1188734792,
+      "x": 623,
+      "y": 1235,
+      "r": 27906,
+      "fv": 0
+    },
+    "Dannig": {
+      "hash": 2939302567,
+      "x": 631,
+      "y": 1271,
+      "r": 48720,
+      "fv": 0
+    },
+    "Gwennen": {
+      "hash": 2230709308,
+      "x": 616,
+      "y": 1300,
+      "r": 5252,
+      "fv": 0
+    },
+    "Ange": {
+      "hash": 2297799330,
+      "x": 846,
+      "y": 1429,
+      "r": 54647,
+      "fv": 0
+    },
+    "Arcane Astronomy Tool": {
+      "hash": 1639315040,
+      "x": 832,
+      "y": 1101,
+      "r": 0,
+      "fv": 0
+    },
+    "Arcane Astronomy Tool": {
+      "hash": 1639315040,
+      "x": 742,
+      "y": 1102,
+      "r": 0,
+      "fv": 0
+    },
+    "Arcane Astronomy Tool": {
+      "hash": 1639315040,
+      "x": 741,
+      "y": 1378,
+      "r": 0,
+      "fv": 0
+    },
+    "Arcane Astronomy Tool": {
+      "hash": 1639315040,
+      "x": 746,
+      "y": 1423,
+      "r": 0,
+      "fv": 0
+    },
+    "Arcane Astronomy Tool": {
+      "hash": 1639315040,
+      "x": 845,
+      "y": 1429,
+      "r": 0,
+      "fv": 0
+    },
+    "Arcane Astronomy Tool": {
+      "hash": 1639315040,
+      "x": 844,
+      "y": 1383,
+      "r": 0,
+      "fv": 0
+    },
+    "Arcane Astronomy Tool": {
+      "hash": 1639315040,
+      "x": 852,
+      "y": 1376,
+      "r": 0,
+      "fv": 0
+    },
+    "Arcane Astronomy Tool": {
+      "hash": 1639315040,
+      "x": 958,
+      "y": 1376,
+      "r": 0,
+      "fv": 0
+    },
+    "Arcane Astronomy Tool": {
+      "hash": 1639315040,
+      "x": 958,
+      "y": 1181,
+      "r": 0,
+      "fv": 0
+    },
+    "Arcane Astronomy Tool": {
+      "hash": 1639315040,
+      "x": 849,
+      "y": 1181,
+      "r": 0,
+      "fv": 0
+    },
+    "Arcane Astronomy Tool": {
+      "hash": 1639315040,
+      "x": 823,
+      "y": 1165,
+      "r": 0,
+      "fv": 0
+    },
+    "Arcane Astronomy Tool": {
+      "hash": 1639315040,
+      "x": 828,
+      "y": 1133,
+      "r": 0,
+      "fv": 0
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "common": {
+    "unknown": "Ошибка запроса"
+  },
+  "maps": {
+    "map_not_found": "Карта не найдена",
+    "invalid_hideout_extension": "Ожидается файл .hideout",
+    "upload_too_large": "Файл слишком большой",
+    "scene_too_large": "Сцена слишком большая",
+    "scene_not_found": "Сохранённой сцены для этой карты нет",
+    "scene_corrupted": "Повреждённые данные сцены в базе",
+    "scene_not_object": "Сцена в базе не объект JSON",
+    "boundary_not_found": "Для этой карты ещё нет разметки границы",
+    "template_missing": "Для этой карты нет сохранённого .hideout-шаблона — загрузите .hideout вручную",
+    "invalid_request": "Некорректный запрос"
+  },
+  "boundary": {
+    "points_key_required": "Нужен ключ points (массив)",
+    "need_min_3_vertices": "Нужно минимум 3 вершины",
+    "expected_json": "Ожидается .json",
+    "invalid_json": "Некорректный JSON: {{reason}}",
+    "json_root_object_required": "Корень JSON должен быть объектом",
+    "expected_hideout_or_json": "Ожидается файл .hideout или JSON",
+    "invalid_file": "Некорректный файл: {{reason}}",
+    "placements_extract_failed": "Не удалось извлечь размещения doodads",
+    "need_min_3_for_editor": "Для основного редактора нужно минимум 3 вершины",
+    "map_name_required": "Укажите название карты",
+    "map_name_mismatch": "Имя карты не совпадает с выбранной для сохранения картой — смена имени сбрасывает привязку к записи в базе.",
+    "map_name_exists": "Карта с таким именем уже существует. Укажите другое имя."
+  },
+  "templates": {
+    "expected_hideout": "Ожидается файл .hideout",
+    "upload_too_large": "Файл слишком большой",
+    "invalid_hideout": "Некорректный hideout: {{reason}}"
+  },
+  "export": {
+    "failed": "Ошибка экспорта",
+    "template_missing": "Неизвестный template_id={{template_id}}"
+  },
+  "input_images": {
+    "empty_name": "Имя файла пустое",
+    "invalid_name": "Недопустимое имя файла (разрешены буквы/цифры/.-_ ()[])",
+    "unsupported_extension": "Неподдерживаемое расширение. Разрешено: {{exts}}",
+    "empty_file": "Файл пуст",
+    "upload_too_large": "Файл слишком большой",
+    "file_not_found": "Файл не найден"
+  }
+}
+

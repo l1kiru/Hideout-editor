@@ -1,0 +1,46 @@
+{
+    "name": "frontend",
+    "private": true,
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "typecheck": "tsc -b",
+        "lint": "eslint .",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "test:coverage": "vitest run --coverage",
+        "preview": "vite preview",
+        "generate-types": "openapi-typescript http://localhost:8000/api/openapi.json -o src/types/api.ts",
+        "i18n:check": "node ./scripts/i18n-check.mjs"
+    },
+    "dependencies": {
+        "i18next": "^26.0.10",
+        "i18next-browser-languagedetector": "^8.2.1",
+        "immer": "^11.1.8",
+        "lucide-react": "^1.14.0",
+        "react": "^19.2.5",
+        "react-dom": "^19.2.5",
+        "react-i18next": "^17.0.7",
+        "react-router-dom": "^7.15.0",
+        "zustand": "^5.0.13"
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@types/node": "^24.12.3",
+        "@types/react": "^19.2.14",
+        "@types/react-dom": "^19.2.3",
+        "@vitejs/plugin-react": "^6.0.1",
+        "@vitest/coverage-v8": "^4.1.6",
+        "eslint": "^10.2.1",
+        "eslint-plugin-react-hooks": "^7.1.1",
+        "eslint-plugin-react-refresh": "^0.5.2",
+        "globals": "^17.5.0",
+        "openapi-typescript": "^7.13.0",
+        "typescript": "~5.9.3",
+        "typescript-eslint": "^8.58.2",
+        "vite": "^8.0.10",
+        "vitest": "^4.1.6"
+    }
+}

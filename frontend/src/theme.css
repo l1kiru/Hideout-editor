@@ -1,0 +1,305 @@
+/* Design tokens — dark editor theme */
+:root {
+  --font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', 'Consolas', monospace;
+
+  --space-1: 4px;
+  --space-2: 6px;
+  --space-3: 8px;
+  --space-4: 10px;
+  --space-5: 12px;
+  --space-6: 14px;
+
+  --sidebar-width: 304px;
+  --sidebar-padding: var(--space-5);
+  --main-column-padding-x: var(--space-5);
+  --main-column-padding-y: var(--space-3);
+
+  --color-bg-root: #0f1115;
+  --color-bg-sidebar: #14161c;
+  --color-bg-panel: #16181e;
+  --color-bg-elevated: #1e293b;
+
+  --color-border: #343945;
+  --color-border-muted: #2a3140;
+  --color-border-fieldset: #2e3544;
+
+  --color-text: #e8e9ef;
+  --color-text-muted: #8b93a8;
+  --color-text-soft: #7a8294;
+  --color-text-hint: #6b7385;
+  --color-text-hint-alt: #5c6578;
+
+  --color-accent: #38bdf8;
+  --color-accent-green: #4ade80;
+  --color-on-primary: #ffffff;
+
+  --color-btn-muted-bg: #334155;
+  --color-btn-primary-bg: #2563eb;
+
+  --color-danger-bg: #4c1d1d;
+  --color-danger-text: #fecaca;
+
+  --color-label: #94a3b8;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.2);
+
+  --poly-zone-fill: rgb(34 197 94 / 0.12);
+
+  /**
+   * Единое выделение: сайдбар (чипы, слои, список вершин), режим инструмента.
+   * Приглушённее «чистого» --color-accent.
+   */
+  --ui-selection-bg: rgb(56 189 248 / 0.055);
+  --ui-selection-border: #548fa8;
+  --ui-selection-accent: #4f9ec4;
+
+  /** Обводка выбранного объекта на холсте редактора */
+  --canvas-selection-stroke: #5f96ae;
+  /** Превью штриха линии */
+  --canvas-line-preview-stroke: rgb(56 189 248 / 0.32);
+
+  /** Вертикальный скролл `leftSidebar` (Firefox + WebKit) */
+  --sidebar-scrollbar-size: 9px;
+  --sidebar-scrollbar-thumb: #454d63;
+  --sidebar-scrollbar-thumb-hover: #5d677e;
+  --sidebar-scrollbar-track: #101218;
+
+  /** Выбранная вершина на карте границы (та же гамма, что UI-выделение) */
+  --map-vertex-selected-fill: var(--canvas-selection-stroke);
+  --map-vertex-selected-stroke: rgb(255 255 255 / 0.78);
+
+  /** Совместимость: используется в BoundaryPolygonPreview */
+  --poly-vertex-selected: var(--map-vertex-selected-fill);
+
+  --focus-ring: 2px solid var(--ui-selection-border);
+  --focus-ring-green: 2px solid var(--color-accent-green);
+}
+
+/* Icon-only and compact icon buttons (min hit area ~40px on md) */
+.iconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  background: var(--color-btn-muted-bg);
+  line-height: 0;
+}
+
+.iconBtn svg {
+  flex-shrink: 0;
+}
+
+.iconBtn:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.iconBtn:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.iconBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.iconBtn--sm {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+.iconBtn--sm svg {
+  width: 16px;
+  height: 16px;
+}
+
+.iconBtn--md {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+
+.iconBtn--md svg {
+  width: 20px;
+  height: 20px;
+}
+
+.iconBtn--muted {
+  background: var(--color-btn-muted-bg);
+  color: var(--color-text);
+}
+
+.iconBtn--primary {
+  background: var(--color-btn-primary-bg);
+  color: var(--color-on-primary);
+}
+
+.iconBtn--danger {
+  background: var(--color-danger-bg);
+  color: var(--color-danger-text);
+}
+
+.iconBtn--danger:focus-visible {
+  outline-color: var(--color-danger-text);
+}
+
+/* Icon + short label (toolbar / primary rows) */
+.iconBtnLabeled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-family: inherit;
+  min-height: 36px;
+  padding: var(--space-3) var(--space-5);
+  color: var(--color-text);
+  background: var(--color-btn-muted-bg);
+}
+
+.iconBtnLabeled svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.iconBtnLabeled:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.iconBtnLabeled:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.iconBtnLabeled:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.iconBtnLabeled.primary {
+  background: var(--color-btn-primary-bg);
+  color: var(--color-on-primary);
+}
+
+.iconBtnLabeled.sideBtnWide {
+  width: 100%;
+}
+
+/* Tool mode: взаимоисключающие режимы — тот же визуал, что у .sideRadioLbl */
+.toolSegment {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.toolSegmentBtn {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin: 0;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-muted);
+  background: var(--color-bg-panel);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  line-height: 1.25;
+  transition:
+    background 0.12s ease,
+    border-color 0.12s ease,
+    color 0.12s ease;
+}
+
+.toolSegmentBtn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.toolSegmentBtn:hover:not(:disabled) {
+  color: var(--color-text);
+  border-color: var(--color-border);
+  background: var(--color-bg-elevated);
+}
+
+.toolSegmentBtn.active {
+  border-color: var(--ui-selection-border);
+  background: var(--ui-selection-bg);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.toolSegmentBtn:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.toolSegmentBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.toolSegmentBtn .toolSegmentSr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Header toolbar link (looks like compact button) */
+.toolbarLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--color-text);
+  background: var(--color-btn-muted-bg);
+  min-height: 40px;
+}
+
+.toolbarLink svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.toolbarLink:hover {
+  filter: brightness(1.08);
+}
+
+.toolbarLink:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 2px;
+}

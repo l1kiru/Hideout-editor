@@ -1,0 +1,140 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  HIDEOUT_EDITOR_BACKEND_HOST: 127.0.0.1
+  HIDEOUT_EDITOR_BACKEND_PORT: "8000"
+  HIDEOUT_EDITOR_FRONTEND_PORT: "5173"
+
+jobs:
+  backend:
+    name: Backend tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install backend dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-api.txt
+      - name: Run backend tests
+        run: python -m unittest discover tests
+
+  frontend:
+    name: Frontend lint, typecheck and build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install frontend dependencies
+        run: npm ci
+        working-directory: frontend
+      - name: Lint frontend
+        run: npm run lint
+        working-directory: frontend
+      - name: Typecheck frontend
+        run: npm run typecheck
+        working-directory: frontend
+      - name: Test frontend
+        run: npm run test
+        working-directory: frontend
+      - name: Build frontend
+        run: npm run build
+        working-directory: frontend
+
+  release-archive:
+    name: Release archive smoke check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build release archive
+        run: python scripts/make_release.py --output release/hideout-editor-ci.zip
+      - name: Check release archive contents
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile
+
+          archive = Path("release/hideout-editor-ci.zip")
+          assert archive.is_file(), "release archive was not created"
+          size = archive.stat().st_size
+          MAX_RELEASE_BYTES = 50_000_000
+          assert size < MAX_RELEASE_BYTES, (
+              f"release archive too large: {size:,} bytes "
+              f"(cap {MAX_RELEASE_BYTES:,}); check INCLUDE_PATHS for "
+              f"accidental bloat (e.g. frontend/dist, node_modules)"
+          )
+          with zipfile.ZipFile(archive) as zf:
+              names = set(zf.namelist())
+          required = {
+              "README.md",
+              "docs/INSTALL.md",
+              "requirements-api.txt",
+              "backend/main.py",
+              "backend/seed_data/poe2_objects_database_all.csv",
+              "config/app-config.json",
+              "frontend/package.json",
+              "Start.bat",
+              "UpdateAndStart.bat",
+          }
+          missing = sorted(required - names)
+          assert not missing, f"missing required files: {missing}"
+          forbidden_parts = (
+              ".venv/",
+              "node_modules/",
+              ".pytest_cache/",
+              "hideout_settings/",
+              "logs/",
+          )
+          bad = [name for name in names if any(part in name for part in forbidden_parts)]
+          assert not bad, f"archive contains excluded paths: {bad[:10]}"
+          PY
+
+  release-publish:
+    name: Publish release archive
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [backend, frontend, release-archive]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compute release version
+        id: version
+        run: |
+          tag="${GITHUB_REF#refs/tags/}"
+          version="${tag#v}"
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+      - name: Build release archive
+        # ``make_release.py`` enforces ``MAX_RELEASE_BYTES`` internally, so the
+        # publish job inherits the same cap as the smoke-check job above.
+        run: |
+          mkdir -p release
+          python scripts/make_release.py \
+            --output "release/hideout-editor-${{ steps.version.outputs.version }}.zip"
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: Hideout Editor ${{ steps.version.outputs.tag }}
+          generate_release_notes: true
+          files: release/hideout-editor-${{ steps.version.outputs.version }}.zip

@@ -1,0 +1,26 @@
+{
+  "name": "hideout-editor-monorepo",
+  "version": "1.0.0",
+  "description": "Hideout Editor — a local web app for creating and organizing hideout maps",
+  "scripts": {
+    "start": "python dev.py",
+    "dev": "python dev.py",
+    "dev:skip-install": "python dev.py --skip-install",
+    "dev:reinstall": "python dev.py --reinstall",
+    "frontend": "npm --prefix frontend run dev",
+    "frontend:build": "npm --prefix frontend run build",
+    "frontend:lint": "npm --prefix frontend run lint",
+    "test:backend": "python -m unittest discover tests",
+    "release:zip": "python scripts/make_release.py"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "keywords": [
+    "game-development",
+    "hideout-editor",
+    "web-app"
+  ],
+  "author": "Hideout Editor contributors",
+  "license": "MIT"
+}

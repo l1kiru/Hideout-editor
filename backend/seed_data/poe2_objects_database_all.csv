@@ -1,0 +1,523 @@
+﻿Категория;Подкатегория;Имя RU;Имя EN;Имя TW;Имя CN;Имя KR;Имя JP;Имя PT;Имя TH;Имя FR;Имя DE;Имя SP
+Постоянные;Utility;Сундук для реликвий;Relic Locker;裝飾物：聖域鎖櫃;遗物陈列柜;유물 사물함;レリックロッカー;Armário de Relíquias;ล็อกเกอร์วัตถุตกทอด;Casier de Reliques;Relikt-Truhe;Cofre de reliquias
+Постоянные;Utility;Верстак для перековки;Reforging Bench;重鑄台;重铸台;재련 작업대;リフォージベンチ;Mesa de Reforja;โต๊ะหลอม;Établi de reforgeage;Umschiedewerkbank;Mesa de reforja
+Постоянные;Utility;Верстак для разборки;Salvage Bench;回收台;分解台;분해 작업대;サルベージベンチ;Mesa de Transmutação;โต๊ะรื้อ;Établi de recyclage;Verwertungswerkbank;Mesa de reciclaje
+Постоянные;Utility;Колодец;Well;水井;水井;우물;井戸;Poço;บ่อน้ำ;Puits;Brunnen;Pozo
+Постоянные;Utility;Машина картоходца волшебного соцветия;Magebloom Map Device;裝飾物：魔炎地圖裝置;地图装置：魔法之花;마법의 꽃 지도 장치;メイジブルームマップデバイス;Dispositivo de Mapas: Florescer da Magia;เครื่องเปิดแผนที่บุปผาจอมเวท;Dispositif cartographique de la Magéclosion;Zauberblüte-Kartenapparat;Artefacto de mapas de Brote mágico
+Постоянные;Utility;Портал учёного лудильщика для убежища;Scientist Tinker's Waypoint;裝飾物：科技匠師傳送點;装饰物：科学家修补匠传送点;과학자 땜장이의 거점;科学者のからくりウェイポイント;Marcador do Faz-tudo Cientista;เวย์พอยน์ช่างเชื่อม Scientist;Point de téléportation du Bricoleur du Scientifique;Wissenschaftlicher Wegpunkt des Tüftlers;Transportador del calderero científico
+Постоянные;Utility;Портал лудильщика-призывателя бури для убежища;Stormcaller Tinker's Waypoint;裝飾物：風暴匠師送符點;装饰物：风暴使者修补匠传送点;폭풍 소환사 땜장이의 거점;ストームコーラーのからくりウェイポイント;Marcador do Faz-tudo Convocador da Tempestade;เวย์พอยน์ช่างเชื่อม Stormcaller;Point de téléportation du Bricoleur du Mande-foudre;Sturmbeschwörender Wegpunkt des Tüftlers;Transportador del calderero llamador de tormentas
+Постоянные;Utility;Божественный портал лудильщика для убежища;Divine Tinker's Waypoint;裝飾物：神聖匠師傳送點;装饰物：神圣修补匠传送点;신성한 땜장이의 거점;神聖なからくりウェイポイント;Marcador do Faz-tudo Divino;เวย์พอยน์ช่างเชื่อม Divine;Point de téléportation du Bricoleur divin;Göttlicher Wegpunkt des Tüftlers;Transportador del calderero divino
+Постоянные;Utility;Портал лудильщика Осколка тьмы для убежища;Darkshard Tinker's Waypoint;裝飾物：暗魂匠師傳送點;装饰物：地狱使魔修补匠传送点;어둠의 파편 땜장이의 거점;ダークシャードのからくりウェイポイント;Marcador do Faz-tudo do Fragmento Sombrio;เวย์พอยน์ช่างเชื่อม Darkshard;Point de téléportation du Bricoleur du Sombre éclat;Dunkelscherbe-Wegpunkt des Tüftlers;Transportador del calderero de cristal oscuro
+Постоянные;Utility;Зелёный портал лудильщика для убежища;Verdant Tinker's Waypoint;裝飾物：自然匠師傳送點;装饰物：翠绿修补匠传送点;신록의 땜장이의 거점;新緑のからくりウェイポイント;Marcador do Faz-tudo Verdejante;เวย์พอยน์ช่างเชื่อม Verdant;Point de téléportation du Bricoleur verdoyant;Grünender Wegpunkt des Tüftlers;Transportador del calderero verde
+Постоянные;Utility;Портал лудильщика-техноманта для убежища;Thaumaturgy Tinker's Waypoint;裝飾物：奇幻匠師傳送點;装饰物：奇术修补匠传送点;마석학 땜장이의 거점;魔術のからくりウェイポイント;Marcador do Faz-tudo Taumaturgo;เวย์พอยน์ช่างเชื่อม Thaumaturgy;Point de téléportation du Bricoleur de la Thaumaturgie;Thaumaturgischer Wegpunkt des Tüftlers;Transportador del calderero taumatúrgico
+Постоянные;Utility;Солнечная Машина картоходца;Solar Map Device;地圖裝置：日耀;装饰物：日耀地图装置;태양의 지도 장치;太陽のマップデバイス;Dispositivo Solar de Mapas;ของตกแต่ง เครื่องเปิดแผนที่ตะวัน;Dispositif cartographique solaire;Sonnen-Kartenapparat;Artefacto de mapas Solar
+Постоянные;Utility;Жертвенная Машина картоходца;Sacrificial Map Device;地圖裝置：獻祭;装饰物：瓦尔地图装置;희생의 지도 장치;生贄のマップデバイス;Dispositivo Sacrificial de Mapas;ของตกแต่ง เครื่องเปิดแผนที่สังเวย;Dispositif cartographique sacrificiel;Opfer-Kartenapparat;Artefacto de mapas Sacrificial
+Постоянные;Utility;Машина картоходца;Map Device;地圖裝置;黄金制图仪;지도 장치;マップデバイス;Dispositivo de Mapas;เครื่องเปิดแผนที่;Dispositif cartographique;Kartenapparat;Artefacto de mapas
+Постоянные;Utility;Тайник;Stash;倉庫;仓库;보관함;スタッシュ;Baú;คลังเก็บของ;Réserve;Truhe;Alijo
+Постоянные;Utility;Тайник гильдии;Guild Stash;公會倉庫;公会仓库;길드 보관함;ギルドスタッシュ;Baú de Guilda;คลังเก็บของกิลด์;Réserve de Guilde;Gildentruhe;Alijo de hermandad
+Постоянные;Utility;Портал;Waypoint;傳送點;传送点;거점;ウェイポイント;Marcador Vaal;เวย์พอยน์;Point de téléportation;Wegpunkt;Transportador
+Постоянные;Utility;Верстак Зачарователя для убежища;Enchanter's Crafting Bench Hideout Decoration;裝飾物：魔紋工藝台;装饰物：附魔师工艺台;마술사의 작업대 은신처 장식물;エンチャンターのクラフトベンチ隠れ家装飾品;Decoração de Refúgio: Mesa de Criação do Encantador;ของตกแต่ง โต๊ะคราฟท์นักลงเสน่ห์;Établi d'artisanat de l'Enchanteur;Werkbank des Verzauberers;Decoración de Mesa de fabricación del Encantador para guarida
+Постоянные;Utility;Машина картоходца котла;Cauldron Map Device;地圖裝置：大鍋爐;大锅地图装置;가마솥 지도 장치;大釜のマップデバイス;Dispositivo de Mapas: Caldeirão;เครื่องเปิดแผนที่หม้อต้ม;Dispositif cartographique : Chaudron;Kessel-Kartenapparat;Artefacto de mapas de Caldero
+Постоянные;Utility;Верстак - каноэ предков;Ancestral Canoe Crafting Bench;祖傳獨木舟工藝台;工艺台：先祖独木舟;선대의 카누 작업대;先祖のカヌーのクラフトベンチ;Mesa de Forja: Canoa Ancestral;โต๊ะคราฟท์เรือพายบรรพชน;Établi d'artisanat Canoë ancestral;'Kanu der Ahnen'-Werkbank;Mesa de fabricación de Canoa ancestral
+Постоянные;Utility;Машина картоходца - трон правителя;Throne of the Ruler Map Device;地圖裝置：統治者王座;地图装置：统治者王座;통치자의 왕좌 지도 장치;支配者の玉座マップデバイス;Dispositivo de Mapas: Trono do Governante;เครื่องเปิดแผนที่บัลลังก์ผู้ครองราชย์;Trône du Souverain (Dispositif cartographique);'Thron des Herrschers'-Kartenapparat;Artefacto de mapas de Trono del gobernante
+Постоянные;Utility;Zodiac Dragon Map Device;Zodiac Dragon Map Device;地圖裝置：黃道巨龍;飞龙乘云地图装置;성좌의 용 지도 장치;ゾディアックドラゴンマップデバイス;Dispositivo de Mapas: Dragão Zodíaco;เครื่องเปิดแผนที่ Zodiac;Dispositif cartographique du Dragon du zodiaque;Tierkreisdrachen-Kartenapparat;Artefacto de mapas de Dragón del zodíaco
+Постоянные;Utility;Бронзовая машина картоходца хранителя времени;Bronze Timekeeper's Map Device;地圖裝置：時間旅人．銅;装饰物：青铜时间守护者地图装置;시간 기록자의 동 지도 장치;銅の時の守り人のマップデバイス;Dispositivo de Mapas: Cronometrista de Bronze;เครื่องเปิดแผนที่จับเวลา Bronze;Dispositif cartographique du Gardien du Temps de bronze;'Bronzener Uhrenturm'-Kartenapparat;Artefacto de mapas del Guardián del tiempo de bronce
+Постоянные;Utility;Серебряная машина картоходца хранителя времени;Silver Timekeeper's Map Device;地圖裝置：時間旅人．銀;装饰物：秘银时间守护者地图装置;시간 기록자의 은 지도 장치;銀の時の守り人のマップデバイス;Dispositivo de Mapas: Cronometrista Prateado;เครื่องเปิดแผนที่จับเวลา Silver;Dispositif cartographique du Gardien du Temps d'argent;'Silberner Uhrentum'-Kartenapparat;Artefacto de mapas del Guardián del tiempo de plata
+Постоянные;Utility;Золотая машина картоходца хранителя времени;Gold Timekeeper's Map Device;地圖裝置：時間旅人．金;装饰物：黄金时间守护者地图装置;시간 기록자의 금 지도 장치;金の時の守り人のマップデバイス;Dispositivo de Mapas: Cronometrista Dourado;เครื่องเปิดแผนที่จับเวลา Gold;Dispositif cartographique du Gardien du Temps d'or;'Goldener Uhrenturm'-Kartenapparat;Artefacto de mapas del Guardián del tiempo de oro
+Постоянные;Utility;Машина картоходца из зиккурата;Ziggurat Map Device;裝飾物：高地神塔地圖裝置;地图装置：金字塔;지구라트 지도 장치;ジッグラトのマップデバイス;Dispositivo de Mapa Zigurate;เครื่องเปิดแผนที่ซิกกุรัต;Dispositif cartographique de la Ziggourat;Zikkurat-Kartenapparat;Artefacto de mapas de zigurat
+Постоянные;Utility;Машина картоходца Ацоатля;Atzoatl Map Device;地圖裝置：阿茲瓦特;阿佐亚特地图装置;앗조아틀 지도 장치;アッツォアトルのマップデバイス;Dispositivo de Mapas: Atzoatl;เครื่องเปิดแผนที่แอ็ทโซแอทล์;Dispositif cartographique d'Atzoatl;Atzoatl-Kartenapparat;Artefacto de mapas de Atzoatl
+Постоянные;Utility;Машина картоходца зелёного вечного дерева;Verdant Evertree Map Device;地圖裝置：翠綠長青樹;装饰物：青翠永恒之树地图装置;신록의 상록수 지도 장치;新緑の永遠なる大樹のマップデバイス;Dispositivo de Mapas: Árvore Eterna Verdejante;เครื่องเปิดแผนที่ต้นชั่วกาล เขียวชอุ่ม;Dispositif cartographique de l'Impérissarbre verdoyant;'Grünender Immerbaum'-Kartenapparat;Artefacto de mapas de Árbol eterno verde
+Постоянные;Utility;Машина картоходца вечного дерева кровавой коры;Bloodbark Evertree Map Device;地圖裝置：血皮長青樹;装饰物：猩红永恒之树地图装置;피껍질 상록수 지도 장치;黒き樹皮の永遠なる大樹のマップデバイス;Dispositivo de Mapas: Árvore Eterna Sangrenta;เครื่องเปิดแผนที่ต้นชั่วกาล เปลือกโลหิต;Dispositif cartographique de l'Impérissarbre écorce de sang;Blutrinde-Immerbaum-Kartenapparat;Artefacto de mapas de Árbol eterno de corteza sangrienta
+Постоянные;Utility;Машина картоходца вечного дерева ночного лотоса;Night Lotus Evertree Map Device;地圖裝置：夜蓮長青樹;装饰物：黑莲永恒之树地图装置;밤의 연꽃 상록수 지도 장치;夜の睡蓮の永遠なる大樹のマップデバイス;Dispositivo de Mapas: Árvore Eterna da Lotus Noturna;เครื่องเปิดแผนที่ต้นชั่วกาล บัวราตรี;Dispositif cartographique de l'Impérissarbre du lotus nocturne;Nachtlotus-Immerbaum-Kartenapparat;Artefacto de mapas de Árbol eterno de loto nocturno
+Постоянные;Utility;Машина картоходца Осквернителя;The Defiler Map Device;地圖裝置：玷汙者;地图装置：污浊之灵;모독자 지도 장치;冒涜者のマップデバイス;Dispositivo de Mapas: O Profanador;เครื่องเปิดแผนที่ผู้เสื่อมทราม;Dispositif cartographique du Profanateur;'Der Schänder'-Kartenapparat;Artefacto de mapas del Profanador
+Постоянные;Utility;Машина картоходца - Дерево душ;Tree of Souls Map Device;裝飾物：攝魂之樹地圖裝置;地图装置：灵魂之树;영혼의 나무 지도 장치;魂の木のマップデバイス;Dispositivo de Mapas: Árvore das Almas;เครื่องเปิดแผนที่ต้นตรึงวิญญาณ;Dispositif cartographique : Arbre des âmes;'Baum der Seelen'-Kartenapparat;Artefacto de mapas de Árbol de almas
+Постоянные;Utility;Машина картоходца джинна-убийцы;Assassin Djinn's Map Device;地圖裝置：刺客巨靈;地图装置：刺客巨灵;암살자 진의 지도 장치;アサシンのジンのマップデバイス;Dispositivo de Mapas do Jinn Assassino;เครื่องเปิดแผนที่จินน์มือสังหาร;Dispositif cartographique du Djinn assassin;Kartenapparat des Assassinen-Djinns;Artefacto de mapas del Genio asesino
+Постоянные;Utility;Машина картоходца водяного джинна;Water Djinn's Map Device;地圖裝置：水之巨靈;地图装置：流水巨灵;물 진의 지도 장치;水のジンのマップデバイス;Dispositivo de Mapas do Jinn das Águas;เครื่องเปิดแผนที่จินน์วารี;Dispositif cartographique du Djinn de l'eau;Kartenapparat des Wasser-Djinns;Artefacto de mapas del Genio del agua
+Постоянные;Utility;Машина картоходца джинна времени;Time Djinn's Map Device;地圖裝置：時空巨靈;地图装置：时光巨灵;시간 진의 지도 장치;時のジンのマップデバイス;Dispositivo de Mapas do Jinn do Tempo;เครื่องเปิดแผนที่จินน์กาลเวลา;Dispositif cartographique du Djinn du temps;Kartenapparat des Zeit-Djinns;Artefacto de mapas del Genio del tiempo
+Постоянные;Utility;Рекомбинатор;Recombinator;重組裝置;重组器;재조합기;リコンビネーター;Recombinador;เครื่องผสมไอเทม;Recombinateur;Rekombinator;Recombinador
+Постоянные;Utility;Разбрызгивающая Машина картоходца;Pulveriser Map Device;地圖裝置：粉碎機;地图装置：粉碎者;분쇄기 지도 장치;粉砕機のマップデバイス;Dispositivo de Mapas Pulverizador;เครื่องเปิดแผนที่เครื่องบดเลือด;Dispositif cartographique : Pulvérisateur;Pulverisierer-Kartengerät;Artefacto de mapas de Pulverizador
+Постоянные;Utility;Машина картоходца Запретных архивов;Sacred Archives Map Device;神聖檔案館地圖裝置;地图装置：圣洁档案馆;성스러운 서고 지도 장치;神聖なアーカイブマップデバイス;Dispositivo de Mapas: Cripta Santificada;เครื่องเปิดแผนที่หอจดหมายเหตุศักดิ์สิทธิ์;Dispositif cartographique : Archives sacrées;'Heilige Archive'-Kartenapparat;Artefacto de mapas de Archivos sagrados
+Постоянные;Utility;Машина картоходца Главного кузнеца;The Forgemaster's Map Device;地圖裝置：冶煉師範;地图装置：锻造大师;제련 장인의 지도 장치;フォージマスターのマップデバイス;Dispositivo de Mapas Mestre da Forja;เครื่องเปิดแผนที่ผู้คุมโรงหลอม;Dispositif cartographique du Maître de la forge;Schmiedemeister-Kartenapparat;Artefacto de mapas del Maestro de la forja
+Постоянные;Utility;Машина картоходца путевых врат с фонтаном;Fountain Waygate Map Device;地圖裝置：噴泉廳廊;地图装置：喷泉大门;분수 경로관문 지도 장치;噴水のウェイゲートマップデバイス;Dispositivo de Mapas da Passagem da Fonte;เครื่องเปิดแผนที่โถงข้ามทางน้ำพุ;Dispositif cartographique : Passerelle de fontaine;Fontänenpforte-Kartenapparat;Artefacto de mapas de pasadizo de fuentes
+Постоянные;Utility;Гардероб;Wardrobe Decoration;裝飾物：衣櫃;衣橱装饰;옷장 장식물;ワードローブ装飾品;Decoração do Guarda-roupa;ของตกแต่ง ตู้เสื้อผ้า;Décoration Garde-robe;Garderobe;Decoración de guardarropas
+Постоянные;Utility;Тайник моллюска;Clam Stash;蚌殼倉庫;蛤蜊仓库;조개 보관함;貝のスタッシュ;Baú Marisco;คลังเก็บของหอยมุก;Réserve Palourde;Muschel-Truhe;Alijo de almeja
+Постоянные;Utility;Хранилище гильдии моллюска;Clam Guild Stash;蚌殼公會倉庫;蛤蜊公会仓库;조개 길드 보관함;貝のギルドスタッシュ;Baú de Guilda Marisco;คลังเก็บของกิลด์หอยมุก;Réserve de Guilde Palourde;Muschel-Gildentruhe;Alijo de hermandad de almeja
+Постоянные;Utility;Тайник - ящик Предтеч;Precursor Receptacle Stash;先行者儲藏箱倉庫;先驱容器仓库;선도자 삽입구 보관함;先人の器スタッシュ;Baú Receptáculo Precursor;คลังเก็บของภาชนะกลุ่มชนก่อนกาล;Réserve Réceptacle des Prédécesseurs;'Wegbereiter-Behältnis'-Truhe;Alijo de Receptáculo de los precursores
+Постоянные;Utility;Хранилище гильдии - ящик Предтеч;Precursor Receptacle Guild Stash;先行者儲藏箱公會倉庫;先驱容器公会仓库;선도자 삽입구 길드 보관함;先人の器ギルドスタッシュ;Baú de Guilda Receptáculo Precursor;คลังเก็บของกิลด์ภาชนะกลุ่มชนก่อนกาล;Réserve de Guilde Réceptacle des Prédécesseurs;'Wegbereiter-Behältnis'-Gildentruhe;Alijo de hermandad de Receptáculo de los precursores
+Постоянные;Utility;Тайник Кракена;Kraken Stash Skin;裝飾物：海怪倉庫;仓库外观：北海巨兽;크라켄의 보관함 스킨;クラーケンスタッシュスキン;Visual de Baú do Kraken;คลังเก็บของคราเคน;Réserve du Kraken;Krakentruhe;Aspecto de alijo de kraken
+Постоянные;Utility;Хранилище гильдии Кракена;Kraken Guild Stash Skin;裝飾物：海怪公會倉庫;仓库外观：北海巨兽（公会）;크라켄의 길드 보관함 스킨;クラーケンギルドスタッシュスキン;Visual de Baú de Guilda do Kraken;คลังเก็บของกิลด์คราเคน;Réserve de Guilde du Kraken;Kraken-GIldentruhe;Aspecto de alijo de hermandad de kraken
+Постоянные;Utility;Тайник царской казны Атзири;Atziri's Royal Cache Stash;裝飾物：阿茲里皇家寶匣倉庫;仓库：阿兹里的皇家秘藏;앗지리의 왕실 은닉함 보관함;アッツィリの王家の財宝スタッシュ;Pacote de Baú Estoque Real de Atziri;คลังเก็บของหีบราชสมบัติอัถสิริ;Réserve Cache royale d'Atziri;'Atziris Königlicher Schatz'-Truhe;Aspecto de Alijo real de Atziri
+Постоянные;Utility;Хранилище гильдии царской казны Атзири;Atziri's Royal Cache Guild Stash;裝飾物：阿茲里皇家寶匣公會倉庫;公会仓库：阿兹里的皇家秘藏;앗지리의 왕실 은닉함 길드 보관함;アッツィリの王家の財宝ギルドスタッシュ;Decoração de Baú de Guilda Estoque Real de Atziri;คลังเก็บของกิลด์หีบราชสมบัติอัถสิริ;Réserve de Guilde Cache royale d'Atziri;'Atziris Königlicher Schatz'-Gildentruhe;Aspecto de Alijo de hermandad real de Atziri
+Постоянные;Utility;Тайник разбитого зеркала;Shattered Mirror Stash;破碎鏡像倉庫;破碎之镜仓库;산산조각 난 거울 보관함;割れた鏡スタッシュ;Baú Espelho Estilhaçado;คลังเก็บของกระจกแตกสลาย;Réserve Miroir brisé;'Zerbrochener Spiegel'-Truhe;Alijo de espejo roto
+Постоянные;Utility;Хранилище гильдии разбитого зеркала;Shattered Mirror Guild Stash;破碎鏡像公會倉庫;破碎之镜公会仓库;산산조각 난 거울 길드 보관함;割れた鏡ギルドスタッシュ;Baú de Guilda Espelho Estilhaçado;คลังเก็บของกิลด์กระจกแตกสลาย;Réserve de Guilde Miroir brisé;'Zerbrochener Spiegel'-Gildentruhe;Alijo de hermandad de espejo roto
+Постоянные;Utility;Тайник ваал;Vaal Cache Stash;瓦爾寶匣倉庫;瓦尔密藏仓库;바알 은닉함 보관함;ヴァールの財宝スタッシュ;Baú Estoque Vaal;คลังเก็บของหีบวาล์;Réserve Cache vaal;'Vaal-Lager'-Truhe;Alijo de tesoro vaal
+Постоянные;Utility;Хранилище гильдии ваал;Vaal Cache Guild Stash;瓦爾寶匣公會倉庫;瓦尔密藏公会仓库;바알 은닉함 길드 보관함;ヴァールの財宝ギルドスタッシュ;Baú de Guilda Estoque Vaal;คลังเก็บของกิลด์หีบวาล์;Réserve de Guilde Cache vaal;'Vaal-Lager'-Gildentruhe;Alijo de hermandad de tesoro vaal
+Постоянные;Utility;Тайник заражённого алтаря;Afflicted Altar Stash;密林祭壇倉庫;苦难祭坛仓库;고난에 시달리는 제단 보관함;苦難の祭壇スタッシュ;Baú Altar Afligido;คลังเก็บของแท่นโรคต้องสาป;Réserve Autel affligé;'Heimgesuchter Altar'-Truhe;Alijo de altar atribulado
+Постоянные;Utility;Хранилище гильдии заражённого алтаря;Afflicted Altar Guild Stash;密林祭壇公會倉庫;苦难祭坛公会仓库;고난에 시달리는 제단 길드 보관함;苦難の祭壇ギルドスタッシュ;Baú de Guilda Altar Afligido;คลังเก็บของกิลด์แท่นโรคต้องสาป;Réserve de Guilde Autel affligé;'Heimgesuchter Altar'-Gildentruhe;Alijo de hermandad de altar atribulado
+Постоянные;Utility;Колодец каруи;Karui Well Decoration;裝飾物：卡魯水井;装饰物：卡鲁之井;카루이 우물 장식물;カルイの井戸装飾品;"Decoração ""Poço Karui""";ของตกแต่ง บ่อน้ำ Karui;Décoration Puits karui;Karui-Brunnen;Decoración de Pozo karui
+Постоянные;Utility;Расколотый колодец;Fractured Well Decoration;裝飾物：破裂水井;装饰物：破碎之井;분열된 우물 장식물;デリリウムの井戸装飾品;"Decoração ""Poço Rompido""";ของตกแต่ง บ่อน้ำแตกร้าว;Décoration Puits brisé;Brüchiger Brunnen;Decoración de Pozo fracturado
+Постоянные;Utility;Машина картоходца путевых врат темницы;Prison Waygate Map Device;地圖裝置：牢獄廳廊;地图装置：监狱大门;감옥 경로관문 지도 장치;牢獄のウェイゲートマップデバイス;Dispositivo de Mapas da Passagem da Prisão;เครื่องเปิดแผนที่โถงข้ามทางเรือนจำ;Dispositif cartographique : Passerelle de prison;Gefängnispforte-Kartenapparat;Artefacto de mapas de pasadizos de prisión
+Постоянные;Utility;Казначей изгнанника для убежища;Exile's Treasurer Hideout Decoration;裝飾物：流亡者的出納員;装饰物：流放者财政长;유배자의 회계원 은신처 장식물;エグザイルの金庫番隠れ家装飾品;Decoração de Refúgio: Tesoureiro do Exilado;ของตกแต่ง เหรัญญิกเอ็กไซล์;Décoration de Repaire : Trésorier de l'Exilé;Schatzmeister der Verbannten;Decoración de Tesorero del exiliado para guarida
+Постоянные;Utility;Машина картоходца - подиум чемпиона;Champion's Podium Map Device;地圖裝置：冠軍領獎台;冠军领奖台地图装置;용사의 연단 지도 장치;覇者の演台マップデバイス;Dispositivo de Mapas Pódio do Campeão;เครื่องเปิดแผนที่แท่นฉลองวีรชน;Dispositif cartographique : Podium du Champion;'Podium des Champions'-Kartenapparat;Artefacto de mapas de Podio del campeón
+Постоянные;Utility;Машина картоходца песочных часов пустыни;Desert Hourglass Map Device;裝飾物：荒漠沙漏地圖裝置;地图装置：荒漠沙漏;사막 모래시계 지도 장치;砂漠の砂時計マップデバイス;Dispositivo de Mapas Ampulheta do Deserto;เครื่องเปิดแผนที่นาฬิกาทรายทะเลทราย;Dispositif cartographique : Sablier du désert;'Wüsten-Sanduhr'-Kartenapparat;Decoración de Artefacto de mapas de Reloj de arena de Sanctum
+Постоянные;Utility;Алая Машина картоходца песочных часов;Crimson Hourglass Map Device;裝飾物：腥紅沙漏地圖裝置;地图装置：绯红沙漏;진홍색 모래시계 지도 장치;深紅の砂時計マップデバイス;Dispositivo de Mapas Ampulheta Carmesim;เครื่องเปิดแผนที่นาฬิกาทรายแดง;Dispositif cartographique : Sablier pourpre;'Blutrote Sanduhr'-Kartenapparat;Artefacto de mapas de Reloj de arena carmesí
+Постоянные;Utility;Машина картоходца песочных часов пустоши;Wasteland Hourglass Map Device;裝飾物：廢土沙漏地圖裝置;地图装置：废土沙漏;황무지 모래시계 지도 장치;荒野の砂時計マップデバイス;Dispositivo de Mapas Ampulheta da Desolação;เครื่องเปิดแผนที่นาฬิกาทรายแดนกันดาร;Dispositif cartographique : Sablier des terres désolées;'Ödland-Sanduhr'-Kartenapparat;Artefacto de mapas de Reloj de arena del páramo
+Постоянные;Utility;Тайник Кракена (валюта);Kraken Stash Skin (Currency);裝飾物：海怪倉庫（通貨）;仓库通货页外观：北海巨兽;크라켄의 보관함 스킨 (화폐);クラーケンスタッシュスキン (カレンシー);Visual de Baú do Kraken (Moeda);สกินคลังเก็บของคราเคน (เงินตรา);Réserve du Kraken (Objets monétaires);Krakentruhe (Währung);Aspecto de alijo de kraken (objeto monetario)
+Постоянные;Utility;Хранилище гильдии Кракена (валюта);Kraken Guild Stash Skin (Currency);裝飾物：海怪公會倉庫（通貨）;仓库通货页外观：北海巨兽（公会）;크라켄의 길드 보관함 스킨 (화폐);クラーケンギルドスタッシュスキン (カレンシー);Visual de Baú de Guilda do Kraken (Moeda);สกินคลังเก็บของกิลด์คราเคน (เงินตรา);Réserve de Guilde du Kraken (Objets monétaires);Kraken-Gildentruhe (Währung);Aspecto de alijo de hermandad de kraken (objeto monetario)
+Постоянные;Utility;Тайник царской казны Атзири (уникальные предметы);Atziri's Royal Cache Stash (Unique);裝飾物：阿茲里皇家寶匣倉庫(傳奇);仓库传奇物品页外观：阿兹里的皇家秘藏;앗지리의 왕실 은닉함 보관함 (고유);アッツィリの王家の財宝スタッシュ (ユニーク);Baú Estoque Real de Atziri (Único);คลังเก็บของหีบราชสมบัติอัถสิริ (ไอเทมยูนิค);Réserve Cache royale d'Atziri (Uniques);'Atziris Königlicher Schatz'-Truhe (Einzigartiges);Aspecto de Alijo real de Atziri (únicos)
+Постоянные;Utility;Хранилище гильдии царской казны Атзири (уникальные предметы);Atziri's Royal Cache Guild Stash (Unique);裝飾物：阿茲里皇家寶匣公會倉庫(傳奇);公会传奇物品仓库外观：阿兹里的皇家秘藏;앗지리의 왕실 은닉함 길드 보관함 (고유);アッツィリの王家の財宝ギルドスタッシュ (ユニーク);Baú de Guilda Estoque Real de Atziri (Único);คลังเก็บของกิลด์หีบราชสมบัติอัถสิริ (ไอเทมยูนิค);Réserve de Guilde Cache royale d'Atziri (Uniques);'Atziris Königlicher Schatz'-Gildentruhe (Einzigartiges);Aspecto de Alijo de hermandad real de Atziri (únicos)
+Постоянные;Utility;Верстак для разборки Главного кузнеца;Forgemaster's Salvage Bench;裝飾物：冶煉師範工藝台;分解台：锻造大师;제련 장인의 분해 작업대;フォージマスターのサルベージベンチ;Bancada de Reciclagem do Mestre da Forja;โต๊ะรื้อผู้คุมโรงหลอม;Établi de recyclage du Maître de la forge;Schmiedemeister-Verwertungswerkbank;Mesa de reciclaje del Maestro de la forja
+Постоянные;Utility;Машина картоходца Предтеч;Relic of the Precursors Map Device;地圖裝置：先行者的聖物;地图装置：先驱者遗物;선도자의 유물 지도 장치;先人の遺物マップデバイス;Dispositivo de Mapas Relíquia dos Precursores;เครื่องเปิดแผนที่โบราณวัตถุกลุ่มชนก่อนกาล;Dispositif cartographique : Relique des Prédécesseurs;'Relikt der Wegbereiter'-Kartenapparat;Artefacto de mapas de Reliquia de los precursores
+Постоянные;Utility;Машина картоходца вечного заточения;Eternal Incarceration Map Device;地圖裝置：永世輪迴;地图装置：永恒禁锢;영원한 감독 지도 장치;永遠なる投獄者のマップデバイス;;;;;
+Постоянные;NPCs;Альва;Alva;艾瓦;阿尔瓦;알바;アルヴァ;Alva;อัลวา;Alva;Alva;Alva
+Постоянные;NPCs;Дэнниг;Dannig;丹尼格;丹宁;대닉;ダニグ;Dannig;แดนนิก;Dannig;Dannig;Dannig
+Постоянные;NPCs;Гвеннен;Gwennen;關南;桂温妮;그위넨;グウェネン;Gwennen;เกว็นเน็น;Gwennen;Gwennen;Gwennen
+Постоянные;NPCs;Туджин;Tujen;圖貞;图金;투젠;トゥージェン;Tujen;ทูเจน;Tujen;Tujen;Tujen
+Постоянные;NPCs;Рог;Rog;羅格;罗格;로그;ログ;Rog;ร็อก;Rog;Rog;Rog
+Постоянные;NPCs;Зелина;Zelina;澤莉娜;泽琳娜;젤리나;ゼリナ;Atalui, Sacerdote Sangrento;เซลิน่า;Zelina;Atalui, Blutpriesterin;Atalui, Sacerdotisa de sangre
+Постоянные;NPCs;Золин;Zolin;佐林;佐林;졸린;ゾリン;Ketzuli, Arquiteto do Tempo;โซลิน;Ketzuli, Architecte du Temps;Ketzuli, Architekt der Zeit;Ketzuli, Arquitecto del tiempo
+Постоянные;NPCs;Дориани;Doryani;多里亞尼;多里亚尼;도리아니;ドリヤニ;Doryani;ดอร์ยานี;Doryani;Doryani;Doryani
+Постоянные;NPCs;Мастер испытаний для убежища;Trialmaster Hideout Decoration;裝飾物：試煉大師;装饰物：试炼使者;시련의 대가 은신처 장식물;トライアルマスターの隠れ家装飾品;Decoração de Refúgio: Mestre das Provações;ของตกแต่ง ผู้คุมบททดสอบ;Maître des épreuves;Prüfungsmeister;Decoración del Maestro de pruebas para guarida
+Постоянные;NPCs;Гоблины-игроки для убежища;Goblin Gamblers Hideout Decoration;藏身處裝飾物：哥布林賭徒;装饰物：地精游戏者;고블린 도박꾼 은신처 장식물;ゴブリンギャンブラー隠れ家装飾品;"Decoração de Refúgio ""Apostadoras Goblin""";ของตกแต่ง วงพนันก็อบลิน;Décoration de repaire : Gobelins joueurs;'Spielende Goblins'-Versteckdekoration;Decoración de guarida de Goblins apostadores
+Постоянные;NPCs;Навали;Navali;娜瓦莉;娜瓦莉;나발리;ナヴァリ;Navali;นาวาลี;Navali;Navali;Navali
+Постоянные;NPCs;Фауст;Ange;安潔;安吉;앤지;アンジェ;Ange;แอนจ์;Ange;Ange;Ange
+Постоянные;NPCs;Мистик-Сфинкс для убежища;Sphinx Mystic Hideout Decoration;藏身處裝飾物：神秘獅身人面;装饰物：狮身人面秘法;스핑크스 신비학자 은신처 장식물;スフィンクスミスティック隠れ家装飾品;"Decoração de refúgio ""Esfinge Mística""";ของตกแต่ง ฤๅษีสฟิงซ์;Décoration de repaire : Sphinx mystique;Sphinx-Versteckdekoration;Decoración de guarida de Esfinge mística
+Постоянные;NPCs;Бакалейщик;Backalley Trader;裝飾物：黑街商人;后巷商人;뒷골목 상인;路地裏の商人;Negociante dos Becos;พ่อค้าตลาดมืด;Marchand clandestin;Hinterhofhändler;Comerciante clandestino
+Постоянные;NPCs;Заточённый джинн-торговец;Imprisoned Djinn Merchant;裝飾物：被囚巨靈商人;被囚的巨灵商人;갇힌 진 상인;囚われたジンの商人;Monge;Monk;Moine;Mönch;Monje
+Опциональные;Hideout Item;Верстак бронника;Armourer's Workbench;護甲鍛造台;护甲锻造台;방어구 장인의 작업대;防具屋の作業台;Bancada do Armeiro;Armourer's Workbench;Plan de travail de l'armurier;Werkbank des Rüstungsschmieds;Mesa de trabajo del armero
+Опциональные;Hideout Item;Инструменты лучного мастера;Bowmaker's Tools;製弓器械;制弓器械;활 제작자의 도구;弓師の道具;Ferramentas do Fabricante de Arcos;Bowmaker's Tools;Outils du facteur d'arcs;Werkzeuge des Bogenmachers;Herramientas del fabricante de arcos
+Опциональные;Hideout Item;Надгробия;Headstones;遠古石碑;远古石碑;묘석;墓石;Lápides;Headstones;Pierres tombales;Grabsteine;Lápidas
+Опциональные;Hideout Item;Точильный круг;Sharpening Wheel;打磨砂輪;打磨砂轮;숫돌바퀴;砥石車;Esmeril;Sharpening Wheel;Meule à affûter;Schleifstein;Rueda de afilar
+Опциональные;Hideout Item;Благословенная купель;Blessing Font;聖泉洗禮台;圣泉洗礼台;축복의 샘;洗礼台;Fonte de Bênçãos;Blessing Font;Fonts de bénédiction;Segnungsbecken;Fuente de bendición
+Опциональные;Hideout Item;Верстак умельца;Artisan's Bench;工藝方桌;工艺方桌;장인의 작업대;職人の作業台;Bancada do Artesão;Artisan's Bench;Établi d'artisan;Werkbank des Kunsthandwerkers;Banco del artesano
+Опциональные;Hideout Item;Верстак гладиатора;Gladiator's Workbench;鬥士工藝台;斗士工艺台;검투사의 작업대;剣闘士の作業台;Bancada do Gladiador;Gladiator's Workbench;Établi du gladiateur;Werkbank des Gladiators;Mesa de trabajo del gladiador
+Опциональные;Hideout Item;Верстак;Crafting Bench;工藝台;工艺工作台;작업대;クラフトベンチ;Mesa de Criação;โต๊ะคราฟท์;Établi d'artisanat;Werkbank;Mesa de fabricación
+Опциональные;Hideout Item;Хроносфера;Chronosphere;裝飾物：時空結界;时空传送仪;시간의 구체;クロノスフィア;Cronosfera;เครื่องคุมกาลเวลา;Chronosphere;Chronosphäre;Cronoesfera
+Опциональные;Hideout Item;Переключатель Атласа;Atlas Toggle;裝飾物：輿圖切換;异界图鉴开关;아틀라스 전환;アトラストグル;Ativar Atlas;เปิด/ปิด แอตลาส;Mode Atlas;Atlas-Schaltfläche;Interruptor del Atlas
+Опциональные;Hideout Item;Переключатель приближения;Zoom Toggle;裝飾物：縮放切換;缩放开关;시야 전환;ズームトグル;Ativar Zoom;เปิด/ปิด การซูม;Mode Zoom;Zoom-Schaltfläche;Interruptor de zoom
+Опциональные;Hideout Item;Пламенный след;Searing Remnant;裝飾物：灼烙遺跡;装饰物：灼热遗迹;이글거리는 유물;灼熱のレムナント;Resto Cauterizante;ซากอาบเพลิง;Vestige ardent;Brennendes Relikt;Remanente abrasador
+Опциональные;Hideout Item;Пустынный павильон;Desert Pavilion;沙漠亭樓;沙漠大帐;사막 별채;砂漠のパビリオン;Pavilhão do Deserto;กระโจมทะเลทราย;Pavillon du Désert;Wüstenpavillon;Pabellón desértico
+Опциональные;Hideout Item;Пустынная палатка;Desert Tent;沙漠帳篷;沙漠帐篷;사막 천막;砂漠のテント;Tenda do Deserto;เต็นท์ทะเลทราย;Tente du Désert;Wüstenzelt;Carpa desértica
+Опциональные;Hideout Item;Кактус в горшке;Potted Cactus;仙人掌盆栽;盆栽仙人掌;선인장 화분;鉢植えのサボテン;Cacto no Vaso;กระบองเพชรในกระถาง;Cactus en pot;Kaktustopf;Cáctus en maceta
+Опциональные;Hideout Item;Удобные подушки;Comfortable Cushions;舒適坐墊;舒适的垫子;편안한 방석;快適なクッション;Almofadas Confortáveis;เบาะสบายตัว;Coussins confortables;Bequeme Kissen;Almohadones cómodos
+Опциональные;Hideout Item;Пустынная статуя;Desert Statue;沙漠雕像;沙漠雕像;사막 조각상;砂漠の像;Estátua do Deserto;รูปปั้นทะเลทราย;Statue du Désert;Wüstenstatue;Estatua desértica
+Опциональные;Hideout Item;Горелка;Pitch Burner;漆黑香爐;沥青灯;타르 화로;ピッチバーナー;Fosso de Piche;ตะเกียงเผา;Brasero;Feuergefäß;Quemador de campo
+Опциональные;Hideout Item;Гоночный флаг роа (голубой);Rhoa Race Flag (Cyan);恐喙鳥競賽旗幟（青）;恐喙鸟竞速旗（青色）;로아 경주 깃발 (청록색);ロアレースの旗 (シアン );Bandeira de Corrida de Rhoa (Ciano);ธงแข่งโรอ์ (ฟ้า);Drapeau de course Rhoa (Cyan);Rhoa-Rennflagge (cyanfarben);Bandera de carreras de rhoa (cian)
+Опциональные;Hideout Item;Гоночный флаг роа (фиолетовый);Rhoa Race Flag (Purple);恐喙鳥競賽旗幟（紫）;恐喙鸟竞速旗（紫色）;로아 경주 깃발 (보라색);ロアレースの旗 (パープル );Bandeira de Corrida de Rhoa (Roxo);ธงแข่งโรอ์ (ม่วง);Drapeau de course Rhoa (Violet);Rhoa-Rennflagge (violett);Bandera de carreras de rhoa (morada)
+Опциональные;Hideout Item;Гоночный флаг роа (жёлтый);Rhoa Race Flag (Yellow);恐喙鳥競賽旗幟（黃）;恐喙鸟竞速旗（黄色）;로아 경주 깃발 (노란색);ロアレースの旗 (イエロー );Bandeira de Corrida de Rhoa (Amarelo);ธงแข่งโรอ์ (เหลือง);Drapeau de course Rhoa (Jaune);Rhoa-Rennflagge (gelb);Bandera de carreras de rhoa (amarilla)
+Опциональные;Hideout Item;Гоночный флаг роа (красный);Rhoa Race Flag (Red);恐喙鳥競賽旗幟（紅）;恐喙鸟竞速旗（红色）;로아 경주 깃발 (빨간색);ロアレースの旗 (レッド );Bandeira de Corrida de Rhoa (Vermelho);ธงแข่งโรอ์ (แดง);Drapeau de course Rhoa (Rouge);Rhoa-Rennflagge (rot);Bandera de carreras de rhoa (roja)
+Опциональные;Hideout Item;Гоночный флаг роа (зелёный);Rhoa Race Flag (Green);恐喙鳥競賽旗幟（綠）;恐喙鸟竞速旗（绿色）;로아 경주 깃발 (초록색);ロアレースの旗 (グリーン );Bandeira de Corrida de Rhoa (Verde);ธงแข่งโรอ์ (เขียว);Drapeau de course Rhoa (Vert);Rhoa-Rennflagge (grün);Bandera de carreras de rhoa (verde)
+Опциональные;Hideout Item;Гоночный флаг роа (синий);Rhoa Race Flag (Blue);恐喙鳥競賽旗幟（藍）;恐喙鸟竞速旗（蓝色）;로아 경주 깃발 (파란색);ロアレースの旗 (ブルー );Bandeira de Corrida de Rhoa (Azul);ธงแข่งโรอ์ (น้ำเงิน);Drapeau de course Rhoa (Bleu);Rhoa-Rennflagge (blau);Bandera de carreras de rhoa (azul)
+Опциональные;Hideout Item;Пульт управления гонкой роа;Rhoa Race Controller;恐喙鳥競賽控制器;恐喙鸟竞速控制台;로아 경주 컨트롤러;ロアレースコントローラー;Controle da Corrida de Rhoas;ที่คุมการแข่งโรอ์;Contrôleur de course Rhoa;Rhoa-Rennen-Startplatz;Controlador de carreras de rhoa
+Опциональные;Hideout Item;Объект для наблюдения за гонкой роа;Rhoa Race Spectate;恐喙鳥競賽觀看裝置;恐喙鸟竞速观赛台;로아 경주 관전;ロアレース観戦;Espectador da Corrida de Rhoas;ที่ดูการแข่งโรอ์;Spectateur de course Rhoa;Rhoa-Rennen-Zuschauerplatz;Observación de carreras de rhoa
+Опциональные;Hideout Item;Дополнительный гоночный флаг роа;Extra Rhoa Race Flag;額外恐喙鳥競賽旗幟;额外恐喙鸟竞速旗;추가 로아 경주 깃발;追加のロアレースの旗;Bandeira Extra da Corrida de Rhoas;ธงแข่งโรอ์ เพิ่มเติม;Drapeau de course Rhoa supplémentaire;Extra Rhoa-Rennflagge;Bandera de carreras de rhoa extra
+Опциональные;Hideout Item;Дополнительный пульт управления гонкой роа;Extra Rhoa Race Controller;額外恐喙鳥競賽控制器;额外恐喙鸟竞速控制台;추가 로아 경주 컨트롤러;追加のロアレースコントローラー;Controle Extra da Corrida de Rhoas;ที่คุมการแข่งโรอ์ เพิ่มเติม;Contrôleur de course Rhoa supplémentaire;Extra Rhoa-Rennen-Startplatz;Controlador de carreras de rhoa extra
+Опциональные;Hideout Item;Дополнительный объект для наблюдения за гонкой роа;Extra Rhoa Race Spectate;額外恐喙鳥競賽觀看裝置;额外恐喙鸟竞速观赛台;추가 로아 경주 관전;追加のロアレースの観客;Espectador Extra da Corrida de Rhoas;ที่ดูการแข่งโรอ์ เพิ่มเติม;Spectateur de course Rhoa supplémentaire;Extra Rhoa-Rennen-Zuschauerplatz;Observación de carreras de rhoa extra
+Опциональные;Hideout Item;Декоративный гоночный флаг роа;Decorative Rhoa Race Flag;裝飾用恐喙鳥競賽旗幟;装饰性恐喙鸟竞速旗;장식용 로아 경주 깃발;装飾のロアレースの旗;Bandeira Decorativa da Corrida de Rhoas;ธงแข่งโรอ์ ตกแต่ง;Drapeau de course Rhoa décoratif;Dekorative Rhoa-Rennflagge;Bandera de carreras de rhoa decorativa
+Опциональные;Hideout Item;Декоративный пульт управления гонкой роа;Decorative Rhoa Race Controller;裝飾用恐喙鳥競賽控制器;装饰性恐喙鸟竞速控制台;장식용 로아 경주 컨트롤러;装飾のロアレースコントローラー;Controlador Decorativo da Corrida de Rhoas;ที่คุมการแข่งโรอ์ ตกแต่ง;Contrôleur de course Rhoa décoratif;Dekorativer Rhoa-Rennen-Startplatz;Controlador de carreras de rhoa decorativo
+Опциональные;Hideout Item;Декоративный объект для наблюдения за гонкой роа;Decorative Rhoa Race Spectate;裝飾用恐喙鳥競賽觀看裝置;装饰性恐喙鸟竞速观赛台;장식용 로아 경주 관전;装飾のロアレースの観客;Espectador Decorativo da Corrida de Rhoas;ที่ดูการแข่งโรอ์ ตกแต่ง;Spectateur de course Rhoa décorative;Dekorativer Rhoa-Rennen-Zuschauerplatz;Observación de carreras de rhoa decorativa
+Опциональные;Hideout Item;Декорации Испытаний Хаоса для убежища;Trials of Chaos Hideout Decoration;藏身處裝飾品：混沌試煉;装饰物：混沌试炼;혼돈의 시련 은신처 장식물;カオスの試練の隠れ家装飾品;Decoração de Refúgio Provação do Caos;ของตกแต่ง บททดสอบแห่งเคออส;Épreuves des Chaos (Décoration de Repaire);'Prüfungen des Chaos'-Versteckdekoration;Decoración de guarida de las Pruebas de Caos
+Опциональные;Hideout Item;Колодец душ;Well of Souls Decoration;裝飾物：靈魂之井;装饰物：灵魂之井;영혼의 우물 장식물;魂の井戸装飾品;Decoração Poço das Almas;ของตกแต่ง บ่อวิญญาณ;Décoration Puits des âmes;Brunnen der Seelen;Decoración de Pozo de almas
+Опциональные;Hideout Item;Ломовой козёл;Burdenback Billy Goat Pet;寵物：重負比利山羊寵物;宠物：负鞍公山羊;등짐 진 숫염소 애완동물;荷運びのヤギペット;Mascote Mulinha;สัตว์เลี้ยงแพะแบกหาม;Billy le Bouc Bête de somme (Familier);Billy die Packziege;Mascota Cabra de carga
+Опциональные;Hideout Item;Жабий идол Порчи для убежища;Toad Idol of Corruption Hideout Decoration;裝飾物：汙染之蟾雕偶;装饰物：腐化蟾蜍雕像;타락의 두꺼비 우상 은신처 장식물;穢れのカエルの像隠れ家装飾品;Decoração de refúgio Ídolo do Sapo da Corrupção;ของตกแต่ง เทวรูปคางคกมลทิน;Décoration de Repaire : Crapaud-idole de la corruption;Kröten-Götze der Verderbtheit;Decoración de Ídolo sapo de corrupción para guarida
+Опциональные;Hideout Item;Жабий идол хаоса для убежища;Toad Idol of Chaos Hideout Decoration;裝飾物：混沌之蟾雕偶;装饰物：混沌蟾蜍雕像;혼돈의 두꺼비 우상 은신처 장식물;カオスのカエルの像隠れ家装飾品;Decoração de refúgio Ídolo Sapo do Caos;ของตกแต่ง เทวรูปคางคกเคออส;Décoration de Repaire : Crapaud-idole du chaos;Kröten-Götze des Chaos;Decoración de Ídolo sapo de caos para guarida
+Опциональные;Hideout Item;Жабий идол алхимии для убежища;Toad Idol of Alchemy Hideout Decoration;裝飾物：點金之蟾雕偶;装饰物：点金蟾蜍雕像;연금술의 두꺼비 우상 은신처 장식물;錬金術のカエルの像隠れ家装飾品;Decoração de refúgio Ídolo Sapo da Alquimia;ของตกแต่ง เทวรูปคางแปรธาตุ;Décoration de Repaire : Crapaud-idole de l'alchimie;Kröten-Götze der Alchemie;Decoración de Ídolo sapo de alquimia para guarida
+Опциональные;Miscellaneous;Жареный роа;Rhoa Dinner;裝飾物：喙鳥晚宴;装饰物：恐喙吃鸡大餐;로아 만찬;ロアディナー;Rhoa Assado;Rhoa Dinner;Dîner à base de rhoa;Rhoa-Spieß;Cena de Rhoa
+Опциональные;Miscellaneous;Тайник стяжателя;Hoarder's Stash;裝飾物：囤積者倉庫;仓库：囤积者;비축가 보관함;ホーダーのスタッシュ;Baú do Acumulador;คลังเก็บของนักกักตุน;Réserve du Collectionneur;Sammlertruhe;Alijo del acumulador
+Опциональные;Miscellaneous;Хранилище гильдии стяжателя;Hoarder's Guild Stash;裝飾物：囤積者公會倉庫;公会仓库：囤积者;비축가 길드 보관함;ホーダーのギルドスタッシュ;Baú de Guilda do Acumulador;คลังเก็บของกิลด์นักกักตุน;Réserve de Guilde du Collectionneur;Sammler-Gildentruhe;Alijo del acumulador de hermandad
+Опциональные;Miscellaneous;Тайник Каландры;Kalandra Stash;裝飾物：卡蘭德倉庫;仓库：卡兰德;칼란드라 보관함;カランドラスタッシュ;Baú de Kalandra;คลังเก็บของ Kalandra;Réserve de Kalandra;Kalandra-Truhe;Alijo de Kalandra
+Опциональные;Miscellaneous;Хранилище гильдии Каландры;Kalandra Guild Stash;裝飾物：卡蘭德公會倉庫;公会仓库：卡兰德;칼란드라 길드 보관함;カランドラギルドスタッシュ;Baú de Guilda de Kalandra;คลังเก็บของกิลด์ Kalandra;Réserve de Guilde de Kalandra;Kalandra-Gildentruhe;Alijo de hermandad de Kalandra
+Опциональные;Miscellaneous;Тайник сокровищ дракона;Dragon's Currency Hoard Stash;裝飾物：古龍通貨屯物倉庫;仓库：巨龙通货财宝堆;용의 화폐 비축물 보관함;ドラゴンのカレンシーの山スタッシュ;Baú Tesouro Monetário do Dragão;คลังเก็บของกองสมบัติเงินตรามังกร;Réserve du Trésor du Dragon;Währungsschatz-Truhe des Drachens;Alijo de Riquezas de dragón
+Опциональные;Miscellaneous;Хранилище гильдии сокровищ дракона;Dragon's Currency Hoard Guild Stash;裝飾物：古龍屯物公會倉庫;公会仓库：巨龙通货财宝堆;용의 화폐 비축물 길드 보관함;ドラゴンのカレンシーの山ギルドスタッシュ;Baú de Guilda Tesouro Monetário do Dragão;คลังเก็บของกิลด์กองสมบัติเงินตรามังกร;Réserve de Guilde du Trésor du Dragon;Währungsschatz-Gildentruhe des Drachens;Alijo de hermandad de Riquezas de dragón
+Опциональные;Miscellaneous;Тайник Горнила;Crucible Stash;裝飾物：熔火倉庫;仓库：古神熔炉;시련 보관함;クルーシブルスタッシュ;Baú Crucible;คลังเก็บของ Crucible;Réserve de Crucible;Crucible-Truhe;Alijo de Crucible
+Опциональные;Miscellaneous;Хранилище гильдии Горнила;Crucible Guild Stash;裝飾物：熔火公會倉庫;公会仓库：古神熔炉;시련 길드 보관함;クルーシブルギルドスタッシュ;Baú de Guilda Crucible;คลังเก็บของกิลด์ Crucible;Réserve de Guilde de Crucible;Crucible-Gildentruhe;Alijo de hermandad de Crucible
+Опциональные;Miscellaneous;Плодоремесленная установка;Horticrafting Station;裝飾物：園藝憩站;花园工艺站;푸르미 제작소;ハーベストクラフト台;Estação de Horticultura;โต๊ะคราฟท์สวน;Établi d'hortisanat;Anfertigungsstation;Mesa de fabricación herbaria
+Опциональные;Miscellaneous;Сундук с семенами;Seed Stockpile;裝飾物：種子堆;装饰物：种子箱;씨앗 전리품;シード貯蔵庫;Pilha de Sementes;คลังเก็บเมล็ดพันธุ์;Réserve de graines;Samenvorrat;Reserva de semillas
+Опциональные;Miscellaneous;Сундук Кражи;Heist Locker;裝飾物：劫盜鎖櫃;装饰物：夺宝奇兵陈列柜;강탈 사물함;ハイストロッカー;Armário Heist;ล็อกเกอร์โจรกรรม;Casier de Malfaiteur;Heist-Schließfach;Armario de Heist
+Опциональные;Miscellaneous;Сундук экспедиции;Expedition Locker;裝飾物：探險鎖櫃;先祖秘藏储物柜;탐험 사물함;エクスペディションロッカー;Armário Expedition;ล็อกเกอร์กองสำรวจ;Casier d'Expédition;Expedition-Truhe;Armario de Expedition
+Опциональные;Miscellaneous;Шкаф с Часовыми;Sentinel Locker;裝飾物：守望鎖櫃;护卫陈列柜;파수꾼 사물함;センチネルロッカー;Armário Sentinel;ล็อกเกอร์หุ่นอารักษ์;Casier de Sentinelles;Wächter-Truhe;Armario de Sentinel
+Опциональные;Miscellaneous;Тотем Ритуала;Ritual Totem;裝飾物：祭祀圖騰;驱灵图腾;의식 토템;儀式のトーテム;Totem Ritualístico;Ritual Totem;Totem rituel;Ritualtotem;Tótem de ritual
+Опциональные;Miscellaneous;Витрина;Item Display Case;裝飾物：勝利雕像;物品展示柜;아이템 진열장;アイテム展示ケース;Mostruário de Itens;ตู้โชว์ไอเทม;Vitrine;Glasvitrine;Vitrina de objetos
+Опциональные;Miscellaneous;Манекен;Mannequin;裝飾物：挑戰雕像;假人;마네킹;マネキン;Manequim;หุ่นกระบอก;Mannequin;Rüstungspuppe;Maniquí
+Опциональные;Miscellaneous;Статуя Легенды;Legend's Hideout Statue;裝飾物：恐喙鳥盛宴;传说藏身处雕像;전설의 은신처 석상;伝説の隠れ家の像;Estátua de Refúgio da Lenda;รูปปั้นที่ซ่อน Legend;Statue de Légende;Statue der Legende;Estatua de la leyenda para guarida
+Опциональные;Miscellaneous;Статуя Чемпиона;Champion's Hideout Statue;裝飾物：西拉克紀念雕像;勇士藏身处雕像;용사의 은신처 석상;王者の隠れ家の像;Estátua de Refúgio do Campeão;รูปปั้นที่ซ่อน Champion;Statue de Champion;Statue des Streiters;Estatua del campeón para guarida
+Опциональные;Miscellaneous;Статуя Победителя;Victor's Hideout Statue;裝飾物：瓦爾超靈紀念雕像;胜利藏身处雕像;승리자의 은신처 석상;勝者の隠れ家の像;Estátua de Refúgio do Vitorioso;รูปปั้นที่ซ่อน Victor;Statue du Vainqueur;Statue des Siegers;Estatua del vencedor para guarida
+Опциональные;Miscellaneous;Статуя Претендента;Challenger's Hideout Statue;裝飾物：神主紀念雕像;挑战者藏身处雕像;도전자의 은신처 석상;挑戦者の隠れ家の像;Estátua de Refúgio do Desafiador;รูปปั้นที่ซ่อน Challenger;Statue de l'Opposant;Statue des Herausforderers;Estatua del retador para guarida
+Опциональные;Miscellaneous;Пир из роа;Rhoa Feast;裝飾物：瑪拉凱紀念雕像;恐喙盛宴;로아 연회;ロアの肉;Banquete de Rhoa;Rhoa Feast;Festin de rhoa;Rhoa-Festmahl;Festín de rhoa
+Опциональные;Miscellaneous;Памятная статуя Хиллока для убежища;Commemorative Hillock Statue Hideout Decoration;裝飾物：奇塔弗紀念雕像;装饰物：西拉克纪念雕像;기념 힐록 조각상 은신처 장식물;ヒロックの記念像隠れ家装飾品;Decoração de Refúgios: Estátua Comemorativa de Hillock;ของตกแต่ง รูปปั้นฮิลล็อกที่ระลึก;Statue commémorative de Hillock (Décoration de Repaire);Hillock-Ehrenstatue;Decoración de Estatua conmemorativa de Hillock para guarida
+Опциональные;Miscellaneous;Памятная статуя Вседуши ваал для убежища;Commemorative Vaal Oversoul Statue Hideout Decoration;焦灼雕像;装饰物：瓦尔超灵纪念雕像;기념 바알 신령 조각상 은신처 장식물;ヴァール・オーバーソウルの記念像隠れ家装飾品;Decoração de Refúgios: Estátua Comemorativa da Sobrealma Vaal;ของตกแต่ง รูปปั้นมหาวิญญาณแห่งวาล์ที่ระลึก;Statue commémorative d'Âme souveraine vaal (Décoration de Reaire);Vaal-Überseele-Ehrenstatue;Decoración de Estatua conmemorativa del Alma suprema vaal para guarida
+Опциональные;Miscellaneous;Памятная статуя Владыки для убежища;Commemorative Dominus Statue Hideout Decoration;透明染劑;装饰物：多米纳斯纪念雕像;기념 도미누스 조각상 은신처 장식물;ドミナスの記念像隠れ家装飾品;Decoração de Refúgios: Estátua Comemorativa de Dominus;ของตกแต่ง รูปปั้นโดมินัสที่ระลึก;Statue commémorative de Dominus (Décoration de Repaire);Dominus-Ehrenstatue;Decoración de Estatua conmemorativa de Dóminus para guarida
+Опциональные;Miscellaneous;Памятная статуя Малахая для убежища;Commemorative Malachai Statue Hideout Decoration;物品外觀;装饰物：马拉凯纪念雕像;기념 말라카이 조각상 은신처 장식물;マラカイの記念像隠れ家装飾品;Decoração de Refúgios: Estátua Comemorativa de Malachai;ของตกแต่ง รูปปั้นมาลาไคที่ระลึก;Statue commémorative de Malachai (Décoration de Repaire);Malachai-Ehrenstatue;Decoración de Estatua conmemorativa de Malachai para guarida
+Опциональные;Miscellaneous;Памятная статуя Китавы для убежища;Commemorative Kitava Statue Hideout Decoration;其它;装饰物：奇塔弗纪念雕像;기념 키타바 조각상 은신처 장식물;キタヴァの記念像隠れ家装飾品;Decoração de Refúgios: Estátua Comemorativa de Kitava;ของตกแต่ง รูปปั้นคิทาวาที่ระลึก;Statue commémorative de Kitava (Décoration de Repaire);Kitava-Ehrenstatue;Decoración de Estatua conmemorativa de Kitava para guarida
+Опциональные;Miscellaneous;Обожжённая статуя;Scorched Statue;隱藏特效效果;烧灼的雕像;그을린 석상;灼けた像;Estátua Queimada;Scorched Statue;Statue calcinée;Versengte Statue;Estatua calcinada
+Опциональные;Miscellaneous;Исчезающая краска;Vanishing Dye;背飾：獵捕者斗篷;透明染剂;소멸 염료;目に見えなくする染料;Tinta Invisível;สีล่องหน;Teinture d'invisibilité;Unsichtbarkeitsfarbe;Tinte de Desvanecimiento
+Опциональные;Miscellaneous;Невидимый положительный эффект;Item Skin;身體外觀附加;隐形增益效果;아이템 스킨;透明なバフエフェクト;Efeito: Buff Invisível;เอฟเฟคบัฟล่องหน;Invisibilité d'Effet bénéfique;Unsichtbarer Stärkungseffekt;Efecto de Bonificación Invisible
+Опциональные;Miscellaneous;Плащ егеря;Miscellaneous;武器外觀：死亡刻痕．魂靈;背饰：猎手披风;기타;山岳歩兵のマント;Capa Jaeger;ผ้าคลุม Jaeger;Cape de Jaeger;Feldjäger-Umhang;Capa de Pégalo
+Опциональные;Miscellaneous;Призрачный смертоносный зазубренный лук;Invisible Buff Effect;武器外觀;幽魂死亡刻痕之弓;버프 이펙트 숨김;スペクトラル・デスノッチの弓;Arco do Nó Mortal Espectral;ธนูง้างมรณะ Spectral;Arc de Morte-encoche spectrale;Spektraler Leichensammler-Bogen;Arco de Muescas mortales espectral
+Опциональные;Miscellaneous;Зелёный василиск;Jaeger Cloak;寵物：翠綠蜥蜴;宠物:翠绿蜥蜴;도둑갈매기 망토;緑のバジリスクペット;Mascote Basilisco Verde;สัตว์เลี้ยงบาสิลิสก์ Green;Basilic vert;Grüner Basilisk;Mascota Basilisco Verde
+Опциональные;Miscellaneous;Призрачный василиск;Body Armour Attachment;寵物：幽魂蜥蜴;宠物:幽魂蜥蜴;갑옷 부착물;スペクトラルバジリスクペット;Mascote Basilisco Espectral;สัตว์เลี้ยงบาสิลิสก์ Spectral;Basilic spectral;Spektralbasilisk;Mascota Basilisco Espectral
+Опциональные;Miscellaneous;Синяя лягушка;Spectral Deathnotch Bow;寵物：海藍鳴蛙;宠物:海蓝鸣蛙;영체 죽음의 오늬 활;青い蛙ペット;Mascote Sapo Azul;สัตว์เลี้ยงกบ Blue;Grenouille bleue;Blauer Frosch;Mascota Rana Azul
+Опциональные;Miscellaneous;Синяя царевна-лягушка;Weapon Skin;寵物：皇家海藍鳴蛙;宠物:皇家海蓝鸣蛙;무기 스킨;王者の青い蛙ペット;Mascote Sapo Azul Real;สัตว์เลี้ยงกบ Royal Blue;Reine grenouille bleue;Blauer Königsfrosch;Mascota Rana Azul Real
+Опциональные;Miscellaneous;Зеленая лягушка;Green Basilisk Pet;寵物：青葉鳴蛙;宠物:青叶鸣蛙;녹색 바실리스크 애완동물;緑の蛙ペット;Mascote Sapo Verde;สัตว์เลี้ยงกบ Green;Grenouille verte;Grüner Frosch;Mascota Rana Verde
+Опциональные;Miscellaneous;Зеленая царевна-лягушка;Spectral Basilisk Pet;寵物：皇家青葉鳴蛙;宠物:皇家青叶鸣蛙;영체 바실리스크 애완동물;王者の緑の蛙ペット;Mascote Sapo Verde Real;สัตว์เลี้ยงกบ Royal Green;Reine grenouille verte;Grüner Königsfrosch;Mascota Rana Verde Real
+Опциональные;Miscellaneous;Красная лягушка;Blue Frog Pet;寵物：赤紅鳴蛙;宠物:赤红鸣蛙;파란색 개구리 애완동물;赤い蛙ペット;Mascote Sapo Vermelho;สัตว์เลี้ยงกบ Red;Grenouille rouge;Roter Frosch;Mascota Rana Roja
+Опциональные;Miscellaneous;Красная царевна-лягушка;Royal Blue Frog Pet;寵物：皇家赤紅鳴蛙;宠物:皇家赤红鸣蛙;왕실 파란색 개구리 애완동물;王者の赤い蛙ペット;Mascote Sapo Vermelho Real;สัตว์เลี้ยงกบ Royal Red;Reine grenouille rouge;Roter Königsfrosch;Mascota Rana Roja Real
+Опциональные;Miscellaneous;Таинственная лягушка;Green Frog Pet;寵物：秘語鳴蛙;宠物:秘语鸣蛙;녹색 개구리 애완동물;不思議な蛙ペット;Mascote Sapo Misterioso;สัตว์เลี้ยงกบ Mysterious;Grenouille mystérieuse;Geheimnisvoller Frosch;Mascota Rana Misteriosa
+Опциональные;Miscellaneous;Кузнечик;Royal Green Frog Pet;寵物：紐西蘭沙螽;宠物:新西兰沙螽;왕실 녹색 개구리 애완동물;ウェタペット;Mascote Grilo;สัตว์เลี้ยงเวตา;Weta;Weta;Mascota Weta
+Опциональные;Miscellaneous;Кузнечик-колосс;Red Frog Pet;寵物：巨無霸沙螽;宠物:巨无霸沙螽;붉은 개구리 애완동물;巨大なウェタペット;Mascote Grilo Colossal;สัตว์เลี้ยงเวตา Colossal;Weta colossal;Riesiges Weta;Mascota Weta Colosal
+Опциональные;Miscellaneous;Гигантский кузнечик;Royal Red Frog Pet;寵物：紐西蘭沙螽二;宠物:新西兰沙螽二;왕실 붉은 개구리 애완동물;大きなウェタペット;Mascote Grilo Gigante;สัตว์เลี้ยงเวตา Giant;Weta géant;Großes Weta;Mascota Weta Gigante
+Опциональные;Miscellaneous;Хорек;Mysterious Frog Pet;寵物：貂;宠物:貂;수수께끼의 개구리 애완동물;フェレットペット;Mascote Furão;สัตว์เลี้ยงเฟอร์เร็ต;Furet;Frettchen;Mascota Hurón
+Опциональные;Miscellaneous;Ящерка с колокольчиком;Weta Pet;寵物：響鈴蜥蜴;宠物:响铃蜥蜴;웨타 애완동물;ベルトカゲペット;Mascote Lagarto com Sino;สัตว์เลี้ยงกิ้งก่า Bell;Lézard à cloche;Glockenechse;Mascota Lagarto Campana
+Опциональные;Miscellaneous;Кобра;Colossal Weta Pet;寵物：魯蛇;宠物:鲁蛇;초대형 웨타 애완동물;コブラペット;Mascote Cobra;สัตว์เลี้ยงงูเห่า;Cobra;Kobra;Mascota Cobra
+Опциональные;Miscellaneous;Таракан;Giant Weta Pet;寵物：極噁蟑螂;宠物:小强;거대 웨타 애완동물;ゴキブリペット;Mascote Barata;สัตว์เลี้ยงแมลงสาบ;Blatte;Kakerlake;Mascota Cucaracha
+Опциональные;Miscellaneous;Тайваньский медведь;Ferret Pet;寵物：台灣黑熊;宠物:可爱黑熊;족제비 애완동물;タイワンツキノワグマのペット;Mascote Urso Formoso;สัตว์เลี้ยงหมี Formosan;Ours noir à gorge blanche;Formosa-Bär;Mascota Oso de Formosa
+Опциональные;Miscellaneous;Двухвостая ящерица;Bell Lizard Pet;寵物：雙尾蜥蜴;宠物:双尾蜥蜴;종 도마뱀 애완동물;二尾のトカゲペット;Mascote Lagarto de Duas Caldas;สัตว์เลี้ยงกิ้งก่าสองหาง;Lézard à deux queues;Gabelschwanzechse;Mascota de Lagartija de Dos Colas
+Опциональные;Miscellaneous;Синий сухопутный краб;Cobra Pet;寵物：靛藍沙蟹;宠物:靛蓝沙蟹;코브라 애완동물;青の陸蟹ペット;Mascote Guaiamu;สัตว์เลี้ยงปูบก Blue;Crabe terrestre bleu;Blaue Landkrabbe;Mascota Cangrejo de Tierra Azul
+Опциональные;Miscellaneous;Жаба;Cockroach Pet;寵物：巨蟾;宠物:巨蟾;바퀴벌레 애완동물;ヒキガエルペット;Mascote Sapo;สัตว์เลี้ยงคางคก;Crapaud;Kröte;Mascota Sapo
+Опциональные;Miscellaneous;Тайваньский олень;Formosan Bear Pet;寵物：梅花鹿;宠物:梅花鹿;대만 흑곰 애완동물;台湾梅花鹿ペット;Mascote Cervo Formoso;สัตว์เลี้ยงกวาง Formosan;Cerf Sika;Formosa-Hirsch;Mascota Venado de Formosa
+Опциональные;Miscellaneous;Светлячки;Two-Tailed Lizard Pet;寵物：螢火蟲群;宠物:萤火虫群;두 꼬리 도마뱀 애완동물;蛍の群れ;Enxame de Vaga-Lumes;สัตว์เลี้ยงฝูงหิ่งห้อย;Nuée de lucioles;Glühwürmchenschwarm;Enjambre de Luciérnagas
+Опциональные;Miscellaneous;Оранжевые светлячки;Blue Land Crab Pet;寵物：螢火蟲群．橘;宠物:萤火虫群：橘;파란색 참게 애완동물;蛍の群れペット;Mascote Enxame de Vaga-Lumes;สัตว์เลี้ยงศีรษะหมุน;Tête roulante;Rollender Schädel;Mascota Enjambre de Luciérnagas
+Опциональные;Miscellaneous;Катающаяся голова;Toad Pet;寵物：滾動怪頭;宠物:滚动怪头;두꺼비 애완동물;生首ペット;Mascote Cabeça Rolante;สัตว์เลี้ยงไก่;Poulet;Huhn;Mascota Cabeza Rodante
+Опциональные;Miscellaneous;Цыпленок;Formosan Deer Pet;寵物：雞;宠物:鸡;대만 꽃사슴 애완동물;鶏ペット;Mascote Galinha;สัตว์เลี้ยงไก่งวง Wild;Dinde sauvage;Truthahn;Mascota Gallina
+Опциональные;Miscellaneous;Дикая индюшка;Firefly Swarm;寵物：狂野火雞;宠物:狂野火鸡;반딧불이 무리;七面鳥ペット;Mascote Peru Selvagem;สัตว์เลี้ยงเม่นหนาม;Hérisson;Igel;Mascota Pavo Salvaje
+Опциональные;Miscellaneous;Ёжик;Firefly Swarm Pet;寵物：刺蝟;宠物:刺猬;반딧불이 무리 애완동물;ハリネズミペット;Mascote Porco-Espinho;สัตว์เลี้ยงลีเมอร์;Lémurien;Lemur;Mascota Puercoespín
+Опциональные;Miscellaneous;Лемур;Rolling Head Pet;寵物：狐猴;宠物:狐猴;굴림 머리 애완동물;キツネザルペット;Mascote Lêmure;สัตว์เลี้ยงนกยูงตัวผู้;Paon;Pfau;Mascota Lémur
+Опциональные;Miscellaneous;Павлин;Chicken Pet;寵物：華麗雄孔雀;宠物:华丽雄孔雀;닭 애완동물;クジャクペット;Mascote Pavão;สัตว์เลี้ยงนกยูงตัวเมีย;Paonne;Pfauenhenne;Mascota Pavo Real Macho
+Опциональные;Miscellaneous;Пава;Wild Turkey Pet;寵物：華麗雌孔雀;宠物:华丽雌孔雀;황야 칠면조 애완동물;雌クジャクペット;Mascote Pavoa;สัตว์เลี้ยงนกพูเคโค;Pukeko;Purpurhuhn;Mascota Pavo Real Hembra
+Опциональные;Miscellaneous;Султанка;Hedgehog Pet;寵物：幻紫水雞;宠物:幻紫水鸡;고슴도치 애완동물;青鶏ペット;Mascote Pukeko;สัตว์เลี้ยง Rock Elemental;Élémentaire de roche;Felselementar;Mascota Pukeko
+Опциональные;Miscellaneous;Каменный элементаль;Lemur Pet;寵物：石魔像;宠物:石魔像;여우원숭이 애완동물;ロックエレメンタルペット;Mascote Elemental de Pedra;สัตว์เลี้ยงเต่า;Tortue;Landschildkröte;Mascota Elemental de Roca
+Опциональные;Miscellaneous;Черепашка;Peacock Pet;寵物：沙漠龜;宠物:沙漠龟;수컷 공작 애완동물;カメペット;Mascote Tartaruga;สัตว์เลี้ยงหมีโคอาลา;Koala;Koalabär;Mascota Tortuga
+Опциональные;Miscellaneous;Коала;Peahen Pet;寵物：無尾熊;宠物:无尾熊;암컷 공작 애완동물;コアラペット;Mascote Urso Coala;สัตว์เลี้ยงลูกช้าง;Éléphanteau;Elefantenbaby;Mascota Koala
+Опциональные;Miscellaneous;Слонёнок;Pukeko Pet;寵物：象寶寶;宠物:象宝宝;푸케코 애완동물;子象ペット;Mascote Bebê Elefante;จุดหมายการวาร์ป;Destination de transfert;Teleportziel;Mascota Elefante Bebé
+Опциональные;Miscellaneous;Точка телепортации;Rock Elemental Pet;傳送目的地;传送目的地;바위 정령 애완동물;ワープ転送先;Destino do Teleporte;อักขระวาร์ป;Rune de transfert;Teleportrune;Destino de teletransportación
+Опциональные;Miscellaneous;Руна телепортации;Tortoise Pet;傳送符紋;传送符文;거북이 애완동물;ワープルーン;Runa de Teleporte;ชาร์จ Luminary;Charges Luminaires;Leuchtende Ladungen;Runa de teletransporte
+Опциональные;Miscellaneous;Заряды светоча;Koala Bear Pet;能量球．光源;充能球特效：天体;코알라 애완동물;ルミナリーチャージ;Cargas Luminárias;;;;Cargas Luminarias
+Украшения;Forest;Куст;Bush;樹叢;树丛;관목;茂み;Arbusto;Bush;Buisson;Strauch;Arbusto
+Украшения;Forest;Болотное чудище;Moss Monster;石堆;石堆;이끼 괴물;苔の怪物;Monstro de Musgo;Moss Monster;Golem léthargique;Moosbedeckter Steinhaufen;Monstruo de Musgo
+Украшения;Forest;Дверь частокола;Palisade Door;木柵門;木栅门;목책 문;杭の扉;Porta Paliçada;Palisade Door;Porte de palissade;Palisadentür;Puerta de Empalizada
+Украшения;Forest;Пальма;Palm Tree;棕櫚樹;棕榈树;야자나무;ヤシの木;Palmeira;Palm Tree;Palmier;Palmenbaum;Palmera
+Украшения;Forest;Поросший мхом камень;Mossy Cairn;腐爛石堆;苔藓石冢;이끼 낀 돌무덤;苔むした石塚;Moledro;Mossy Cairn;Cairn moussu;Waldfelsen;Hito musgoso
+Украшения;Forest;Камень в лесу;Forest Rock;滾石;滚石;숲 바위;森の岩;Pedra da Floresta;Forest Rock;Rocher sylvestre;Gebetssteine;Roca de Bosque
+Украшения;Forest;Молитвенные камни;Prayer Stones;堆石柱;堆石柱;기도하는 돌탑;祈りの石;Pedras de Oração;Prayer Stones;Pierres de prière;Baum;Piedras de Rezo
+Украшения;Forest;Дерево;Tree;大樹;大树;나무;木;Árvore;Tree;Arbre;Üppiger Baum;Árbol
+Украшения;Forest;Зеленое дерево;Lush Tree;小樹;小树;우거진 나무;生い茂った木;Árvore Exuberante;Lush Tree;Arbre touffu;Wegstein;Árbol Frondoso
+Украшения;Forest;Путевой камень;Waystone;換界石;标示台座;경로석;標石;Pedra do Caminho;Waystone;Borne;Dickichtbaum;Piedra del Camino
+Украшения;Forest;Дерево из чащобы;Thicket Tree;樹墩;丛林大树;잡목림 나무;森の花;Árvore do Matagal;Thicket Tree;Arbre du fourré;Waldblumen;Árbol de Matorral
+Украшения;Forest;Лесные цветы;Forest Flowers;野花;野花;숲의 꽃;蜘蛛の巣の残骸;Flores da Floresta;Forest Flowers;Fleurs sylvestres;Eingesponnene Überreste;Flores de Bosque
+Украшения;Forest;Останки в паутине;Webbed Remains;纏絲枯骨;缠丝枯骨;거미줄 덮인 유해;蜘蛛の巣の付いた切り株;Restos com Teias;Webbed Remains;Ossements entoilés;Eingesponnener Klotz;Restos con Telarañas
+Украшения;Forest;Обрубок в паутине;Webbed Stump;纏絲;缠丝;거미줄 덮인 그루터기;蜘蛛の食料;Toco com Teias;Webbed Stump;Souche entoilée;Spinnennahrung;Tocón con Telarañas
+Украшения;Forest;Жертва паука;Spider Food;纏絲活物;缠丝活物;거미 먹이;部族の宝箱;Comida de Aranha;Spider Food;Repas pour araignées;Stammestruhe;Comida de Araña
+Украшения;Forest;Припасы племени;Tribal Chest;部落箱子;部落箱子;부족 상자;クモの巣が張った木;Baú Tribal;Tribal Chest;Coffre tribal;Eingesponnener Baum;Cofre tribal
+Украшения;Forest;Покрытое паутиной дерево;Web-Covered Tree;纏絲樹木;爬满蛛网的树木;거미줄 덮인 나무;石造りのアーチの入り口;Árvore Coberta por Teia;Web-Covered Tree;Arbre couvert de toiles;Steintorbogen;Árbol cubierto de Telarañas
+Украшения;Forest;Каменная арка;Stone Archway;石拱門;石拱门;돌 아치문;ライオンの像;Arcada de Pedra;Stone Archway;Porche voûté en pierre;Löwenstatue;Arco de Piedra
+Украшения;Forest;Статуя льва;Lion Statue;獅子雕像;狮子雕像;사자 석상;石のオベリスク;Estátua de Leão;Lion Statue;Statue de lion;Steinobelisk;Estatua de León
+Украшения;Forest;Каменный обелиск;Stone Obelisk;石碑;石制方尖碑;석재 오벨리스크;森の木;Obelisco de Pedra;Stone Obelisk;Obélisque en pierre;Waldbaum;Obelisco de Piedra
+Украшения;Forest;Лесное дерево;Forest Tree;乾枯大樹;干枯大树;숲 나무;枯れた木;Árvore da Floresta;Forest Tree;Arbre forestier;Vertrockneter Baum;Árbol de Bosque
+Украшения;Forest;Высохшее дерево;Dry Tree;細長大樹;细长大树;마른 나무;装飾された木;Árvore Seca;Dry Tree;Arbre sec;Dichte Bäume;Árbol Seco
+Украшения;Forest;Вековые деревья;Thick Trees;掛著骷髏的大樹;挂着魔侍的大树;굵은 나무;装飾された木々;Árvores Espessas;Thick Trees;Arbres imposants;Verzierter Baum;Árboles Gruesos
+Украшения;Forest;Декоративное дерево;Decorated Tree;掛著骷髏的樹群;挂着魔侍的树群;장식된 나무;蜘蛛の巣の張った木;Árvore Decorada;Decorated Tree;Arbre décoré;Verzierte Bäume;Árbol Decorado
+Украшения;Forest;Декоративные деревья;Decorated Trees;纏絲大樹;缠丝大树;장식된 나무들;木に作られたあばら屋;Árvores Decoradas;Decorated Trees;Arbres décorés;Baumhaus;Árboles Decorados
+Украшения;Forest;Дерево в паутине;Webbed Tree;大樹帳篷;大树帐篷;나무 오두막;苔の生えた壁;Árvore com Teia;Webbed Tree;Arbre entoilé;Moosbewachsene Mauer;Árbol con Telarañas
+Украшения;Forest;Хижина;Tree Hut;長滿青苔的牆;长满青苔的墙;이끼 낀 벽;苔の生えた低い壁;Casa na Árvore;Tree Hut;Arbre cabane;Niedrige moosbewachsene Mauer;Cabaña de Árbol
+Украшения;Forest;Замшелая стена;Mossy Wall;長滿青苔的矮牆;长满青苔的矮墙;이끼 낀 낮은 벽;石のアーチ;Parede com Musgo;Mossy Wall;Mur moussu;Steinbogen;Muro con Musgo
+Украшения;Forest;Низкая замшелая стена;Low Mossy Wall;長滿青苔的拱門牆;长满青苔的拱门墙;돌 아치;苔の生えた壁のアーチ;Parede Baixa com Musgo;Low Mossy Wall;Muret moussu;Moosbewachsener Mauerbogen;Muro Bajo con Musgo
+Украшения;Forest;Замшелая каменная арка;Stone Arch;裝飾物：腐爛樹墩;腐烂残桩;이끼 낀 벽 아치;腐った切り株;Arco de Pedra;Stone Arch;Arche en pierre;Fauler Baumstumpf;Arco de Muro con Musgo
+Украшения;Forest;Гнилой пень;Mossy Wall Arch;裝飾物：葛魯斯寇祭壇;格鲁丝克神龛;썩은 그루터기;グラスクルの神殿;Arco Parede com Musgo;Mossy Wall Arch;Arche de mur moussu;Gruthkul-Schrein;Tocón podrido
+Украшения;Forest;Алтарь Граткул;Rotten Stump;裝飾物：遍地屍體;发泡的灵盒;그루스컬의 성소;肥大化した死体;Toco Apodrecido;Rotten Stump;Souche pourrie;Überwachsene Leiche;Santuario de Gruthkul
+Украшения;Forest;Поросший труп;Gruthkul Shrine;裝飾物：瑞斯拉薩樹;瑞斯拉萨树木;무성한 시신;リスラーサの木;Altar de Gruthkul;Gruthkul Shrine;Autel à Gruthkul;Ryslatha-Baum;Cadáver infestado
+Украшения;Forest;Дерево Рюслаты;Overgrown Corpse;裝飾物：森林營地地板;森林营地地表;리슬라사 나무;フォレストエンキャンプメントの地面;Cadáveres de Oriath;Overgrown Corpse;Cadavre envahi par la végétation;Boden aus dem Waldlager;Árbol de Ryslatha
+Украшения;Forest;Земля Лесного лагеря;Ryslatha Tree;裝飾物：林地;装饰物：林地;숲 야영지 바닥;森林地帯のオブジェクト;Árvore de Ryslatha;Ryslatha Tree;Arbre de Ryslatha;Hölzerne Objekte;Suelo del Campamento forestal
+Украшения;Forest;Декорации лесов;Forest Encampment Ground;凋零大樹;枯槁之树;밀림 물품;枯れ木;Solo do Acampamento da Floresta;Forest Encampment Ground;Sol du Campement de la forêt;Verdorrter Baum;Objetos de madera
+Украшения;Forest;Засохшее дерево;Woodland Objects;山毛櫸樹;山毛榉;말라버린 나무;ブナの木;Objetos Florestais;วัตถุ Woodland;Objets des bois;Buche;Árbol marchito
+Украшения;Forest;Буковое дерево;Withered Tree;森林蕨類;森林蕨类;너도밤나무;森のシダ;Árvore Definhada;Withered Tree;Arbre flétri;Waldfarn;Haya (árbol)
+Украшения;Forest;Лесной куст;Beech Tree;流蘇蘚衣;边缘苔藓;숲 고사리;フリンジモス;Árvore de Faia;Beech Tree;Hêtre;Zackenmoos;Helecho de bosque
+Украшения;Forest;Мох с опушки;Forest Fern;森林大樹;大型森林树木;가장자리 이끼;大きな森の木;Samambaia da Floresta;Forest Fern;Fougère forestière;Große Waldbäume;Musgo periférico
+Украшения;Forest;Большие лесные деревья;Fringe Moss;樹葉堆;落叶堆;대형 숲 나무;落ち葉の山;Musgo Franjado;Fringe Moss;Mousse à franges;Laubhaufen;Árboles de bosque grandes
+Украшения;Forest;Куча листьев;Large Forest Trees;木頭堆;原木堆;나뭇잎 더미;丸太の山;Grandes Árvores da Floresta;Large Forest Trees;Grands arbres forestiers;Gestapelte Baumstämme;Pila de hojas
+Украшения;Forest;Сваленные брёвна;Leaf Pile;長草;茂密杂草;통나무 더미;長い草;Pilha de Folhas;Leaf Pile;Tas de feuilles;Hohes Gras;Pila de troncos
+Украшения;Forest;Высокая трава;Log Pile;堅固木頭堆;简陋的木堆;긴 풀;頑丈な薪の山;Pilha de Troncos;Log Pile;Tas de bûches;Unordentlicher Holzhaufen;Pasto alto
+Украшения;Forest;Сваленная древесина;Long Grass;樹樁;树桩;울퉁불퉁한 나무 더미;切り株;Grama Alta;Long Grass;Herbe haute;Baumstumpf;Pila de madera resistente
+Украшения;Forest;Пень;Rugged Wood Pile;一根木頭;单根原木;나무 그루터기;丸太;Pilha de Madeira Rústica;Rugged Wood Pile;Tas de bois rugueux;Einzelner Baumstamm;Tocón de árbol
+Украшения;Forest;Бревно;Tree Stump;;;통나무 한 개;;Toco de Árvore;Tree Stump;Souche d'arbre;;Tronco individual
+Украшения;Vaal City;Город ваал MapVaalCity;Vaal City MapVaalCity;瓦爾古城 MapVaalCity;瓦尔城市 MapVaalCity;바알 도시 MapVaalCity;ヴァールの都市 MapVaalCity;Cidade Vaal MapVaalCity;Vaal City MapVaalCity;Cité vaal MapVaalCity;Stadt der Vaal MapVaalCity;Ciudad vaal MapVaalCity
+Украшения;Vaal City;Гадюка Напуаци;Viper Napuatzi;邪魔毒蛇．納普阿茲;蝰蛇娜帕齐;바이퍼 나푸앗지;ヴァイパー・ナプアツィ;Víbora Napuatzi;อสรพิษนาปวดซี;Vipère Napuatzi;Viper Napuatzi;Napuatzi la Víbora
+Украшения;Vaal City;Броня;Viper Legionnaire;護甲值;护甲;방어도;アーマー;Armadura;ค่าเกราะ;Armure;Rüstung;Armadura
+Украшения;Vaal City;Энергетический щит;Atziri Statue;能量護盾;能量护盾;에너지 보호막;エナジーシールド;Escudo de Energia;โล่พลังงาน;Bouclier d'énergie;Energieschild;Escudo de energía
+Украшения;Vaal City;Легионер Гадюки;Scattered Fruit;邪魔毒蛇軍團;蝰蛇军团士兵;독사 군단병;ヴァイパー・リージョネア;Legionário da Víbora;Viper Legionnaire;Légionnaire de la Vipère;Viperlegionär;Legionario viperino
+Украшения;Vaal City;Статуя Атзири;Vaal Bench;阿茲里雕像;阿兹里雕像;앗지리 조각상;アッツィリの像;Estátua de Atziri;Atziri Statue;Statue d'Atziri;Atziri-Statue;Estatua de Atziri
+Украшения;Vaal City;Разбросанные фрукты;Vaal Chair;散落的水果;散落的水果;널브러진 과일;散らばった果実;Frutas Espalhadas;Scattered Fruit;Fruits éparpillés;Verstreutes Obst;Frutas desparramadas
+Украшения;Vaal City;Скамья ваал;Vaal Market Clusters;瓦爾長椅;瓦尔长椅;바알 벤치;ヴァールのベンチ;Banco Vaal;Vaal Bench;Banc vaal;Vaal-Bank;Banco vaal
+Украшения;Vaal City;Стул ваал;Vaal Market Fish;瓦爾椅子;瓦尔椅子;바알 의자;ヴァールの椅子;Cadeira Vaal;Vaal Chair;Chaise vaal;Vaal-Stuhl;Silla vaal
+Украшения;Vaal City;Рыночная утварь ваал;Vaal Market Stalls Cover;瓦爾市場群落;瓦尔市场货堆;바알 시장 더미;ヴァールの市場の雑貨;Agrupamentos do Mercado Vaal;Vaal Market Clusters;Amas de marché vaal;Vaal-Marktgegenstände;Grupos de mercado vaal
+Украшения;Vaal City;Рыба с рынка ваал;Vaal Market Table;瓦爾市場魚;瓦尔市场鱼货;바알 시장 생선;ヴァールの市場の魚;Peixes do Mercado Vaal;Vaal Market Fish;Poisson de marché vaal;Vaal-Marktfische;Peces de mercado vaal
+Украшения;Vaal City;Рыночный навес ваал;Vaal Potted Plants;瓦爾市場攤販頂蓋;瓦尔市场摊位;바알 시장 매점 덮개;ヴァールの市場のストールカバー;Cobertura das Barracas do Mercado Vaal;Vaal Market Stalls Cover;Couverture des étals de marché vaal;Vaal-Marktzelt;Puestos de mercado vaal
+Украшения;Vaal City;Рыночный стол ваал;Vaal Small Market Table;瓦爾市場桌;瓦尔市场桌子;바알 시장 탁자;ヴァールの市場の机;Mesa do Mercado Vaal;Vaal Market Table;Table de marché vaal;Vaal-Markttisch;Mesa de mercado vaal
+Украшения;Vaal City;Растение в горшке ваал;;瓦爾盆栽;瓦尔盆栽植物;바알 화분에 심은 식물;ヴァールの鉢植えの植物;Plantas em Vasos Vaal;Vaal Potted Plants;Plantes en pots vaal;Vaal-Topfpflanzen;Plantas en maceta vaal
+Украшения;Vaal City;Небольшой рыночный стол ваал;;瓦爾市場小桌;瓦尔小型市场桌子;바알 소형 시장 탁자;ヴァールの小さな市場の机;Mesa Pequena do Mercado Vaal;Vaal Small Market Table;Petite table de marché vaal;Vaal-Markttisch (klein);Mesa de mercado vaal pequeña
+Украшения;Arcane;Колдовской трон;Arcane Throne;秘術王座;秘术王座;비전 왕좌;アーケーンの玉座;Trono Arcano;บัลลังก์ Arcane;Trône arcanique;Arkaner Thron;Trono Arcano
+Украшения;Arcane;Колдовское пламя;Arcane Flame;裝飾物：秘術火焰;装饰物:奥术之焰;비전 화염;アーケインフレイム;Chama Arcana;เพลิง Arcane;Flamme arcanique;Arkane Flamme;Llama Arcana
+Украшения;Arcane;Колдовской астрономический инструмент;Arcane Astronomy Tool;裝飾物：奧法觀星台;奥术星象仪;비전 천문학 도구;アーケインの天文学道具;Ferramenta de Astronomia Arcana;Arcane Astronomy Tool;Instrument d'astronomie arcanique;Arkanes Astronomiewerkzeug;Herramienta de astronomía arcana
+Украшения;Arcane;Колдовской шкаф;Arcane Cabinet;裝飾物：奧法櫥櫃;奥术储物柜;비전의 장식장;アーケインのキャビネット;Armário Arcano;Arcane Cabinet;Meuble arcanique;Arkaner Schrank;Armario arcano
+Украшения;Arcane;Колдовской стул;Arcane Chair;裝飾物：奧法椅;奥术座椅;비전의 의자;アーケインの椅子;Cadeira Arcana;Arcane Chair;Chaise arcanique;Arkaner Stuhl;Silla arcana
+Украшения;Arcane;Колдовская рабочая доска;Arcane Research Board;裝飾物：奧法研究板;奥术研究记事板;비전의 연구판;アーケインの研究掲示板;Painel de Pesquisa Arcana;Arcane Research Board;Tableau de recherche arcanique;Arkane Forschungstafel;Tablero de investigación arcano
+Украшения;Arcane;Колдовские рабочие материалы;Arcane Research Material;裝飾物：奧法研究材料;奥术研究材料;비전의 연구 자료;アーケインの研究材料;Material de Pesquisa Arcana;Arcane Research Material;Matériel de recherche arcanique;Arkanes Forschungsmaterial;Material de investigación arcano
+Украшения;Arcane;Колдовской рабочий стол;Arcane Research Table;裝飾物：奧法研究桌;奥术研究桌;비전의 연구대;アーケインの研究テーブル;Mesa de Pesquisa Arcana;Arcane Research Table;Table de recherche arcanique;Arkaner Forschungstisch;Mesa de investigación arcana
+Украшения;Arcane;Колдовская полка;Arcane Shelf;裝飾物：奧法架子;奥术置物架;비전의 선반;アーケインの棚;Prateleira Arcana;Arcane Shelf;Étagère arcanique;Arkanes Regal;Estante arcano
+Украшения;Arcane;Разрушенные колдовские стены;Arcane Ruin Walls;裝飾物：奧法廢墟牆壁;奥术残垣断壁;비전의 유적 벽;アーケインの遺跡の壁;Paredes de Ruína Arcana;Arcane Ruin Walls;Murs arcaniques en ruines;Arkanruine-Wände;Muros de ruinas arcanas
+Украшения;Arcane;Разрушенные колдовские постройки;Arcane Ruin Structures;裝飾物：奧法廢墟結構;奥术遗迹构筑;비전의 유적 구조물;アーケインの遺跡の構造物;Estruturas de Ruína Arcana;Arcane Ruin Structures;Structures arcaniques en ruines;Arkanruine-Bauten;Estructuras de ruinas arcanas
+Украшения;Arcane;Разрушенные колдовские ступени;Arcane Ruin Stairs;裝飾物：奧法廢墟階梯;奥术遗迹阶梯;비전의 유적 계단;アーケインの遺跡の階段;Escada de Ruína Arcana;Arcane Ruin Stairs;Escaliers arcaniques en ruines;Arkanruine-Treppe;Escaleras de ruinas arcanas
+Украшения;Arcane;Колдовской горшок для растений;Arcane Plant Pot;裝飾物：奧法花盆;奥术花盆;비전의 화분;アーケインの植物の鉢;Vaso de Plantas Arcano;Arcane Plant Pot;Pot de fleurs arcanique;Arkaner Blumentopf;Maceta arcana
+Украшения;Arcane;Сломанный колдовской горшок для растений;Arcane Broken Plant Pot;裝飾物：破碎奧法花盆;奥术碎裂花盆;비전의 부서진 화분;アーケインの壊れた植物の鉢;Vaso de Plantas Quebrado Arcano;Arcane Broken Plant Pot;Pot de fleurs cassé arcanique;Arkaner zerbrochener Blumentopf;Maceta rota arcana
+Украшения;Arcane;Колдовская кадка;Arcane Planter;裝飾物：奧法植被;奥术花槽;비전의 대형 화분;アーケインのプランター;Plantadora Arcana;Arcane Planter;Jardinière arcanique;Arkanes Pflanzgefäß;Tiesto arcano
+Украшения;Arcane;Заросший колдовской столб;Arcane Overgrown Post;裝飾物：過度生長的奧法遺跡;奥术繁茂柱;비전의 무성한 말뚝;アーケインの生い茂った郵便受け;Poste Coberto de vegetação Arcano;Arcane Overgrown Post;Poteau arcanique envahi par la végétation;Arkaner überwachsener Pfosten;Poste con hiedras arcano
+Украшения;Arcane;Колдовские следы;Arcane Footprints Effect;行走特效：秘能之力;足迹特效：奥秘之力;비전의 발자국 이펙트;アーケイン足跡エフェクト;Efeito: Pegadas Arcanas;เอฟเฟครอยเท้า Arcane;Empreintes de pas arcaniques;Arkane Fußspuren;Efecto de Huellas Arcanas
+Украшения;Arcane;Жезл волшебника;Footprints Effect;足跡特效;法杖外观：术士法杖;발자국 이펙트;ソーサラーワンド;Varinha da Feiticeira;ไม้กายสิทธิ์ Sorcerer;Baguette de sorcier;Hexer-Zauberstab;Varita de Hechicero
+Украшения;Arcane;Колдовской смертоносный зазубренный лук;Arcane;秘術;奥术死亡刻痕之弓;비전;アーケイン・デスノッチの弓;Arco do Nó Mortal Arcano;ธนูง้างมรณะ Arcane;Arc de Morte-encoche arcanique;Arkaner Leichensammler-Bogen;Arco de Muescas mortales arcano
+Украшения;Cave;Пещерная колонна;Cave Pillar;石柱;石柱;동굴 기둥;洞窟の柱;Pilar da Caverna;Cave Pillar;Pilier de grotte;Höhlenpfeiler;Pilar de Cueva
+Украшения;Cave;Пещерный сталагмит;Cave Stalagmite;石筍;石笋;동굴 석순;洞窟の石筍;Estalagmite da Caverna;Cave Stalagmite;Stalagmite de grotte;Höhlenstalagmit;Estalagmita de Cueva
+Украшения;Cave;Пещерный мусор;Cave Trash;垃圾堆;垃圾堆;동굴 쓰레기;洞窟のごみ;Lixo da Caverna;Cave Trash;Déchets de la grotte;Höhlenplunder;Basura de Cueva
+Украшения;Cave;Пещерное сокровище;Cave Treasure;金銀珠寶;金银珠宝;동굴 보물;洞窟の財宝;Tesouro da Caverna;Cave Treasure;Trésor de la grotte;Höhlenschatz;Tesoro de Cueva
+Украшения;Cave;Столб из логова;Den Pillar;巨石;巨石;굴 기둥;巣穴の柱;Pilar da Toca;Den Pillar;Pilier de tanière;Unterschlupfpfeiler;Pilar de Madriguera
+Украшения;Cave;Валун из логова;Den Large Rock;石頭;石头;굴 대형 바위;巣穴の大岩;Pedra Grande da Toca;Den Large Rock;Gros rocher de tanière;Großer Höhlenfelsen;Roca Grande de Madriguera
+Украшения;Cave;Камень из логова;Den Small Rock;大石筍;大石笋;굴 소형 바위;巣穴の小石;Pedra Pequena da Toca;Den Small Rock;Petit rocher de tanière;Kleiner Höhlenfelsen;Roca Pequeña de Madriguera
+Украшения;Cave;Сталагмиты из логова;Den Stalagmites;洞穴珊瑚;洞穴珊瑚;굴 석순;巣穴の石筍;Estalagmites da Toca;Den Stalagmites;Stalagmites de tanière;Höhlenstalagmiten;Estalagmitas de Madriguera
+Украшения;Cave;Большие сталагмиты из логова;Den Large Stalagmites;洞穴珊瑚群;洞穴珊瑚群;굴 대형 석순;巣穴の大石筍;Estalagmites Grandes da Toca;Den Large Stalagmites;Grandes stalagmites de tanière;Große Höhlenstalagmiten;Estalagmitas Grandes de Madriguera
+Украшения;Cave;Пещерный коралл;Cave Coral;洞穴化石;洞穴化石;동굴 암초;洞窟の珊瑚;Coral de Caverna;Cave Coral;Corail des cavernes;Höhlen-Koralle;Coral de cueva
+Украшения;Cave;Пещерные кораллы;Cave Coral Group;洞穴石化像;洞穴石化雕像;동굴 암초군;洞窟の珊瑚の群れ;Grupo de Coral de Caverna;Cave Coral Group;Groupe de corail des cavernes;Höhlen-Korallengruppe;Arrecife de coral de cueva
+Украшения;Cave;Пещерное ископаемое;Cave Fossil;洞穴海妖巢穴;洞穴海妖之巢;동굴 화석;洞窟の化石;Fóssil de Caverna;Cave Fossil;Fossile des cavernes;Höhlen-Fossil;Fósil de cueva
+Украшения;Cave;Окаменевшая фигура из пещер;Cave Petrified Figure;;;동굴 석화 조각상;洞窟の石化した像;Figura Petrificada de Caverna;Cave Petrified Figure;Figure pétrifiée des cavernes;Versteinerte Höhlenfigur;Figura petrificada de cueva
+Украшения;Cave;Гнездо сирены из пещер;Cave Siren Nest;;;동굴 사이렌 둥지;洞窟のセイレーンの巣;Ninho de Sereia da Caverna;Cave Siren Nest;Nid de sirènes des cavernes;Höhlen-Sirenennest;Nido de sirenas de cueva
+Украшения;Coastal;Костер на берегу;Shore Bonfire;篝火;篝火;바닷가 모닥불;海岸の薪;Fogueira Litorânea;Shore Bonfire;Feu de camp du littoral;Küstensignalfeuer;Hoguera de Orilla
+Украшения;Coastal;Ветки плавника;Driftwood Branches;漂流木堆;漂流木堆;표류목 나뭇가지;流木の枝;Galhos de Madeira Balsa;Driftwood Branches;Branches de bois flotté;Treibholzzweige;Ramas de Madera de Naufragio
+Украшения;Coastal;Мёртвая рыба;Dead Fish;死魚;死鱼;죽은 물고기;魚の死体;Peixe Morto;Dead Fish;Poisson mort;Toter Fisch;Pez Muerto
+Украшения;Coastal;Обломки крушения;Shore Plank Debris;破碎木板;破碎木板;바닷가 널빤지 잔해;海岸の板の破片;Destroços de Tábuas no Litoral;Shore Plank Debris;Débris de planches du littoral;Küstenwrackteile;Escombros de Tablón de Orilla
+Украшения;Coastal;Прибрежные камни;Shore Rocks;石塊;石块;바닷가 바위;海岸の石;Rochas Litorâneas;Shore Rocks;Rochers littoraux;Küstenfelsen;Rocas de Orilla
+Украшения;Coastal;Дохлая чайка;Dead Seagull;海鷗屍體;海鸥灵盒;죽은 바다갈매기;カモメの死体;Gaivota Morta;Dead Seagull;Mouette morte;Tote Möwe;Gaviota Muerta
+Украшения;Coastal;Дохлая чайка на палочке;Dead Seagull On Stick;穿刺海鷗;死去的海鸥;막대기에 꽂힌 죽은 바다갈매기;串刺しのカモメの死体;Gaivota Morta no Palito;Dead Seagull On Stick;Mouette morte embrochée;Tote Möwe auf Pfahl;Gaviota Muerta Empalada
+Украшения;Coastal;Противень людоеда;Cannibal Sheet;鋪地布;铺地布;식인종 덮개;人食いの敷布;Folha Canibal;Cannibal Sheet;Drap de cannibale;Kannibalentuch;Sábana Caníbal
+Украшения;Coastal;Полено на берегу;Shore Stub;小石柱;小石柱;바닷가 그루터기;海岸の尖った石;Ponta do Litoral;Shore Stub;Écueil du littoral;Buhne;Cabo de Orilla
+Украшения;Coastal;Слизняки;Slugs;蛞蝓;蛞蝓;민달팽이;ナメクジ;Lesmas;Slugs;Limaces;Schnecken;Babosas
+Украшения;Coastal;Мухи;Flies;蒼蠅;苍蝇;파리;ハエ;Moscas;Flies;Mouches;Fliegen;Moscas
+Украшения;Coastal;Пляжные мухи;Beach Flies;海灘蒼蠅;海滩苍蝇;해변 파리;スナバエ;Pernilongos;Beach Flies;Moustiques;Strandfliegen;Moscas de playa
+Украшения;Coastal;Рой мух;Fly Swarm;飛蟲;飞虫;파리 무리;ハエの群れ;Enxame de Mosquitos;Fly Swarm;Nuée de mouches;Fliegenschwarm;Enjambre de moscas
+Украшения;Coastal;Жухлая трава;Blown Grass;風吹落葉;风吹落叶;흩날린 풀;ブラウングラス;Grama Sopradas;Blown Grass;Herbe emportée par le vent;Verwehtes Gras;Hiebra soplada
+Украшения;Coastal;Останки лодки;Boat Remains;木船殘骸;木船残骸;보트 잔해;小舟の残骸;Restos de Barco;Boat Remains;Décombres de bateau;Bootsüberreste;Restos de Bote
+Украшения;Coastal;Останки большой лодки;Large Boat Remains;大型木船殘骸;大型木船残骸;대형 보트 잔해;小舟の大きな残骸;Restos Grandes de Barco;Large Boat Remains;Gros décombres de bateau;Überreste eines großen Bootes;Restos de Bote Grande
+Украшения;Coastal;Разбитая лодка;Boat Wreckage;甲板殘骸;甲板残骸;난파선 잔해;難破船の一部;Naufrágio;Boat Wreckage;Épave;Schiffswrack;Bote Destruido
+Украшения;Coastal;Промокшее бревно;Driftwood Log;漂流木;漂流木;표류목 통나무;流木の丸太;Tora de Madeira Balsa;Driftwood Log;Rondin de bois flotté;Treibholzstamm;Troco de Madera de Naufragio
+Украшения;Coastal;Арка из плавника;Driftwood Archway;漂流碎木;漂流碎木;표류목 아치문;流木でできたアーチの入り口;Arcada de Madeira Balsa;Driftwood Archway;Porche voûté en bois flotté;Treibholz-Torbogen;Arco de Madera de Naufragio
+Украшения;Coastal;Скрещенные мачты;Mast Arch;船桅殘骸;船桅残骸;돛대 아치;帆船のマストでできたアーチ状の入り口;Arco do Mastro;Mast Arch;Arche composée de mâts;Mastbogen;Arco de Mástil
+Украшения;Coastal;Гнездо роа;Rhoa Nest;恐喙鳥巢;恐喙鸟巢;로아 둥지;ロアの巣;Ninho de Rhoa;Rhoa Nest;Nid de rhoa;Rhoa-Nest;Nido de Rhoa
+Украшения;Coastal;Гнездо чайки;Seagull Nest;海鷗巢;海鸥巢;바다갈매기 둥지;カモメの巣;Ninho da Gaivota;Seagull Nest;Nid de mouette;Möwennest;Nido de Gaviota
+Украшения;Coastal;Скалы;Large Rocks;大石塊;大石块;대형 바위;巨大な岩;Pedras Grandes;Large Rocks;Gros rochers;Große Felsen;Piedras Grandes
+Украшения;Coastal;Крупное укрепление;Large Fortification;大型瞭望護欄;大型防护栏;대형 방어 시설;巨大な防壁;Fortificação Grande;Large Fortification;Imposantes fortifications;Große Festung;Fortificación Grande
+Украшения;Coastal;Баррикада;Fortification;瞭望護欄;防护栏;방어 시설;防壁;Fortificação;Fortification;Fortifications;Festung;Fortificación
+Украшения;Coastal;Пень болотного дерева;Swamp Tree Stump;沼澤樹根;沼泽树根;늪 나무 그루터기;沼の切り株;Toco de Árvore do Pântano;Swamp Tree Stump;Souche d'arbre des marais;Sumpfbaumstumpf;Tocón de Árbol de Pantano
+Украшения;Coastal;Болотное дерево;Swamp Tree;沼澤大樹;沼泽大树;늪 나무;沼の木;Árvore do Pântano;Swamp Tree;Arbre des marais;Sumpfbaum;Árbol de Pantano
+Украшения;Coastal;Сгнившая мёртвая рыба;Rotten Dead Fish;裝飾物：腐爛死魚;腐烂的死鱼;썩은 죽은 물고기;腐った魚;Peixe Morto Apodrecido;Rotten Dead Fish;Poisson pourri;Verrotteter toter Fisch;Pez Muerto podrido
+Украшения;Coastal;Рифовый коралл;Reef Coral;裝飾物：珊瑚礁;珊瑚礁;암초 산호;サンゴ礁;Coral do Recífe;Reef Coral;Récif corallien;Riffkoralle;Arrecife de Coral
+Украшения;Coastal;Прибрежный коралл;Beach Coral;裝飾物：珊瑚灘;滩礁;해변 산호;ビーチサンゴ;Coral da Praia;Beach Coral;Corail de plage;Strandkoralle;Playa de Coral
+Украшения;Coastal;Коралловые растения;Coral Grass;裝飾物：珊瑚草;珊瑚草;산호 풀;サンゴ草;Grama de Coral;Coral Grass;Végétaux coralliens;Korallengras;Hierbas de Coral
+Украшения;Coastal;Коралловые наросты;Coral Barnacles;裝飾物：珊瑚藤蔓;珊瑚礁藤壶;산호 따개비;サンゴフジツボ;Percevejos de Corais;Coral Barnacles;Bernacles coralliennes;Korallen-Seepocken;Percebe de Coral
+Украшения;Coastal;Морские жёлуди;Barnacles;裝飾物：藤蔓;藤壶;따개비;フジツボ;Percevejos;Barnacles;Bernacles;Seepocken;Percebes
+Украшения;Coastal;Группа кораллов;Coral Cluster;裝飾物：珊瑚群;珊瑚丛;산호 군락;サンゴ群;Grupo de Corais;Coral Cluster;Amas de corail;Korallenansammlung;Colonia de Corales
+Украшения;Coastal;Коралловые образования;Coral Formation;裝飾物：珊瑚堆;珊瑚群;산호층;サンゴ樹;Formação de Corais;Coral Formation;Formation corallienne;Korallenformation;Formación de Corales
+Украшения;Coastal;Каменные образования;Rock Formation;裝飾物：石堆;石群;암석층;岩石層;Formação Rochosa;Rock Formation;Formation rocheuse;Steinformation;Formación rocosa
+Украшения;Coastal;Останки пирата;Pirate Remains;裝飾物：海盜遺體;海盗遗骨;해적 유해;海賊の死体;Destroços de Pirata;Pirate Remains;Restes de pirate;Piratenüberreste;Restos piratas
+Украшения;Coastal;Кордилина;Cabbage Tree;包心菜樹;卷心菜树;양배추 나무;キャベツツリー;Árvore de Repolhos;Cabbage Tree;Cordyline australe;Kohlbaum;Cordiline
+Украшения;Coastal;Харакеке;Harakeke;哈拉克克;亚麻;하라케케;ハラケケ;Harakeke;Harakeke;Harakeke;Harakeke;Harakeke
+Украшения;Coastal;Тонкосемянник;Manuka Tree;瑪努卡樹;麦卢卡树;마누카 나무;マヌカツリー;Árvore-chá;Manuka Tree;Manuka;Manuka-Baum;Árbol manuka
+Украшения;Coastal;Ропалостилис;Nikau Palm;尼考棕櫚;尼考棕榈;니카우 야자;ニカウパーム;Palmeira Nikau;Nikau Palm;Palmier Nikau;Nikau-Palme;Palmera nikau
+Украшения;Coastal;Похутукава;Pohutukawa;波胡圖卡瓦;圣诞树;포후투카와;ポフツカワ;Pohutukawa;Pohutukawa;Pohutukawa;Pohutukawa;Pohutukawa
+Украшения;Coastal;Циатея;Punga;本加;蒲加;푼가;プンガ;Punga;Punga;Fougère argentée;Punga;Punga
+Украшения;Coastal;Песчаный кустарник;Sand Tussock;砂地叢生草;沙丛;모래 잔디풀;砂地の茂み;Tufo da Areia;Sand Tussock;Spinifex poilu;Sandgrasbüschel;Hierba de arena
+Украшения;Coastal;Морская водоросль;Seaweed;海藻;海草;해초;海藻;Alga;Seaweed;Algues;Seetang;Alga marina
+Украшения;Coastal;Маленький береговой камень;Small Shore Rock;小型礁岩;小海滨岩石;작은 바닷가 바위;小さな海岸の岩;Rocha Pequena da Orla;Small Shore Rock;Petit rocher de rivage;Kleiner Küstenfelsen;Roca costera pequeña
+Украшения;Coastal;Средний береговой камень;Medium Shore Rock;中型礁岩;中海滨岩石;중간 크기 바닷가 바위;中くらいの海岸の岩;Rocha Mediana da Orla;Medium Shore Rock;Rocher de rivage intermédiaire;Mittlerer Küstenfelsen;Roca costera mediana
+Украшения;Coastal;Большой береговой камень;Large Shore Rock;大型礁岩;大海滨岩石;큰 바닷가 바위;巨大な海岸の岩;Rocha Grande da Orla;Large Shore Rock;Grand rocher de rivage;Großer Küstenfelsen;Roca costera grande
+Украшения;Coastal;Береговая галька;Shoreline Pebbles;濱海鵝卵石;海岸线卵石;해안선 조약돌;海岸の小石;Pedregulhos da Orla;Shoreline Pebbles;Galets du littoral;Küstenschotter;Piedrecitas costeras
+Украшения;Coastal;Береговой кустарник;Shoreline Fern;濱海蕨;海岸线蕨草;해안선 고사리;海岸のシダ;Moita da Orla;Shoreline Fern;Fougère du littoral;Küstenfarn;Helecho costero
+Украшения;Encampment;Бочки;Barrels;木桶;木桶;통;樽;Barris;Barrels;Tonneaux;Fässer;Barriles
+Украшения;Encampment;Преграда;Barricade;木柵;木栅;방벽;バリケード;Barricada;Barricade;Barricade;Barrikade;Barricada
+Украшения;Encampment;Корзина;Basket;籃子;木篮;바구니;かご;Cesta;Basket;Panier;Korb;Cesta
+Украшения;Encampment;Ведра;Buckets;木盆;木盆;양동이;バケツ;Baldes;Buckets;Seaux;Eimer;Cubos
+Украшения;Encampment;Повозка;Palisade Cart;推車;木栅推车;목책 수레;杭を乗せたカート;Carrinho de Paliçada;Palisade Cart;Charette;Palisadenkarren;Carro de Empalizada
+Украшения;Encampment;Дрова;Chopped Wood;木材;木材;나무토막;薪;Madeira Cortada;Chopped Wood;Bois coupé;Kleinholz;Madera Talada
+Украшения;Encampment;Сушильня рыбы;Fish Stand;曬魚架;晒鱼架;물고기 걸이;魚干し台;Banca de Peixes;Fish Stand;Séchoir à poissons;Fischstand;Estante de Peces
+Украшения;Encampment;Частокол;Palisade;直立木柵;直立木栅;목책;杭柵;Paliçada;Palisade;Palissade;Palisade;Empalizada
+Украшения;Encampment;Глиняный горшок;Clay Pot;陶罐;陶盆;점토 항아리;素焼鉢;Vaso de Barro;Clay Pot;Pot en argile;Lehmtopf;Maceta de Arcilla
+Украшения;Encampment;Группа горшков;Pot Line;陶罐架;陶罐架;항아리 걸이;食器干し;Linha de Cubas;Pot Line;Ustensiles de cuisine;Topfreihe;Fila de Macetas
+Украшения;Encampment;Пойманный роа;Hunted Rhoa;曬鳥架;猎捕的鸟;사냥한 로아;捕えたロア;Rhoa Caçado;Hunted Rhoa;Rhoa chassé;Gejagter Rhoa;Rhoa cazado
+Украшения;Encampment;Куча мусора;Scrap Pile;廢料堆;废料堆;폐품 더미;ゴミの山;Pilha de Sucata;Scrap Pile;Tas de babioles;Schutthaufen;Montón de Chatarra
+Украшения;Encampment;Удобное бревно;Sitting Log;樹幹;树干;좌석 통나무;丸太椅子;Banqueta de Toco;Sitting Log;Rondin;Baumstamm;Tronco para Sentarse
+Украшения;Encampment;Факел;Torch;火炬;火炬;횃불;トーチ;Tocha;Torch;Torche;Fackel;Antorcha
+Украшения;Encampment;Урна;Urn;甕;陶瓮;단지;壺;Urna;Urn;Urne;Urne;Urna
+Украшения;Encampment;Телега;Wagon;貨車;货车;짐마차;ワゴン;Carroça;Wagon;Chariot;Wagen;Carretón
+Украшения;Encampment;Флаг;Flag;旗幟;旗帜;깃발;旗;Bandeira;Flag;Drapeau;Flagge;Bandera
+Украшения;Encampment;Котёл;Cauldron;大鍋爐;大锅汤;가마솥;大釜;Caldeirão;Cauldron;Chaudron;Kessel;Caldero
+Украшения;Encampment;Разбойничья палатка;Bandit Tent;盜賊帳篷;盗贼帐篷;도적 천막;盗賊のテント;Tenda de Bandidos;Bandit Tent;Tente de bandit;Banditenzelt;Carpa de Bandidos
+Украшения;Encampment;Костер;Fireplace;壁爐;壁炉;벽난로;暖炉;Lareira;เตาผิง;Cheminée;Feuerstelle;Chimenea
+Украшения;Encampment;Лагерный плед;Camp Rug;營地地毯;营地地毯;야영지 깔개;暖炉の周りに置く敷物;Tapete de Acampamento;Camp Rug;Tapis de campement;Lagerteppich;Alfombra de campamento
+Украшения;Encampment;Средняя палатка;Medium Tent;中型帳篷;中型帐篷;중형 천막;中型のテント;Tenda Média;Medium Tent;Tente moyenne;Mittleres Zelt;Carpa Mediana
+Украшения;Encampment;Большая палатка;Large Tent;大型帳篷;大型帐篷;대형 천막;大型のテント;Tenda Grande;Large Tent;Grande tente;Großes Zelt;Carpa Grande
+Украшения;Encampment;Укреплённая дверь;Fortification Door;石頭拱門;石头拱门;방어 시설 문;補強された入り口;Porta de Fortificação;Fortification Door;Porte des fortifications;Festungstür;Puerta de Fortificación
+Украшения;Encampment;Ворота частокола;Palisade Gate;木頭拱門;木头拱门;목책 정문;杭柵でできた入り口;Portão Paliçado;Palisade Gate;Portail de palissade;Palisadentor;Puerta de Empalizada
+Украшения;Encampment;Палатка дозорного;Lookout's Booth;瞭望所;哨站遮雨棚;망루;見張り小屋;Cabine de Vigílha;Lookout's Booth;Poste d'observation;Aussichtsstand;Cabina de Vigilancia
+Украшения;Encampment;Приговоры изгнанников;Letters of Exile;流亡者的信;流放者的信;유배자의 편지;追放の宣告;Cartas de Exílio;Letters of Exile;Lettres d'exil;Pfahl mit Briefen;Cartas de Exiliado
+Украшения;Encampment;Развалины маяка;Lighthouse Remains;燈塔遺跡;灯塔遗迹;등대 유적;灯台の残骸;Restos do Farol;Lighthouse Remains;Décombres de phare;Leuchtturmüberreste;Restos de Faro
+Украшения;Encampment;Погасший костер;Ashen Bonfire;裝飾物：蒼白篝火;灰白篝火;잿빛 모닥불;灰の薪;Fogueira em Cinzas;Ashen Bonfire;Feu de camp cendreux;Aschfahles Lagerfeuer;Hoguera de cenizas
+Украшения;Encampment;Мешок из грубой ткани;Burlap Sack;裝飾物：粗麻布袋;粗布麻袋;삼베 자루;黄麻布の袋;Pano de Saco;Burlap Sack;Sac en jute;Leinensack;Saco de arpillera
+Украшения;Encampment;Разрушенная преграда;Destroyed Barricade;裝飾物：毀壞的柵欄;被摧毁的木栅;파괴된 방벽;破壊されたバリケード;Barricada Destruída;Destroyed Barricade;Barricade détruite;Zerstörte Barrikade;Barricada destrozada
+Украшения;Encampment;Покрытый снегом тюк сена;Snowy Hay Bale;裝飾物：覆雪盤綑草;积雪的草垛;눈 덮인 건초 더미;雪の積もった干し草;Fardo de Feno Nevado;Snowy Hay Bale;Botte de foin enneigée;Schneebedeckter Heuballen;Fardo de Heno Nevado
+Украшения;Encampment;Манекен-мишень;Target Dummy;裝飾物：魁儡;假人;대상 인형;ターゲットダミー;Boneco de Alvo;Target Dummy;Mannequin d'entraînement;Übungspuppe;Muñeco de entrenamiento
+Украшения;Encampment;Деревянная преграда;Wooden Barricade;裝飾物：木製圍欄;木制木栅;목재 방벽;木のバリケード;Barricada de Madeira;Wooden Barricade;Barricade en bois;Holzbarrikade;Barricada de Madera
+Украшения;Encampment;Деревянное ведро;Wooden Bucket;裝飾物：木製桶;木制篮子;목재 양동이;木のバスケット;Balde de Madeira;Wooden Bucket;Seau en bois;Holzeimer;Cubo de Madera
+Украшения;Encampment;Деревянный табурет;Wooden Stool;裝飾物：木製凳;木制凳子;목재 걸상;木のスツール;Banco de Madeira;Wooden Stool;Tabouret en bois;Holzstuhl;Taburete de Madera
+Украшения;Encampment;Деревянное корыто;Wooden Tray;裝飾物：木製托盤;木制托盘;나무 쟁반;木のトレイ;Bandeja de Madeira;Wooden Tray;Plateau en bois;Holzablage;Bandeja de Madera
+Украшения;Encampment;Деревянный станок;Wooden Workbench;裝飾物：木製工作台;木制工作台;목재 작업대;木の作業台;Mesa de Trabalho de Madeira;Wooden Workbench;Établi en bois;Holzwerkbank;Mesa de Trabajo de Madera
+Украшения;Encampment;Мостовая Заставы Львиного глаза;Lioneye's Watch Ground;裝飾物：獅眼守望地板;狮眼守望地表;라이온아이 초소 바닥;ライオンアイウォッチの地面;Solo da Vigília de Lioneye;Lioneye's Watch Ground;Sol du Guet d'Œil de Lion;Boden aus Löwenauges Wacht;Suelo de la Vigilancia de Lioneye
+Украшения;Encampment;Строения;Settlement Buildings;駐紮地建築;定居点建筑;정착지 건물;入植地の建物;Construções do Assentamento;Settlement Buildings;Bâtiments coloniaux;Siedlungsgebäude;Edificaciones del asentamiento
+Украшения;Encampment;Кровать из лагеря;Encampment Bed;營地床鋪;营地床铺;야영지 침대;野営地のベッド;Cama do Acampamento;Encampment Bed;Lit de campement;Lagerbett;Cama de campamento
+Украшения;Encampment;Сундук из лагеря;Encampment Chest;營地箱子;营地箱子;야영지 상자;野営地のチェスト;Baú do Acampamento;Encampment Chest;Coffre de campement;Lagertruhe;Cofre de campamento
+Украшения;Encampment;Ящик из лагеря;Encampment Crate;營地木箱;营地储物帐篷;야영지 나무상자;野営地の木箱;Caixote do Acampamento;Encampment Crate;Caisse de campement;Lagerkiste;Cajón de campamento
+Украшения;Encampment;Складская палатка из лагеря;Encampment Storage Tent;營地儲帳;营地桌子;야영지 창고 막사;野営地の物資保管用テント;Tenda de Armazenamento do Acampamento;Encampment Storage Tent;Tente de stockage de campement;Lagerzelt;Tienda almacén de campamento
+Украшения;Encampment;Стол из лагеря;Encampment Table;營地桌;营地容器堆;야영지 탁자;野営地のテーブル;Mesa do Acampamento;Encampment Table;Table de campement;Lagertisch;Mesa de campamento
+Украшения;Encampment;Груда ящиков из лагеря;Encampment Container Cluster;營地容器群;营地装备;야영지 용기 더미;野営地の集積コンテナ;Agrupamento de Contêineres do Acampamento;Encampment Container Cluster;Groupement de conteneurs de campement;Lagerbehälteransammlung;Contenedores de campamento
+Украшения;Encampment;Снаряжение из лагеря;Encampment Equipment;營地裝備;;야영지 장비;野営地の装備;Equipamento do Acampamento;Encampment Equipment;Équipement de campement;Lagerausrüstung;Equipamiento de campamento
+Украшения;Faridun;Фаридунская маска;Faridun Mask;法里登之面;法里顿面具;파리둔 가면;ファリドゥンの仮面;Máscara de Faridun;Faridun Mask;Masque faridun;Faridun-Maske;Máscara faridun
+Украшения;Faridun;Книга Яманры;The Book of Jamanra;賈嫚拉之書;亚曼拉之书;자만라의 책;ジャマンラの本;O Livro de Jamanra;คัมภีร์แห่งจามันรา;Le Livre de Jamanra;Das Buch von Jamanra;El libro de Jamanra
+Украшения;Faridun;Фаридунские цепи;Faridun Chains;法里登鎖鏈;法里顿锁链;파리둔 사슬;ファリドゥンの鎖;Correntes Faridun;Faridun Chains;Chaînes fariduns;Faridun-Ketten;Cadenas faridun
+Украшения;Faridun;Фаридунские грузы;Faridun Cargo;法里登貨物;法里顿货箱;파리둔 화물;ファリドゥンの積み荷;Carga Faridun;Faridun Cargo;Cargo faridun;Faridun-Fracht;Cargamento faridun
+Украшения;Faridun;Баллиста фаридунцев;Faridun Ballista;法里登弩砲;法里顿弩车;파리둔 쇠뇌;ファリドゥンのバリスタ;Balista Faridun;Faridun Ballista;Baliste faridun;Faridun-Balliste;Balista faridun
+Украшения;Faridun;Фаридунские инструменты;Faridun Tools;法里登工具;法里顿工具;파리둔 도구;ファリドゥンの工具;Ferramentas Faridun;Faridun Tools;Outils fariduns;Faridun-Werkzeuge;Herramientas faridun
+Украшения;Faridun;Фаридунские верёвки;Faridun Ropes;法里登繩索;法里顿绳索;파리둔 밧줄;ファリドゥンの縄;Cordas Faridun;Faridun Ropes;Cordes fariduns;Faridun-Seile;Cuerdas faridun
+Украшения;Faridun;Фаридунское оружие;Faridun Weapons;法里登武器;法里顿军械;파리둔 무기;ファリドゥンの武器;Armas Faridun;Faridun Weapons;Armes fariduns;Faridun-Waffen;Armas faridun
+Украшения;Faridun;Фаридунские светильники;Faridun Lights;法里登之光;法里顿灯具;파리둔 불빛;ファリドゥンの光源;Luzes Faridun;Faridun Lights;Lumières fariduns;Faridun-Beleuchtung;Luces faridun
+Украшения;Faridun;Фардидунская баррикада;Faridun Barricade;法里登路障;法里顿路障;파리둔 방벽;ファリドゥンのバリケード;Barricada Faridun;Faridun Barricade;Barricade faridun;Faridun-Barrikade;Barricada faridun
+Украшения;Faridun;Фаридунское газебо;Faridun Gazebo;法里登涼亭;法里顿露台;파리둔 정자;ファリドゥンの見晴らし台;Gazebo Faridun;Faridun Gazebo;Belvédère faridun;Faridun-Pavillon;Gacebo faridun
+Украшения;Faridun;Фаридунский трон;Faridun Throne;法里登王座;法里顿王座;파리둔 왕좌;ファリドゥンの玉座;Trono Faridun;Faridun Throne;Trône faridun;Faridun-Thron;Trono faridun
+Украшения;Faridun;Фаридунская лампа;Faridun Burner;法里登火爐;法里顿火炉;파리둔 화로;ファリドゥンのバーナー;Incensário Faridun;Faridun Burner;Brûleur faridun;Faridun-Räuchergefäß;Quemador faridun
+Украшения;Faridun;Фаридунская ткань;Faridun Cloth;法里登布料;法里顿布匹;파리둔 천;ファリドゥンの帆;Pano Faridun;Faridun Cloth;Étoffe faridun;Faridun-Tuch;Tela faridun
+Украшения;Faridun;Фаридунские клети;Faridun Cages;法里登籠子;法里顿囚笼;파리둔 창살;ファリドゥンの檻;Jaulas Faridun;Faridun Cages;Cages fariduns;Faridun-Käfige;Jaulas faridun
+Украшения;Faridun;Портал - ускоритель частиц;Particle Accelerator Portal;時空之門．粒子加速器;时空之门：粒子加速器;입자 가속기 포탈;素粒子加速器ポータル;Efeito de Portal: Acelerador de Partículas;เอฟเฟควาร์ปเครื่องเร่งอนุภาค;Effet de portail : Accélérateur de particules;Partikelbeschleuniger-Portal;Efecto de Acelerador de partículas para portal
+Украшения;Faridun;Стрела молнии фаридунцев;Portal Effect;時空之門特效;闪电箭矢：法里顿;포탈 이펙트;ファリドゥンのライトニングアローエフェクト;Efeito: Flecha Relampejante Faridun;เอฟเฟคศรสายฟ้า ฟาริดัน;Effet de Flèche de foudre : Faridun;Blitzpfeil der Faridun;Efecto de Faridun para Flecha de rayo
+Украшения;Faridun;Громоотвод фаридунцев;Faridun;法里登;引雷针：法里顿;파리둔;ファリドゥンのライトニングロッドエフェクト;Efeito: Para-raio Faridun;เอฟเฟคเสาล่อฟ้า ฟาริดัน;Effet de Flèche paratonnerre : Faridun;Blitzrute der Faridun;Efecto de Faridun para Pararrayos
+Украшения;Faridun;Магнетический залп фаридунцев;Faridun Lightning Arrow Effect;閃電箭矢．法里登;磁性齐射：法里顿;파리둔 번개 화살 이펙트;ファリドゥンのマグネティックサルヴォエフェクト;Efeito: Salva Magnética Faridun;เอฟเฟคแม่เหล็กกระหน่ำยิง ฟาริดัน;Effet de Salve magnétique : Faridun;Magnetische Salve der Faridun;Efecto de Faridun para Salva magnética
+Украшения;Faridun;Стрела призыва бури фаридунцев;Lightning Arrow Skin;閃電箭矢外觀;唤雷箭：法里顿;번개 화살 스킨;ファリドゥンのストームコーラーアローエフェクト;Efeito: Flecha Tempestuosa Faridun;เอฟเฟคศรเรียกวายุ ฟาริดัน;Effet de Flèche mande-orage : Faridun;Sturmrufer-Pfeil der Faridun;Efecto de Faridun para Flecha invocadora de tormentas
+Украшения;Faridun;Стрела цепной молнии фаридунцев;Faridun Lightning Rod Effect;雷霆之杖．法里登;连环震击箭：法里顿;파리둔 피뢰침 이펙트;ファリドゥンのショックチェインアローエフェクト;Efeito: Flecha da Cadeia Eletrizante Faridun;เอฟเฟคศรชิ่งช็อค ฟาริดัน;Effet de Flèche électro-ricochante : Faridun;Schockkettenpfeil der Faridun;Efecto de Faridun para Flecha de cadena electrocutante
+Украшения;Faridun;Громовая метка фаридунцев;Lightning Rod Skin;雷霆之杖外觀;流电印记：法里顿;피뢰침 스킨;ファリドゥンの電流の呪印エフェクト;Efeito: Marca Voltáica Faridun;เอฟเฟคคำแช่งก่อประจุ ฟาริดัน;Effet de Marque voltaïque : Faridun;Voltaisches Mal der Faridun;Efecto de Faridun para Señal voltaica
+Украшения;Faridun;Стрела-проводник фаридунцев;Faridun Magnetic Salvo Effect;電磁齊射．法里登;电殛箭：法里顿;파리둔 자성 포화 이펙트;ファリドゥンのエレクトロカッティングアローエフェクト;Efeito: Flecha Eletrocutante Faridun;เอฟเฟคศรช็อตประสาท ฟาริดัน;Effet de Flèche foudroyante : Faridun;Elektrisierender Pfeil der Faridun;Efecto de Faridun para Flecha paralizante
+Украшения;Faridun;Вестник грома фаридунцев;Magnetic Salvo Skin;電磁齊射外觀;闪电之捷：法里顿;자성 포화 스킨;ファリドゥンのヘラルドオブサンダーエフェクト;Efeito: Arauto Trovejante Faridun;เอฟเฟคสาสน์สายฟ้า ฟาริดัน;Effet de Héraut du tonnerre : Faridun;Herold des Donners der Faridun;Efecto de Faridun para Heraldo de trueno
+Украшения;Maraketh;Фонарь маракетов;Maraketh Lantern;裝飾物：馬拉克斯燈籠;马拉克斯灯笼;마라케스 등불;マラケスの灯篭;Lanterna Maraketh;Maraketh Lantern;Lanterne maraketh;Maraketh-Laterne;Farol Maraketh
+Украшения;Maraketh;Куча бамбука;Bamboo Pile;裝飾物：竹堆;竹子堆;대나무 더미;竹材の山;Pilha de Bambu;Bamboo Pile;Bambous empilés;Bambushaufen;Pila de bambú
+Украшения;Maraketh;Бамбуковый забор;Bamboo Fence;裝飾物：竹籬笆;竹子栅栏;대나무 우리;竹の柵;Cerca de Bambu;Bamboo Fence;Palissade en bambou;Bambuszaun;Cerca de bambú
+Украшения;Maraketh;Бамбуковая ширма;Bamboo Divider;裝飾物：竹隔板;竹子隔板;대나무 칸막이;竹の仕切り;Divisor de Bambu;Bamboo Divider;Cloison en bambou;Bambustrennwand;Divisor de bambú
+Украшения;Maraketh;Бамбуковый пол;Bamboo Floor;裝飾物：竹板;竹子地板;대나무 바닥;竹の床;Chão de Bambu;Bamboo Floor;Sol en bambou;Bambusboden;Suelo de bambú
+Украшения;Maraketh;Коврик маракетов;Maraketh Rug;裝飾物：馬拉克斯地毯;马拉克斯地毯;마라케스 깔개;マラケスのラグ;Tapete Maraketh;Maraketh Rug;Tapis maraketh;Maraketh-Teppich;Alfombra maraketh
+Украшения;Maraketh;Подушка маракетов;Maraketh Cushion;裝飾物：馬拉克斯坐墊;马拉克斯软垫;마라케스 방석;マラケスの座布団;Travesseiro Maraketh;Maraketh Cushion;Coussin maraketh;Maraketh-Kissen;Almohadón maraketh
+Украшения;Maraketh;Знак маракетов;Maraketh Banner;裝飾物：馬拉克斯旗幟;马拉克斯旗帜;마라케스 깃발;マラケスのバナー;Baner Maraketh;Maraketh Banner;Étendard maraketh;Maraketh-Banner;Estandarte maraketh
+Украшения;Maraketh;Мангал маракетов;Maraketh Brazier;裝飾物：馬拉克斯火盆;马拉克斯火盆;마라케스 화로;マラケスの火鉢;Braseiro Maraketh;Maraketh Brazier;Brasero maraketh;Maraketh-Feuerschale;Brasero maraketh
+Украшения;Maraketh;Статуя Рекса;Rhex Statue;裝飾物：巨喙鳥雕像;幼鸟雕像;렉스 조각상;ルヘックスの像;Estátua do Rei;Rhex Statue;Statue de rhex;Rhex-Statue;Estatua de rhex
+Украшения;Maraketh;Клен;Maple Tree;裝飾物：楓樹;枫树;단풍나무;カエデの木;Bordo;Maple Tree;Érable;Ahornbaum;Arce
+Украшения;Maraketh;Святыня Тасуни;Tasuni's Shrine;裝飾物：達蘇尼神殿;达苏尼的神殿;타수니의 성소;タスーニの祠;Alar de Tasuni;Tasuni's Shrine;Autel de Tasuni;Tasunis Schrein;Santuario de Tasuni
+Украшения;Maraketh;Храмовый стол;Shrine Table;裝飾物：神桌;神殿桌台;성소 탁자;お供え机;Altar;Shrine Table;Table du sanctuaire;Schreintisch;Mesa de Santuario
+Украшения;Maraketh;Трон Оюн;Oyun's Throne;裝飾物：歐優恩王座;欧优恩的王座;오연의 왕좌;オユンの玉座;Trono de Oyun;Oyun's Throne;Trône d'Oyun;Oyuns Thron;Trono de Oyun
+Украшения;Maraketh;Гонг маракетов;Maraketh Gong;裝飾物：馬拉克斯響鑼;马拉克斯响锣;마라케스 징;マラケスの銅鑼;Gongo Maraketh;Maraketh Gong;Gong maraketh;Maraketh-Gong;Gong maraketh
+Украшения;Maraketh;Стол маракетов;Maraketh Table;裝飾物：馬拉克長桌;马拉克斯桌子;마라케스 탁자;マラケスの机;Mesa Maraketh;Maraketh Table;Table maraketh;Maraketh-Tisch;Mesa maraketh
+Украшения;Maraketh;Украшенный бар;Ornate Bar;裝飾物：華麗吧檯;华丽木梁;화려한 바;豪華なバー;Barra Ornamentada;Ornate Bar;Comptoir orné;Ornate Bar;Barra ornamentada
+Украшения;Maraketh;Украшенное настенное полотно;Ornate Wall Hanging;裝飾物：華麗壁掛;华丽墙幔;화려한 벽 장식품;豪華な壁掛け;Poster de Parede Ornamentado;Ornate Wall Hanging;Décoration murale ornée;Verzierter Wandteppich;Decoración de pared ornamentada
+Украшения;Maraketh;Стойка лотоса для террасы;Lotus Terrace Stand;裝飾物：蓮花露臺;莲花地台;연꽃 테라스 걸이;テラスの蓮置き台;Suporte Terraço de Lótus;Lotus Terrace Stand;Terrasse lotus;Lotus-Terrassenstand;Terraza de loto
+Украшения;Maraketh;Скамья лотоса;Lotus Bench;裝飾物：蓮花長凳;莲花长凳;연꽃 긴 의자;蓮のベンチ;Banco de Lótus;Lotus Bench;Banc lotus;Lotus-Bank;Banco de loto
+Украшения;Maraketh;Летающий песок;Falling Sand;落沙;飞落黄沙;떨어지는 모래;落ちる砂;Areia Cadente;Falling Sand;Sable tombant;Fallender Sand;Arena en caída
+Украшения;Maraketh;Маракетский сундук;Maraketh Chest;馬拉克斯保險箱;马拉克斯宝箱;마라케스 상자;マラケスのチェスト;Baú Maraketiano;Maraketh Chest;Coffre maraketh;Maraketh-Truhe;Cofre maraketh
+Украшения;Maraketh;Маракетская колонна;Maraketh Pillar;馬拉克斯柱子;马拉克斯立柱;마라케스 기둥;マラケスの柱;Pilar Maraketiano;Maraketh Pillar;Pillier maraketh;Maraketh-Säule;Pilar maraketh
+Украшения;Maraketh;Маракетская курительница;Maraketh Incense Burner;馬拉克斯香爐;马拉克斯香炉;마라케스 향로;マラケスの香炉;Incensário Maraketiano;Maraketh Incense Burner;Brûleur d'encens maraketh;Maraketh-Räuchergefäß;Quemador de incienso maraketh
+Украшения;Maraketh;Статуя богини;Goddess Statue;裝飾物：女神雕像;女神雕像;여신 석상;女神の像;Estátua da Deusa;Goddess Statue;Statue de déesse;Göttinnenstatue;Estatua de diosa
+Украшения;Maraketh;Маракетский страж;Maraketh Guard;馬拉克斯守衛;马拉克斯护卫;마라케스 수호병;マラケスの衛兵;Guarda Maraketiano;Maraketh Guard;Garde maraketh;Maraketh-Wächter;Guardia maraketh
+Украшения;Maraketh;Маракетский роа;Maraketh Rhoa;馬拉克斯恐喙鳥;马拉克斯恐喙鸟;마라케스 로아;マラケスのロア;Rhoa Maraketiana;Maraketh Rhoa;Rhoa maraketh;Maraketh-Rhoa;Rhoa maraketh
+Украшения;Maraketh;Маракетская баллиста;Maraketh Ballista;馬拉克斯砲塔;马拉克斯弩炮;마라케스 쇠뇌;マラケスのバリスタ;Balista Maraketiana;Maraketh Ballista;Baliste maraketh;Maraketh-Balliste;Balista maraketh
+Украшения;Maraketh;Маракетская баррикада;Maraketh Barricade;馬拉克斯路障;马拉克斯路障;마라케스 방벽;マラケスのバリケード;Barricada Maraketiana;Maraketh Barricade;Barricade maraketh;Maraketh-Barrikade;Barricada maraketh
+Украшения;Maraketh;Маракетский шатёр;Maraketh Pavilion;馬拉克斯亭樓;马拉克斯帐篷;마라케스 별채;マラケスのパビリオン;Pavilhão Maraketiano;Maraketh Pavilion;Pavillon maraketh;Maraketh-Pavillon;Pabellón maraketh
+Украшения;Maraketh;Маракетский шпиль;Maraketh Spire;馬拉克斯尖塔;马拉克斯尖塔;마라케스 첨탑;マラケスの尖塔;Espiral Maraketiana;Maraketh Spire;Cime maraketh;Maraketh-Spitze;Torre maraketh
+Украшения;Maraketh;Маракетские обломки;Maraketh Rubble;馬拉克斯瓦礫;马拉克斯碎石;마라케스 돌덩이;マラケスの瓦礫;Entulho Maraketiano;Maraketh Rubble;Gravats maraketh;Maraketh-Trümmer;Escombros maraketh
+Украшения;Maraketh;Маракетские сокровища;Maraketh Treasure;馬拉克斯寶藏;马拉克斯宝藏;마라케스 보물;マラケスの財宝;Tesouro Maraketiano;Maraketh Treasure;Trésor maraketh;Maraketh-Schatz;Tesoro maraketh
+Украшения;Maraketh;Маракетское украшение;Maraketh Decor;馬拉克斯裝飾;马拉克斯装饰;마라케스 장식;マラケスの装飾;Decoração Maraketiana;Maraketh Decor;Décoration maraketh;Maraketh-Dekor;Decoración maraketh
+Украшения;Maraketh;Маракетский самовар;Maraketh Fire Pot;馬拉克斯火罐;禁域纹章;성역 메달리온;マラケスの火鍋;Pote de Fogo Maraketiano;Maraketh Fire Pot;Pot de feu maraketh;Sanktum-Medallion;Olla de fuego
+Украшения;Maraketh;Медальон святилища;Sanctum Medallion;聖殿獎章;禁域立柱;성역 기둥;サンクタムのメダリオン;Medalhão do Sanctum;Sanctum Medallion;Médaillon du sanctuaire;Sanktum-Pfeiler;Medallón de santuario
+Украшения;Maraketh;Колонны святилища;Sanctum Pillars;聖殿之柱;禁域墙壁;성역 금고;サンクタムの柱;Pilares do Sanctum;Sanctum Pillars;Piliers du sanctuaire;Sanktum-Wände;Pilares de santuario
+Украшения;Maraketh;Стены святилища;Sanctum Walls;聖殿之牆;禁域宝藏;성역 보물;サンクタムの壁;Paredes do Sanctum;Sanctum Walls;Murs du sanctuaire;Sanktum-Schatz;Muros de santuario
+Украшения;Maraketh;Сокровища святилища;Sanctum Treasure;聖殿寶藏;禁域鬼灵;성역 도깨비불;サンクタムの財宝;Tesouro do Sanctum;Sanctum Treasure;Trésor du sanctuaire;Sanktum-Irrlicht;Tesoro de santuario
+Украшения;Maraketh;Огонёк святилища;Sanctum Wisp;聖殿幽火;禁域悬空陷阱;성역 매다는 덫;サンクタムのウィスプ;Lúmen do Sanctum;Sanctum Wisp;Flammerole du sanctuaire;Sanktum-Springfalle;Fuego fatuo de santuario
+Украшения;Maraketh;Пружинная ловушка святилища;Sanctum Suspension Trap;聖殿懸浮陷阱;禁域陷阱;성역 덫;サンクタムの懸架罠;Armadilha Suspensa do Sanctum;Sanctum Suspension Trap;Piège de suspension du sanctuaire;Sanktum-Falle;Trampa de suspensión de santuario
+Украшения;Maraketh;Ловушка святилища;Sanctum Trap;聖殿陷阱;;;サンクタムの罠;Armadilha do Sanctum;Sanctum Trap;Piège du sanctuaire;;Trampa de santuario
+Украшения;Oriath;Опора из Ориата;Oriath Standard Bearer;裝飾物：奧瑞亞的重擔;装饰物:奥瑞亚的搬运工;오리아스 깃발 받침대;オリアスのシンボル;Portador do Estandarte de Oriath;Oriath Standard Bearer;Porte-étendard d'Oriath;Oriath-Standartenträger;Portador de Estandarte de Oriath
+Украшения;Oriath;Житель Ориата;Oriath Citizen;裝飾物：奧瑞亞的居民;装饰物：奥瑞亚居民;오리아스 시민;オリアス市民;Cidadão de Oriath;พลเมือง Oriath;Citoyen d'Oriath;Bürger von Oriath;Ciudadano de Oriath
+Украшения;Oriath;Труп жителя Ориата;Oriath Citizen Corpse;裝飾物：奧瑞亞人的遺體;装饰物：破碎家具;오리아스 시민 시신;オリアス市民の死体;Corpo de um Cidadão de Oriath;ศพพลเมือง Oriath;Cadavre de citoyen d'Oriath;Leiche eines Oriathers;Cadáver de Ciudadano de Oriath
+Украшения;Oriath;Символ Греха;Sin Symbol;裝飾物：罪孽徵兆;装饰物：罪之印记;씬의 상징;シンのシンボル;Símbolo do Pecado;สัญลักษณ์ Sin;Symbole de Péché;Sin-Symbol;Símbolo de Pecado
+Украшения;Oriath;Витраж Греха;Sin Cathedral;裝飾物：罪殿堂;装饰物：罪的教堂窗画;씬 대성당;シンの大聖堂;Catedral do Pecado;วิหาร Sin;Cathédrale de Péché;Sin-Kathedralenfenster;Catedral de Pecado
+Украшения;Oriath;Символ Невинности;Innocence Symbol;裝飾物：善良徵兆;装饰物：纯净之印记;이노센스의 상징;イノセンスのシンボル;Símbolo da Inocência;สัญลักษณ์ Innocence;Symbole d'Innocence;Innocence-Symbol;Símbolo de Inocencia
+Украшения;Oriath;Витраж Невинности;Innocence Cathedral;裝飾物：善殿堂;装饰物：纯净之神教堂窗画;이노센스 대성당;イノセンスの大聖堂;Catedral da Inocência;วิหาร Innocence;Cathédrale d'Innocence;Innocence-Kathedralenfenster;Catedral de Inocencia
+Украшения;Oriath;Светлая роспись;Light Mural Tile;裝飾物：光明壁磚;浅色壁砖;빛의 벽화 타일;光の壁画タイル;Mural Ladrilhado Iluminado;จิตรกรรมกระเบื้องสว่าง;Carrelage pur;Helle Fliesenmalerei;Azulejo para mural Claro
+Украшения;Oriath;Тёмная роспись;Dark Mural Tile;裝飾物：黑暗壁磚;深色壁砖;어둠의 벽화 타일;闇の壁画タイル;Mural Ladrilhado Sombrio;จิตรกรรมกระเบื้องมืด;Carrelage profané;Dunkle Fliesenmalerei;Azulejo para mural Oscuro
+Украшения;Oriath;Светлая статуя Ориата;Light Oriath Statue;裝飾物：光明奧瑞亞雕像;浅色奥瑞亚雕像;빛의 오리아스 석상;光のオリアス像;Estátua Iluminada de Oriath;รูปปั้นสว่าง Oriath;Statue d'Oriath pure;Helle Oriath-Statue;Estatua de Oriath clara
+Украшения;Oriath;Тёмная статуя Ориата;Dark Oriath Statue;裝飾物：黑暗奧瑞亞雕像;深色奥瑞亚雕像;어둠의 오리아스 석상;闇のオリアス像;Estátua Sombria de Oriath;รูปปั้นมืด Oriath;Statue d'Oriath profanée;Dunkle Oriath-Statue;Estatua de Oriath oscura
+Украшения;Oriath;Стена Ориата;Oriath Wall;裝飾物：奧瑞亞圍牆;奥瑞亚墙壁;오리아스 벽;オリアスの壁;Parede de Oriath;กำแพง Oriath;Mur d'Oriath;Oriath-Mauer;Pared de Oriath
+Украшения;Oriath;Забор Ориата;Oriath Fence;裝飾物：奧瑞亞鐵欄;奥瑞亚铁栅;오리아스 우리;オリアスのフェンス;Cerca de Oriath;รั้ว Oriath;Clôture d'Oriath;Oriath-Zaun;Cerca de Oriath
+Украшения;Oriath;Обледеневшее дерево;Frozen Tree;裝飾物：冰凍之樹;冻结的树;얼어붙은 나무;凍った木;Árvore Congelada;Frozen Tree;Arbre gelé;Gefrorener Baum;Árbol congelado
+Украшения;Oriath;Зелёное дерево;Verdant Tree;裝飾物：翠綠之樹;青翠的树;신록의 나무;青々とした木;Árvore Verdejante;Verdant Tree;Arbre verdoyant;Grüner Baum;Árbol frondoso
+Украшения;Oriath;Ориатская статуя;Oriath Statue;裝飾物：奧瑞亞雕像;奥瑞亚雕像;오리아스 석상;オリアスの像;Estátua de Oriath;Oriath Statue;Statue d'Oriath;Oriath-Statue;Estatua de Oriath
+Украшения;Oriath;Сломанная преграда;Broken Barricade;裝飾物：破損柵欄;破碎木栅;부서진 방벽;壊れたバリケード;Barricada Quebrada;Broken Barricade;Barricade fracturée;Kaputte Barrikade;Barricada Rota
+Украшения;Oriath;Сломанный столб;Broken Pole;裝飾物：斷桿;破碎柱杆;부서진 기둥;壊れた柱;Mastro Quebrado;Broken Pole;Poteau brisé;Kaputter Pfosten;Poste roto
+Украшения;Oriath;Ветхий ящик;Ramshackle Crate;裝飾物：搖搖欲墜的木箱;摇摇欲坠的箱子;무너질 듯한 나무상자;ぼろぼろの木箱;Caixa em Ruínas;Ramshackle Crate;Caisse en piteux état;Marode Kiste;Caja harapienta
+Украшения;Oriath;Ветхая стена;Ramshackle Wall;裝飾物：搖搖欲墜的牆;摇摇欲坠的墙体;무너질 듯한 벽;ぼろぼろの壁;Parede em Ruínas;Ramshackle Wall;Mur en piteux état;Marode Mauer;Muro ruinoso
+Украшения;Oriath;Арочные ворота;Arched Gateway;裝飾物：拱型入口;弧形玄关;아치형 입구;アーチ型の門;Portão Arqueado;Arched Gateway;Arche;Bogenförmiges Tor;Pasarela arqueada
+Украшения;Oriath;Строительные припасы;Building Supplies;裝飾物：建築器材;建筑供给;건설 자원;建築資材;Suprimentos de Construção;Building Supplies;Fournitures de construction;Baumaterial;Suministros de Construcción
+Украшения;Oriath;Ориатские бочки;Oriath Barrels;裝飾物：奧瑞亞木桶;奥瑞亚木桶;오리아스 통;オリアスの樽;Barrís de Oriath;Oriath Barrels;Tonneaux d'Oriath;Oriath-Fässer;Barriles de Oriath
+Украшения;Oriath;Ориатская жаровня;Oriath Brazier;裝飾物：奧瑞亞火盆;奥瑞亚火盆;오리아스 화로;オリアスの火鉢;Brazeiro de Oriath;Oriath Brazier;Brasero d'Oriath;Oriath-Feuerschale;Brasero de Oriath
+Украшения;Oriath;Пост Ориатской охраны;Oriath Guard Shed;裝飾物：奧瑞亞守衛棚;奥瑞亚安保室;오리아스 수호병 초소;オリアスの護衛小屋;Galpão da Guarda de Oriath;Oriath Guard Shed;Guérite d'Oriath;Oriath-Wachschuppen;Cobertizo de la Guardia de Oriath
+Украшения;Oriath;Ориатская лестница;Oriath Ladder;裝飾物：奧瑞亞梯子;奥瑞亚阶梯;오리아스 사다리;オリアスの梯子;Escada de Oriath;Oriath Ladder;Échelle d'Oriath;Oriath-Leiter;Escalera de Oriath
+Украшения;Oriath;Ориатский фонарь;Oriath Lantern;裝飾物：奧瑞亞燈籠;奥瑞亚灯笼;오리아스 등불;オリアスの灯篭;Lanterna de Oriath;Oriath Lantern;Lanterne d'Oriath;Oriath-Laterne;Farol de Oriath
+Украшения;Oriath;Ориатские завалы;Oriath Rubble;裝飾物：奧瑞亞磚瓦;奥瑞亚粗石;오리아스 돌덩이;オリアスの瓦礫;Destroços de Oriath;Oriath Rubble;Décombres d'Oriath;Oriath-Trümmer;Escombros de Oriath
+Украшения;Oriath;Ориатские строительные леса;Oriath Scaffolding;裝飾物：奧瑞亞鷹架;奥瑞亚脚手架;오리아스 발판;オリアスの足場;Andaimes de Oriath;Oriath Scaffolding;Échaffaudage d'Oriath;Oriath-Gerüst;Andamio de Oriath
+Украшения;Oriath;Жреческая преграда;Templar Barricade;裝飾物：教堂的圍欄;圣堂木栅;템플러 방벽;テンプラーのバリケード;Barricada Templária;Templar Barricade;Barricade des Templiers;Templer-Barrikade;Barricada de Templario
+Украшения;Oriath;Труп жреца;Templar Corpse;裝飾物：教堂的屍體;大块木板;템플러 시신;テンプラーの死体;Cadáver Templário;Templar Corpse;Cadavre de Templier;Templer-Leichnam;Cadáver de Templario
+Украшения;Oriath;Плетёная корзина;Wicker Basket;裝飾物：柳製籃;柳条筐;고리버들 바구니;小枝のバスケット;Cesta de Vime;Wicker Basket;Panier en osier;Weidenkorb;Cesta de Mimbre
+Украшения;Oriath;Куча обугленной древесины;Charred Wood Pile;裝飾物：焦灼木堆;烧焦的木堆;까맣게 탄 나무 더미;焼け焦げた木の山;Pilha de Madeira Carbonizada;Charred Wood Pile;Tas de bois calciné;Verkohlter Holzstapel;Montón de Madera Carbonizada
+Украшения;Oriath;Памятник узникам;Prisoners' Monument;裝飾物：囚犯紀念碑;囚徒的纪念碑;죄수의 기념물;囚人の記念碑;Monumento do Prisioneiro;Prisoners' Monument;Monument du prisonnier;Gefangenen-Denkmal;Monumento del Prisionero
+Украшения;Oriath;Фонтан с площади Ориата;Oriath Square Fountain;裝飾物：奧瑞亞廣場噴泉;奥瑞亚广场喷泉;오리아스 광장 분수;オリアス広場の噴水;Fonte da Praça de Oriath;Oriath Square Fountain;Fontaine de la Place d'Oriath;Oriath-Stadtplatzbrunnen;Fuente de la Plaza de Oriath
+Украшения;Oriath;Бордюрный камень Ориата;Oriath Curb;裝飾物：奧瑞亞砌磚;奥瑞亚拴马桩;오리아스 연석;オリアスの縁石;Calçada de Oriath;Oriath Curb;Chaussée oriathéenne;Oriath-Bordstein;Acera de Oriath
+Украшения;Oriath;Триумфальный фонтан;Triumph Fountain;裝飾物：勝利噴泉;凯旋喷泉;승리의 분수;勝利の噴水;Fonte do Triunfo;Triumph Fountain;Fontaine du triomphe;Triumphbrunnen;Fuente de Triunfo
+Украшения;Oriath;Земля Ориата;Oriath Ground;裝飾物：奧瑞亞陣地;奥瑞亚广场;오리아스 지면;オリアスの床;Chão de Oriath;Oriath Ground;Sol oriathéen;Oriath-Fußboden;Suelo de Oriath
+Украшения;Oriath;Дверной проём Ориата;Oriath Doorway;裝飾物：奧瑞亞門道;奥瑞亚门廊;오리아스 출입문;オリアスの戸口;Entrada de Oriath;Oriath Doorway;Embrasure oriathéenne;Oriath-Eingangstor;Puerta de Oriath
+Украшения;Oriath;Ориатский ребенок;Oriathan Child;裝飾物：奧瑞亞小P孩;奥瑞亚孩子;오리아스 아이;オリアス人の子ども;Criança Oriathiana;Oriathan Child;Enfant oriathéen;Oriather Kind;Niña de Oriath
+Украшения;Oriath;Преграда Ориата;Oriath Barrier;裝飾物：奧瑞亞路障;奥瑞亚屏障;오리아스 방어막;オリアスの障壁;Barreira de Oriath;Oriath Barrier;Barrière d'Oriath;Oriath-Absperrung;Barrera de Oriath
+Украшения;Oriath;Набор для бассейна;Pool Kit;裝飾物：水池套組;水池组件;웅덩이 키트;プールセット;Kit Piscina;Pool Kit;Éléments de bassin;Wasserbecken-Set;Kit de charco
+Украшения;Oriath;Деревянный пол;Wood Ground;裝飾物：森林地板;林地;나무 바닥;木の床;Solo de Madeira;Wood Ground;Sol en bois;Hölzerner Boden;Suelo de madera
+Украшения;Oriath;Печать Ориата;Oriath Sigil Decoration;裝飾物：奧瑞亞輝印;装饰物：奥瑞亚法印;오리아스 부적 장식물;オリアスの紋章の装飾;Decoração Emblema de Oriath;ของตกแต่ง ตราสัญลักษณ์ Oriath;Sceau d'Oriath;Oriath-Sigille;Decoración de Símbolo de Oriath
+Украшения;Oriath;Детали фонтана;Fountain Objects;裝飾物：噴泉;装饰物：喷泉;분수 물품;噴水の装飾;Objetos de Fonte;วัตถุ Fountain;Objets de fontaine;Brunnenobjekte;Objetos de fuente
+Украшения;Oriath;Сумеречное дерево в кадке;Twilight Potted Tree;暮光盆栽樹;暮光盆栽树木;황혼 화분에 심은 나무;黄昏の鉢植えの木;Árvore no Vaso do Crepúsculo;Twilight Potted Tree;Arbre en pot du crépuscule;Zwielicht-Topfbaum;Árbol en maceta del Crepúsculo
+Украшения;Oriath;Сумеречное растение в кадке;Twilight Potted Plant;暮光盆栽植物;暮光盆栽植物;황혼 화분에 심은 식물;黄昏の鉢植えの植物;Planta em Vaso do Crepúsculo;Twilight Potted Plant;Plante en pot du crépuscule;Zwielicht-Topfpflanze;Planta en maceta del Crepúsculo
+Украшения;Oriath;Сумеречный куст;Twilight Planter;暮光植栽;暮光花盆;황혼 화분;黄昏のプランター;Cultivador do Crepúsculo;Twilight Planter;Jardinière du crépuscule;Zwielicht-Pflanzgefäß;Maceta del Crepúsculo
+Украшения;Oriath;Сумеречное дерево;Twilight Tree;暮光之樹;暮光树木;황혼 나무;黄昏の木;Árvore do Crepúsculo;Twilight Tree;Arbre du crépuscule;Zwielicht-Baum;Árbol del Crepúsculo
+Украшения;Oriath;Сумеречный прилавок;Twilight Market Stall;暮光攤販;暮光集市摊位;황혼 좌판;黄昏の屋台;Barraca de Mercado do Crepúsculo;Twilight Market Stall;Étal de marché du crépuscule;Zwielicht-Marktstand;Caseta de mercado del Crepúsculo
+Украшения;Oriath;Сумеречный телескоп;Twilight Telescope;暮光望遠鏡;暮光望远镜;황혼 망원경;黄昏の望遠鏡;Telescópio do Crepúsculo;Twilight Telescope;Télescope du crépuscule;Zwielicht-Teleskop;Telescopio del Crepúsculo
+Украшения;Oriath;Сумеречное интерьерный стул;Twilight Indoor Chair;暮光室內椅;暮光室内座椅;황혼 실내 의자;黄昏の屋内用椅子;Cadeira Interna do Crepúsculo;Twilight Indoor Chair;Chaise d'intérieur du crépuscule;Zwielicht-Hallenstuhl;Silla de interior del Crepúsculo
+Украшения;Oriath;Сумеречное стул для веранды;Twilight Outdoor Chair;暮光室外椅;暮光户外座椅;황혼 실외 의자;黄昏の屋外用椅子;Cadeira Externa do Crepúsculo;Twilight Outdoor Chair;Chaise d'extérieur du crépuscule;Zwielicht-Außenstuhl;Silla de exterior del Crepúsculo
+Украшения;Oriath;Сумеречный банкетный стол;Twilight Banquet Table;暮光宴會桌;暮光宴席桌;황혼 연회 탁자;黄昏のバンケットテーブル;Mesa de Banquete do Crepúsculo;Twilight Banquet Table;Table de banquet du crépuscule;Zwielicht-Festtagstisch;Mesa de banquete del Crepúsculo
+Украшения;Oriath;Сумеречная скамья;Twilight Bench;暮光長椅;暮光长椅;황혼 긴 의자;黄昏のベンチ;Banco do Crepúsculo;Twilight Bench;Banc du crépuscule;Zwielicht-Bank;Banco del Crepúsculo
+Украшения;Oriath;Сумеречный ковёр;Twilight Carpet;暮光地毯;暮光地毯;황혼 양탄자;黄昏のカーペット;Tapete do Crepúsculo;Twilight Carpet;Tapis du crépuscule;Zwielicht-Teppich;Alfombra del Crepúsculo
+Украшения;Oriath;Сумеречный контейнер;Twilight Container;暮光容器;暮光容器;황혼 용기;黄昏の容器;Armazenador do Crepúsculo;Twilight Container;Conteneur du crépuscule;Zwielicht-Container;Contenedor del Crepúsculo
+Украшения;Oriath;Сумеречные припасы;Twilight Stockpile;暮光堆積物;暮光储物堆;황혼 전리품;黄昏の備蓄品;Estoque do Crepúsculo;Twilight Stockpile;Réserves du crépuscule;Zwielicht-Vorrat;Reservas del Crepúsculo
+Украшения;Oriath;Сумеречный стол;Twilight Table;暮光桌子;暮光桌子;황혼 탁자;黄昏の机;Mesa do Crepúsculo;Twilight Table;Table du crépuscule;Zwielicht-Tisch;Mesa del Crepúsculo
+Украшения;Oriath;Шезлонг;Lounger;裝飾物：躺椅;躺椅;안락 의자;ラウンジャー;Espreguiçadeira;Lounger;Chaise longue;Liege;Tumbona
+Украшения;Oriath;Мраморная скамья;Marble Bench;裝飾物：大理石長凳;大理石长椅;대리석 긴 의자;大理石のベンチ;Banco de Mármore;Marble Bench;Banc en marbre;Marmorbank;Banco de mármol
+Украшения;Oriath;Мраморный фонтан;Marble Fountain;裝飾物：大理石噴泉;大理石喷泉;대리석 분수;大理石の噴水;Fonte de Mármore;Marble Fountain;Fontaine en marbre;Marmorbrunnen;Fuente de mármol
+Украшения;Oriath;Мраморная колонна;Marble Pillar;裝飾物：大理石柱;大理石支柱;대리석 기둥;大理石の柱;Pilar de Mármore;Marble Pillar;Pilier en marbre;Marmorsäule;Pilar de mármol
+Украшения;Oriath;Мраморный шпиль;Marble Spire;裝飾物：大理石尖塔;大理石尖塔;대리석 첨탑;大理石の尖塔;Torre de Mármore;Marble Spire;Flèche en marbre;Marmorturm;Columna de mármol
+Украшения;Oriath;Мраморный стол;Marble Table;裝飾物：大理石桌;大理石桌子;대리석 탁자;大理石の机;Mesa de Mármore;Marble Table;Table en marbre;Marmortisch;Mesa de mármol
+Украшения;Oriath;Мраморные стены;Marble Walls;裝飾物：大理石牆;大理石墙壁;대리석 벽;大理石の壁;Paredes de Mármore;Marble Walls;Murs en marbre;Marmorwände;Muros de mármol
+Украшения;Oriath;Украшенное газебо;Ornate Gazebo;裝飾物：華麗涼亭;华丽露台;화려한 정자;華美なガゼボ;Coreto Ornado;Ornate Gazebo;Kiosque orné;Verzierter Pavillon;Glorieta ornamentada
+Украшения;Oriath;Украшенная статуя;Ornate Statue;裝飾物：華麗雕像;华丽雕像;화려한 조각상;華美な像;Estátua Ornada;Ornate Statue;Statue ornée;Verzierte Statue;Estatua ornamentada
+Украшения;Oriath;Жаровня с вершины;Summit Brazier;裝飾物：頂峰火盆;险峰火盆;꼭대기 화로;山頂の火鉢;Braseiro Alto;Summit Brazier;Brasero du sommet;Gipfelschale;Brasero de cima
+Украшения;Oriath;Кадка с вершины;Summit Planter;裝飾物：頂峰植栽;险峰花盆;꼭대기 화분;山頂のプランター;Floreira Alta;Summit Planter;Jardinière du sommet;Gipfelkübel;Maceta de cima
+Украшения;Oriath;Кадка для дерева;Tree Planter;裝飾物：樹植栽;树木花盆;나무 화분;木のプランター;Plantador de Árvores;Tree Planter;Planteuse d'arbres;Baumkübel;Maceta para árbol

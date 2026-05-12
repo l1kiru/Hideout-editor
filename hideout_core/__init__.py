@@ -1,0 +1,1 @@
+# Core hideout functionality package.

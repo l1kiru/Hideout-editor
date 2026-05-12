@@ -1,0 +1,18 @@
+{
+  "modesAria": "Режим приложения",
+  "editorModeTitle": "Редактор сцены",
+  "editorModeLabel": "Редактор",
+  "boundaryModeTitle": "Разметка границы",
+  "boundaryModeLabel": "Разметка",
+  "connection": "Связь",
+  "connectionYes": "есть",
+  "connectionNo": "нет",
+  "objectsCount": "Объектов",
+  "objectsCountNearLimit": "Приближается к игровому лимиту в {{limit}} объектов",
+  "objectsCountOverLimit": "Превышен игровой лимит в {{limit}} объектов — экспорт .hideout может быть отклонён игрой",
+  "hidePanel": "Скрыть панель настроек",
+  "showPanel": "Показать панель настроек",
+  "languageSwitchTitle": "Переключить язык интерфейса",
+  "languageSwitchAria": "Текущий язык: {{lang}}"
+}
+

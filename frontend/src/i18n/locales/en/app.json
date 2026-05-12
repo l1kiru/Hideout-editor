@@ -1,0 +1,18 @@
+{
+  "modesAria": "Application mode",
+  "editorModeTitle": "Scene editor",
+  "editorModeLabel": "Editor",
+  "boundaryModeTitle": "Boundary markup",
+  "boundaryModeLabel": "Markup",
+  "connection": "Connection",
+  "connectionYes": "online",
+  "connectionNo": "offline",
+  "objectsCount": "Objects",
+  "objectsCountNearLimit": "Approaching the game limit of {{limit}} objects",
+  "objectsCountOverLimit": "Over the game limit of {{limit}} objects — the .hideout export may be rejected by the game",
+  "hidePanel": "Hide settings panel",
+  "showPanel": "Show settings panel",
+  "languageSwitchTitle": "Switch interface language",
+  "languageSwitchAria": "Current language: {{lang}}"
+}
+

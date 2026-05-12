@@ -1,0 +1,71 @@
+{
+  "source": {
+    "section": "Source",
+    "upload": "Upload .hideout",
+    "placementsCount": "Placements: {{count}}",
+    "samples": {
+      "label": "Sample maps",
+      "placeholder": "— select a sample —",
+      "hint": "Curated .hideout files shipped under input/hideout/. Picking one runs the same flow as a file upload."
+    }
+  },
+  "marker": {
+    "section": "Zone contour marker",
+    "hint": "After loading .hideout, the object type with the most instances in the file is selected by default (by doodad name).",
+    "choiceLabel": "Marker object selection (name as in doodads)",
+    "nameLabel": "Marker object name (manual input)",
+    "nameHint": "Autocomplete suggestions include only names from uploaded .hideout",
+    "applyTitle": "Rebuild vertex chain using current marker name",
+    "applyButton": "Apply marker"
+  },
+  "order": {
+    "section": "Vertex order",
+    "hint": "On the preview at right, select a vertex by click or marquee; with selection active, mouse wheel over polygon cycles vertex position.",
+    "moveUpTitle": "Move selected vertex up",
+    "moveUpAria": "Move vertex up",
+    "moveDownTitle": "Move selected vertex down",
+    "moveDownAria": "Move vertex down",
+    "rotateTitle": "Cycle order",
+    "rotateAria": "Cycle vertex order",
+    "reverseTitle": "Reverse vertex order",
+    "reverseAria": "Reverse vertex order",
+    "nearestTitle": "From first marker point in file: each next point is nearest of remaining points",
+    "nearestButton": "Order: nearest neighbor",
+    "polarTitle": "Sort by angle around centroid (often gives convex contour)",
+    "polarButton": "Order: angle from center"
+  },
+  "preview": {
+    "aria": "Polygon preview",
+    "hint": "Pale dots are other map objects; green contour is boundary marker (red dashed means self-intersection). Select vertex by click or marquee; click background without dragging clears selection. Mouse wheel over polygon (with selected vertex) changes vertex index in contour with wrap-around."
+  },
+  "save": {
+    "section": "Save",
+    "mapName": "Map name",
+    "mapNamePlaceholder": "Enter map name...",
+    "createBase": "Create as project base map",
+    "createBaseHint": "Server will set exported .hideout title from uploaded file name (if available) or from “Map name”.",
+    "saveTitle": "Save map and boundary markup",
+    "saveButton": "Write to database",
+    "disabledHint": "Buttons are disabled until a contour with at least three vertices exists: upload .hideout, choose boundary marker, and build point order in “Vertex order”."
+  },
+  "status": {
+    "parseStart": "Parsing “{{name}}”…",
+    "parseError": "Parse error: {{error}}",
+    "uploadFirst": "Upload .hideout first",
+    "markerTooFew": "Less than 2 points found by marker name — specify marker name from .hideout.",
+    "chainExtracted": "Chain points extracted: {{count}}",
+    "autoOrderApplied": "{{count}} points extracted; automatic ordering applied.",
+    "autoOrderFallback": "{{count}} points extracted; automatic ordering did not find a non-self-intersecting contour — adjust manually.",
+    "heuristicNoSimple": "Could not build a closed non-self-intersecting contour for these points — change marker or reorder manually.",
+    "heuristicApplied": "A non-self-intersecting contour has been built.",
+    "heuristicFallback": "Fallback non-self-intersecting contour variant has been applied.",
+    "ringSelfIntersects": "Contour is self-intersecting — fix vertex order before saving.",
+    "needThreeMarkerPoints": "At least 3 points for selected marker are required — check marker name (or all points matched same filter).",
+    "needMapName": "Enter hideout map name",
+    "saved": "Saved: “{{name}}” (map {{id}})",
+    "savedAlert": "Map “{{name}}” has been saved successfully",
+    "saveError": "Save error: {{error}}",
+    "heuristicPolar": "angle from center"
+  }
+}
+

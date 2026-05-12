@@ -1,0 +1,56 @@
+{
+  "appTitle": "Hideout Editor",
+  "apiVersion": "1.0.0",
+  "defaults": {
+    "rotFull": 65536,
+    "rotLineRopeOffset": 32768,
+    "rotStep": 2048,
+    "maxUndoSteps": 96,
+    "lineBrushVertexDist": 1.0,
+    "ropeSpacingWorld": 3.0,
+    "ropeMarginFromWallWorld": 3.0
+  },
+  "limits": {
+    "maxUploadSizeBytes": 31457280
+  },
+  "assetCatalog": {
+    "rope": {
+      "nameRu": "Фаридунские верёвки",
+      "hash": 1675705915
+    },
+    "moss": {
+      "nameRu": "Мох с опушки 3",
+      "hash": 1459723677
+    },
+    "sand": {
+      "nameRu": "Летающий песок",
+      "hash": 3853073345
+    }
+  },
+  "decorations": [
+    {
+      "hash": 1675705915,
+      "fv": 3,
+      "src": "/decorations/FaridunRopes.webp",
+      "viewWidth": 10,
+      "viewHeight": 14,
+      "name": "Rope"
+    },
+    {
+      "hash": 1459723677,
+      "fv": 2,
+      "src": "/decorations/FringeMoss.webp",
+      "viewWidth": 11,
+      "viewHeight": 10,
+      "name": "Moss"
+    },
+    {
+      "hash": 3853073345,
+      "fv": 0,
+      "src": "/decorations/FallingSand.webp",
+      "viewWidth": 12,
+      "viewHeight": 12,
+      "name": "Sand"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "common": {
+    "unknown": "Request failed"
+  },
+  "maps": {
+    "map_not_found": "Map not found",
+    "invalid_hideout_extension": "Expected .hideout file",
+    "upload_too_large": "File is too large",
+    "scene_too_large": "Scene is too large",
+    "scene_not_found": "No saved scene for this map",
+    "scene_corrupted": "Corrupted scene data in database",
+    "scene_not_object": "Scene in database is not a JSON object",
+    "boundary_not_found": "No boundary markup saved for this map yet",
+    "template_missing": "No saved .hideout template is available for this map — upload .hideout manually",
+    "invalid_request": "Invalid request"
+  },
+  "boundary": {
+    "points_key_required": "Key points (array) is required",
+    "need_min_3_vertices": "At least 3 vertices are required",
+    "expected_json": "Expected .json",
+    "invalid_json": "Invalid JSON: {{reason}}",
+    "json_root_object_required": "JSON root must be an object",
+    "expected_hideout_or_json": "Expected .hideout or JSON file",
+    "invalid_file": "Invalid file: {{reason}}",
+    "placements_extract_failed": "Failed to extract doodad placements",
+    "need_min_3_for_editor": "At least 3 vertices are required for main editor",
+    "map_name_required": "Map name is required",
+    "map_name_mismatch": "Map name does not match selected save map — renaming resets DB map binding.",
+    "map_name_exists": "A map with this name already exists. Use another name."
+  },
+  "templates": {
+    "expected_hideout": "Expected .hideout file",
+    "upload_too_large": "File is too large",
+    "invalid_hideout": "Invalid hideout: {{reason}}"
+  },
+  "export": {
+    "failed": "Export failed",
+    "template_missing": "Unknown template_id={{template_id}}"
+  },
+  "input_images": {
+    "empty_name": "File name is empty",
+    "invalid_name": "Invalid file name (letters/digits/.-_ ()[] are allowed)",
+    "unsupported_extension": "Unsupported extension. Allowed: {{exts}}",
+    "empty_file": "File is empty",
+    "upload_too_large": "File is too large",
+    "file_not_found": "File not found"
+  }
+}
+
