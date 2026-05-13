@@ -1,5 +1,7 @@
 import { TOOL_VARIANTS, type Scene } from '../../../types/scene';
 
+const LAYER_KINDS = ['default', 'decorations', 'palette', 'user'] as const;
+
 function isRecord(x: unknown): x is Record<string, unknown> {
     return x !== null && typeof x === 'object' && !Array.isArray(x);
 }
@@ -92,13 +94,19 @@ export function validateEditorSceneJson(
             };
         }
         if (
-            typeof ly.title !== 'string'
+            (ly.title !== undefined && ly.title !== null && typeof ly.title !== 'string')
+            || (ly.kind !== undefined
+                && ly.kind !== null
+                && (
+                    typeof ly.kind !== 'string'
+                    || !(LAYER_KINDS as readonly string[]).includes(ly.kind)
+                ))
             || typeof ly.visible !== 'boolean'
             || typeof ly.locked !== 'boolean'
         ) {
             return {
                 ok: false,
-                message: `layers[${li}]: нужны строка title и булевы visible, locked.`,
+                message: `layers[${li}]: title должен быть строкой, kind — одним из известных типов слоя, visible/locked — булевыми.`,
             };
         }
         if (!Array.isArray(ly.batches)) {

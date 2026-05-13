@@ -27,6 +27,7 @@ import {
     preferredDrawingLayerIndex,
 } from '../lib/editorDefaultMapLayer';
 import { layerId } from '../lib/editorIds';
+import { normalizePaintLayers } from '../lib/editorLayers';
 import {
     migrateLayersRopeLineRToTangent,
     migrateLegacyToolAssetKeys,
@@ -125,7 +126,7 @@ export function useEditorPersistence(opts: {
                 camera_deg: cameraDeg,
                 boundary: { points: boundary.map(([x, y]) => ({ x, y })) },
                 template: { template_id: templateId },
-                layers,
+                layers: normalizePaintLayers(layers),
                 tool: { ...tool, draw_style: 'object' },
                 background: { ...defaultBackground(), ...background },
                 ui: { ...defaultUi(), ...ui },

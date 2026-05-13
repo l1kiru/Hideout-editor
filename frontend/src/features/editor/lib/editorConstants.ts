@@ -118,6 +118,3 @@ export function hideoutForkSubtreeIds(
 
 // Default-map layer (doodads from .hideout) is always at index 0.
 export const DEFAULT_MAP_LAYER_INDEX = 0;
-
-// Title of layer 0 in the layers list. String match is used to migrate older scenes.
-export const DEFAULT_MAP_LAYER_TITLE = 'Объекты по умолчанию';

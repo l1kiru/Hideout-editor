@@ -252,13 +252,13 @@ def _editor_scene_json_for_hideout_import(
         layer2_batches = painted_batches_from_doodad_pairs(deco_palette)
         paint_layers: list[PaintLayerModel] = [
             PaintLayerModel(
-                title="Украшения",
+                kind="decorations",
                 visible=True,
                 locked=False,
                 batches=layer1_batches,
             ),
             PaintLayerModel(
-                title="Палитра (верёвка, мох, песок)",
+                kind="palette",
                 visible=True,
                 locked=False,
                 batches=layer2_batches,
@@ -268,7 +268,7 @@ def _editor_scene_json_for_hideout_import(
         layer1_batches = painted_batches_from_doodad_pairs(decoration_pairs)
         paint_layers = [
             PaintLayerModel(
-                title="Слой 1",
+                kind="decorations",
                 visible=True,
                 locked=False,
                 batches=layer1_batches,
@@ -280,7 +280,7 @@ def _editor_scene_json_for_hideout_import(
         boundary=boundary,
         layers=[
             PaintLayerModel(
-                title="Объекты по умолчанию",
+                kind="default",
                 visible=True,
                 locked=True,
                 batches=layer0_batches,
@@ -291,7 +291,10 @@ def _editor_scene_json_for_hideout_import(
         hideout_map_display_name=map_display_name,
         template_dots_cache=dots_cache,
     )
-    return json.dumps(scene.model_dump(mode="json"), ensure_ascii=False)
+    return json.dumps(
+        scene.model_dump(mode="json", exclude_none=True),
+        ensure_ascii=False,
+    )
 
 
 def create_map_from_hideout_on_base(

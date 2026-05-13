@@ -18,7 +18,7 @@ export function sampleEditorScene(): Scene {
         template: { template_id: 'sample-tpl' },
         layers: [
             {
-                title: 'Объекты по умолчанию',
+                kind: 'default',
                 visible: true,
                 locked: true,
                 batches: [
@@ -30,6 +30,7 @@ export function sampleEditorScene(): Scene {
                 ],
             },
             {
+                kind: 'user',
                 title: 'Декор',
                 visible: true,
                 locked: false,

@@ -11,7 +11,6 @@ import { EditorBackgroundLayer } from '../components/EditorBackgroundLayer';
 import {
     ACTIVE_MAP_ID_LS,
     DEFAULT_MAP_LAYER_INDEX,
-    DEFAULT_MAP_LAYER_TITLE,
     firstBaseHideoutMap,
     hideoutForkSubtreeIds,
     isBaseHideoutMap,
@@ -22,6 +21,11 @@ import {
     createInitialEditorLayers,
     ensureDefaultMapLayerFirst,
 } from '../lib/editorDefaultMapLayer';
+import {
+    createDefaultPaintLayer,
+    createImportedDecorationsLayer,
+    createPalettePaintLayer,
+} from '../lib/editorLayers';
 import {
     currentInputImageName,
     defaultBackground,
@@ -239,39 +243,14 @@ export function useEditorController(options?: UseEditorControllerOptions) {
             setLayers(() => {
                 if (hasPaletteDecoLayer) {
                     return [
-                        {
-                            title: DEFAULT_MAP_LAYER_TITLE,
-                            visible: true,
-                            locked: true,
-                            batches: l0b,
-                        },
-                        {
-                            title: 'Decorations',
-                            visible: true,
-                            locked: false,
-                            batches: l1b,
-                        },
-                        {
-                            title: 'Palette decorations',
-                            visible: true,
-                            locked: false,
-                            batches: l2b,
-                        },
+                        createDefaultPaintLayer(l0b),
+                        createImportedDecorationsLayer(l1b),
+                        createPalettePaintLayer(l2b),
                     ];
                 }
                 return [
-                    {
-                        title: DEFAULT_MAP_LAYER_TITLE,
-                        visible: true,
-                        locked: true,
-                        batches: l0b,
-                    },
-                    {
-                            title: 'Layer 1',
-                        visible: true,
-                        locked: false,
-                        batches: l1b,
-                    },
+                    createDefaultPaintLayer(l0b),
+                    createImportedDecorationsLayer(l1b),
                 ];
             });
         },

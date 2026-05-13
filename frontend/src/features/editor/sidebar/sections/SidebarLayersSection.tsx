@@ -16,6 +16,7 @@ import {
     DEFAULT_MAP_LAYER_INDEX,
 } from '../../lib/editorConstants';
 import { layerId } from '../../lib/editorIds';
+import { getLayerDisplayTitle } from '../../lib/editorLayers';
 import { refEqual } from '../../lib/placementSelection';
 import type { EditorSidebarLayersProps } from '../editorSidebarTypes';
 
@@ -80,9 +81,10 @@ export function SidebarLayersSection(props: EditorSidebarLayersProps) {
                         (s, b) => s + b.placements.length,
                         0,
                     );
+                    const displayTitle = getLayerDisplayTitle(ly, i, t);
                     return (
                         <li
-                            key={`${ly.title}-${i}`}
+                            key={`${ly.kind ?? ly.title ?? 'layer'}-${i}`}
                             className="sideLayerItem"
                         >
                             <div className="sideLayerTop">
@@ -91,7 +93,7 @@ export function SidebarLayersSection(props: EditorSidebarLayersProps) {
                                     className={`sideLayerSel ${layerId(i) === layerIdx ? 'active' : ''}`}
                                     onClick={() => setLayerIdx(layerId(i))}
                                 >
-                                    {i + 1}. {i === DEFAULT_MAP_LAYER_INDEX ? t('layers.defaultLayerTitle') : ly.title}{' '}
+                                    {i + 1}. {displayTitle}{' '}
                                     <span className="sideMuted">
                                         ({placementCount})
                                     </span>

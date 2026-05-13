@@ -146,6 +146,9 @@
     "layers": {
         "section": "Layers",
         "defaultLayerTitle": "Default objects",
+        "importedDecorationsTitle": "Imported decorations",
+        "paletteRecognizedTitle": "Palette-recognized objects",
+        "userLayerTitle": "Layer {{index}}",
         "baseReadonlyHint": "Layers are read-only on base maps. Create a child map to work with layers and objects.",
         "stats": "{{placements}} objects · {{batches}} records",
         "addLayer": "Add layer",

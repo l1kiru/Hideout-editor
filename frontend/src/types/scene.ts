@@ -67,8 +67,13 @@ export interface PaintedBatch {
     line_stroke?: boolean;
 }
 
+export type PaintLayerKind = 'default' | 'decorations' | 'palette' | 'user';
+
 export interface PaintLayer {
-    title: string;
+    // Stable semantic layer kind used for locale-aware UI labels.
+    kind?: PaintLayerKind;
+    // Optional user-defined title. System layers should prefer `kind`.
+    title?: string;
     visible: boolean;
     locked: boolean;
     batches: PaintedBatch[];

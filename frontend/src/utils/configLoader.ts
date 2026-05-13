@@ -39,7 +39,7 @@ let appConfig: AppConfig | null = null;
 function defaultAppConfig(): AppConfig {
   return {
     appTitle: 'Hideout Editor',
-    apiVersion: '1.0.0',
+    apiVersion: '1.0.1',
     defaults: {
       rotFull: 65536,
       rotLineRopeOffset: 32768,

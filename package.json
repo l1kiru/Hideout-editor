@@ -1,6 +1,6 @@
 {
   "name": "hideout-editor-monorepo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hideout Editor — a local web app for creating and organizing hideout maps",
   "scripts": {
     "start": "python dev.py",

@@ -2,12 +2,14 @@ from __future__ import annotations
 
 # SQLite SSOT for hideout base maps — smoke tests (isolated DB file).
 
+import json
 import tempfile
 import unittest
 from pathlib import Path
 
 import backend.database as database
 from backend.services.maps_repo import (
+    _editor_scene_json_for_hideout_import,
     create_new_map,
     delete_map_by_id,
     get_map_template_hideout_json,
@@ -230,6 +232,28 @@ class TestHideoutMapsSsot(unittest.TestCase):
         promote_map_to_base(int(m["id"]), export_hideout_display_name=None, export_hideout_hash=None)
         with self.assertRaises(ValueError):
             save_editor_scene_json(int(m["id"]), "{}")
+
+    def test_hideout_import_scene_uses_semantic_layer_kinds(self) -> None:
+        scene_txt = _editor_scene_json_for_hideout_import(
+            map_display_name="Imported map",
+            map_id=42,
+            boundary_doc={
+                "points": [
+                    {"x": 0, "y": 0},
+                    {"x": 10, "y": 0},
+                    {"x": 10, "y": 10},
+                ],
+            },
+            base_pairs=[("Тайник", {"hash": 1, "x": 0, "y": 0, "r": 0})],
+            decoration_pairs=[
+                ("Дерево", {"hash": 999, "x": 1, "y": 1, "r": 0, "fv": 0}),
+            ],
+        )
+        doc = json.loads(scene_txt)
+        self.assertEqual(doc["layers"][0]["kind"], "default")
+        self.assertNotIn("title", doc["layers"][0])
+        self.assertEqual(doc["layers"][1]["kind"], "decorations")
+        self.assertNotIn("title", doc["layers"][1])
 
 
 if __name__ == "__main__":

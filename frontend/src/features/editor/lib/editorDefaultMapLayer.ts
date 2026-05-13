@@ -1,26 +1,16 @@
 import type { PaintedBatch, PaintLayer } from '../../../types/scene';
 
+import { DEFAULT_MAP_LAYER_INDEX } from './editorConstants';
 import {
-    DEFAULT_MAP_LAYER_INDEX,
-    DEFAULT_MAP_LAYER_TITLE,
-} from './editorConstants';
+    createDefaultPaintLayer,
+    createUserPaintLayer,
+    isDefaultMapLayer,
+    normalizePaintLayers,
+} from './editorLayers';
 
 // Initial state: layer 0 (map template, locked) plus one editable layer.
 export function createInitialEditorLayers(): PaintLayer[] {
-    return [
-        {
-            title: DEFAULT_MAP_LAYER_TITLE,
-            visible: true,
-            locked: true,
-            batches: [],
-        },
-        {
-            title: 'Слой 1',
-            visible: true,
-            locked: false,
-            batches: [],
-        },
-    ];
+    return [createDefaultPaintLayer(), createUserPaintLayer()];
 }
 
 // Default drawing layer when multiple layers exist: never the template layer.
@@ -32,17 +22,9 @@ export function preferredDrawingLayerIndex(layers: PaintLayer[]): number {
 // Used when loading older scenes that have no doodads layer.
 export function ensureDefaultMapLayerFirst(layers: PaintLayer[]): PaintLayer[] {
     if (layers.length === 0) return createInitialEditorLayers();
-    if (layers[DEFAULT_MAP_LAYER_INDEX]?.title === DEFAULT_MAP_LAYER_TITLE)
-        return layers;
-    return [
-        {
-            title: DEFAULT_MAP_LAYER_TITLE,
-            visible: true,
-            locked: true,
-            batches: [],
-        },
-        ...layers,
-    ];
+    const normalized = normalizePaintLayers(layers);
+    if (isDefaultMapLayer(normalized[DEFAULT_MAP_LAYER_INDEX])) return normalized;
+    return [createDefaultPaintLayer(), ...normalized];
 }
 
 // Deep copy of batches from the API response for writing into layers[0].batches.

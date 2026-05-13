@@ -71,7 +71,8 @@ class PaintedBatchModel(BaseModel):
 
 
 class PaintLayerModel(BaseModel):
-    title: str = "Слой"
+    kind: Literal["default", "decorations", "palette", "user"] | None = None
+    title: str | None = None
     visible: bool = True
     locked: bool = False
     batches: list[PaintedBatchModel] = Field(default_factory=list)

@@ -78,6 +78,15 @@ describe('validateEditorSceneJson', () => {
         expect(validateEditorSceneJson({ ...scene, layers: {} }).ok).toBe(false);
     });
 
+    it('accepts semantic layer kinds without a stored title', () => {
+        const scene = sampleEditorScene();
+        scene.layers = [
+            { kind: 'default', visible: true, locked: true, batches: [] },
+            { kind: 'decorations', visible: true, locked: false, batches: [] },
+        ];
+        expect(validateEditorSceneJson(scene).ok).toBe(true);
+    });
+
     it('rejects a batch with a non-finite placement coordinate', () => {
         const scene = sampleEditorScene();
         const broken = JSON.parse(JSON.stringify(scene));

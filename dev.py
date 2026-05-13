@@ -399,6 +399,12 @@ def _child_env() -> dict[str, str]:
     return env
 
 
+def _child_creationflags() -> int:
+    if IS_WINDOWS:
+        return subprocess.CREATE_NEW_PROCESS_GROUP
+    return 0
+
+
 def start_backend(py: Path, *, dev_mode: bool) -> subprocess.Popen:
     info(
         f"starting backend on http://{BACKEND_HOST}:{BACKEND_PORT}"
@@ -423,6 +429,7 @@ def start_backend(py: Path, *, dev_mode: bool) -> subprocess.Popen:
         stderr=subprocess.PIPE,
         bufsize=0,
         env=_child_env(),
+        creationflags=_child_creationflags(),
     )
     child_processes.append(proc)
     _attach_log_pump(proc, "backend")
@@ -454,6 +461,7 @@ def start_frontend() -> subprocess.Popen:
         stderr=subprocess.PIPE,
         bufsize=0,
         env=_child_env(),
+        creationflags=_child_creationflags(),
     )
     child_processes.append(proc)
     _attach_log_pump(proc, "frontend")

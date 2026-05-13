@@ -6,6 +6,7 @@ import type { PaintLayer } from '../../../types/scene';
 import { DEFAULT_MAP_LAYER_INDEX } from '../lib/editorConstants';
 import type { LayerId } from '../lib/editorIds';
 import { layerId } from '../lib/editorIds';
+import { createUserPaintLayer } from '../lib/editorLayers';
 import type { SelectionState } from '../model/editorSessionTypes';
 
 export function useEditorLayerActions(opts: {
@@ -37,15 +38,7 @@ export function useEditorLayerActions(opts: {
 
     const addLayer = useCallback(() => {
         const nl = layers.length + 1;
-        setLayers([
-            ...layers,
-            {
-                title: `Layer ${nl}`,
-                visible: true,
-                locked: false,
-                batches: [],
-            },
-        ]);
+        setLayers([...layers, createUserPaintLayer()]);
         setLayerIdx(layerId(nl - 1));
     }, [layers, setLayers, setLayerIdx]);
 

@@ -146,6 +146,9 @@
     "layers": {
         "section": "Слои",
         "defaultLayerTitle": "Объекты по умолчанию",
+        "importedDecorationsTitle": "Импортированные украшения",
+        "paletteRecognizedTitle": "Объекты, распознанные как палитра",
+        "userLayerTitle": "Слой {{index}}",
         "baseReadonlyHint": "На базовой карте слои недоступны для редактирования. Создайте дочернюю карту, чтобы работать со слоями и объектами.",
         "stats": "{{placements}} объектов · {{batches}} записей",
         "addLayer": "Добавить слой",

@@ -2,8 +2,9 @@ import { Eraser, MapPin, MousePointer2, PenLine } from 'lucide-react';
 import type { Dispatch, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { DECORATIONS, DRAWING_ASSET_KEYS } from '../../../../../lib/sceneDecorations';
+import { DRAWING_ASSET_KEYS } from '../../../../../lib/sceneDecorations';
 import type { AssetKey, Tool } from '../../../../../types/scene';
+import { syncToolVariantSelection } from '../../../lib/editorToolVariant';
 
 type ToolPickerProps = {
     tool: Tool;
@@ -30,7 +31,7 @@ export function ToolPicker(props: ToolPickerProps) {
                 title={t('tools.select')}
                 aria-pressed={tool.variant === 'select'}
                 disabled={disabled}
-                onClick={() => setTool((t) => ({ ...t, variant: 'select' }))}
+                onClick={() => setTool((t) => syncToolVariantSelection(t, 'select'))}
             >
                 <MousePointer2 aria-hidden />
                 <span className="toolSegmentSr">{t('tools.select')}</span>
@@ -47,12 +48,7 @@ export function ToolPicker(props: ToolPickerProps) {
                         const ak: AssetKey = isSingleVariant(t.asset_key ?? '')
                             ? (t.asset_key as AssetKey)
                             : 'faridun_ropes4';
-                        return {
-                            ...t,
-                            variant: ak,
-                            asset_key: ak,
-                            fv: DECORATIONS[ak]?.fv ?? t.fv,
-                        };
+                        return syncToolVariantSelection(t, ak);
                     });
                 }}
             >
@@ -65,7 +61,7 @@ export function ToolPicker(props: ToolPickerProps) {
                 title={t('tools.eraser')}
                 aria-pressed={tool.variant === 'eraser'}
                 disabled={disabled}
-                onClick={() => setTool((t) => ({ ...t, variant: 'eraser' }))}
+                onClick={() => setTool((t) => syncToolVariantSelection(t, 'eraser'))}
             >
                 <Eraser aria-hidden />
                 <span className="toolSegmentSr">{t('tools.eraser')}</span>
@@ -76,7 +72,7 @@ export function ToolPicker(props: ToolPickerProps) {
                 title={t('tools.line')}
                 aria-pressed={tool.variant === 'line'}
                 disabled={disabled}
-                onClick={() => setTool((t) => ({ ...t, variant: 'line' }))}
+                onClick={() => setTool((t) => syncToolVariantSelection(t, 'line'))}
             >
                 <PenLine aria-hidden />
                 <span className="toolSegmentSr">{t('tools.line')}</span>
@@ -87,7 +83,7 @@ export function ToolPicker(props: ToolPickerProps) {
                 title={t('tools.fill')}
                 aria-pressed={tool.variant === 'fill'}
                 disabled={disabled}
-                onClick={() => setTool((t) => ({ ...t, variant: 'fill' }))}
+                onClick={() => setTool((t) => syncToolVariantSelection(t, 'fill'))}
             >
                 <span aria-hidden>▧</span>
                 <span className="toolSegmentSr">{t('tools.fill')}</span>

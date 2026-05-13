@@ -15,7 +15,7 @@ class AppSettings(BaseSettings):
     )
 
     api_title: str = "Hideout Editor API"
-    api_version: str = "1.0.0"
+    api_version: str = "1.0.1"
     debug: bool = False
 
     # Local dev default: whitelist bundled Vite origins instead of "*".
