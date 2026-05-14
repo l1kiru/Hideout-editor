@@ -65,6 +65,9 @@ GROUPS = {
     "Украшения": DECORATIONS,
 }
 
+_REPO_ROOT = Path(__file__).resolve().parents[2]
+_CANONICAL_SEED_CSV = _REPO_ROOT / "backend" / "seed_data" / "poe2_objects_database_all.csv"
+
 _BLACKLIST = {
     "PoE2 DB",
     "Item",
@@ -283,14 +286,31 @@ def build_seed_rows(
     return rows
 
 
+def _preferred_seed_csv_lineterminator(output_path: Path) -> str:
+    references = [output_path, _CANONICAL_SEED_CSV]
+    for ref in references:
+        try:
+            if not ref.is_file():
+                continue
+            raw = ref.read_bytes()
+        except OSError:
+            continue
+        if b"\r\n" in raw:
+            return "\r\n"
+        if b"\n" in raw:
+            return "\n"
+    return "\n"
+
+
 def write_seed_csv(rows: list[dict[str, str]], output_path: Path) -> int:
     output_path.parent.mkdir(parents=True, exist_ok=True)
+    lineterminator = _preferred_seed_csv_lineterminator(output_path)
     with output_path.open("w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(
             f,
             fieldnames=list(CSV_HEADERS),
             delimiter=";",
-            lineterminator="\r\n",
+            lineterminator=lineterminator,
         )
         writer.writeheader()
         for row in rows:
