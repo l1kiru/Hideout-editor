@@ -1,5 +1,9 @@
 ﻿import { viewToWorld, worldToView } from '../../../lib/coords';
-import { DECORATIONS, templatePlacementFootprintView } from '../../../lib/sceneDecorations';
+import {
+    DECORATIONS,
+    LINE_STROKE_ANALYSIS_FOOTPRINT,
+    templatePlacementFootprintView,
+} from '../../../lib/sceneDecorations';
 import { worldPointAllowed } from '../../../lib/polygon';
 import type {
     AssetKey,
@@ -419,8 +423,12 @@ export function computeFillPlacements(params: {
                 batch.template_hash,
                 batch.facet_fv,
             );
-            const halfW = fp.widthView / 2 + fillWallMargin;
-            const halfH = (fp.heightView * FILL_WALL_HEIGHT_SCALE) / 2 + fillWallMargin;
+            const analysisFp = batch.line_stroke
+                ? LINE_STROKE_ANALYSIS_FOOTPRINT
+                : fp;
+            const halfW = analysisFp.widthView / 2 + fillWallMargin;
+            const halfH
+                = (analysisFp.heightView * FILL_WALL_HEIGHT_SCALE) / 2 + fillWallMargin;
             if (halfW <= 0 || halfH <= 0)
                 continue;
             for (const p of batch.placements) {
@@ -430,6 +438,7 @@ export function computeFillPlacements(params: {
                     cameraDeg,
                     batch.template_hash,
                     batch.facet_fv,
+                    batch.line_stroke === true,
                 );
                 const theta = (viewDeg * Math.PI) / 180;
                 const cos = Math.cos(theta);
@@ -558,6 +567,7 @@ export function computeFillPlacements(params: {
                 asset.hash,
                 asset.fv,
                 viewBox,
+                false,
             )
         ) {
             placements.push({ x: cur.x, y: cur.y, r: fillR });

@@ -10,15 +10,6 @@ from hideout_core.geometry.polygon_zone import point_allowed
 router = APIRouter(prefix="/tools", tags=["tools"])
 
 
-@router.get("/cli-reference")
-def cli_reference() -> dict[str, object]:
-    # Web-only project: desktop/GUI utilities were removed from the distribution.
-    return {
-        "mode": "web-only",
-        "message": "Используйте React-интерфейс и FastAPI. Отдельные desktop/Qt/Tk режимы удалены.",
-    }
-
-
 class PointAllowedRequest(BaseModel):
     world_x: float
     world_y: float

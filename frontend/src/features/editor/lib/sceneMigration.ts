@@ -1,10 +1,12 @@
+import { EDITOR_LEGACY_ASSET_ALIASES } from '../../../shared/generated/editorAssets';
 import { DECORATIONS } from '../../../lib/sceneDecorations';
 import type { PaintLayer, Tool } from '../../../types/scene';
 import { ROT_LINE_ROPE_OFFSET } from './editorConstants';
 import { normR } from './editorViewport';
 
-// v1 scenes encoded the preview offset +q in the rope-stroke r value;
-// v2 (and export) keep only the tangent angle. This converts the older form.
+// Runtime import seam: some persisted/uploaded scenes still encode the rope
+// preview offset in line-stroke rotation. Normalize them to the tangent angle
+// used by the current editor and export path.
 export function migrateLayersRopeLineRToTangent(
   layers: PaintLayer[],
   fromVersion: number,
@@ -30,20 +32,31 @@ export function migrateLayersRopeLineRToTangent(
   }));
 }
 
-const LEGACY_ROPE_KEY = 'rope';
-const RENAMED_ROPE_KEY = 'faridun_ropes4';
-
 function migrateLegacyToolVariant(v: string | undefined): Tool['variant'] | undefined {
-  return v === LEGACY_ROPE_KEY ? RENAMED_ROPE_KEY : (v as Tool['variant'] | undefined);
+  if (!v)
+    return undefined;
+  const migrated
+    = EDITOR_LEGACY_ASSET_ALIASES[
+      v as keyof typeof EDITOR_LEGACY_ASSET_ALIASES
+    ];
+  return (migrated ?? v) as Tool['variant'] | undefined;
 }
 
 function migrateLegacyToolAssetKey(
   k: string | undefined,
 ): Tool['asset_key'] | undefined {
-  return k === LEGACY_ROPE_KEY ? RENAMED_ROPE_KEY : (k as Tool['asset_key'] | undefined);
+  if (!k)
+    return undefined;
+  const migrated
+    = EDITOR_LEGACY_ASSET_ALIASES[
+      k as keyof typeof EDITOR_LEGACY_ASSET_ALIASES
+    ];
+  return (migrated ?? k) as Tool['asset_key'] | undefined;
 }
 
-// Legacy compatibility: older scenes may store `rope` in tool and eraser_targets.
+// Runtime import seam: older scene payloads may still use `rope` in tool fields
+// and eraser targets. Normalize them to manifest-backed asset keys before the
+// rest of the editor reads the tool state.
 export function migrateLegacyToolAssetKeys(tool: Tool): Tool {
   const et = tool.eraser_targets ?? {};
   const etAny = et as Record<string, boolean | undefined>;

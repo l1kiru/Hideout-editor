@@ -1,11 +1,16 @@
 import type {
     AssetKey,
     Background,
+    PaintLayer,
     PaintedBatch,
     Tool,
     UiState,
 } from '../../../types/scene';
 import { DRAWING_ASSET_KEYS } from '../../../lib/sceneDecorations';
+import {
+    EDITOR_ASSETS,
+    TOOL_FV_ASSET_KEY,
+} from '../../../shared/generated/editorAssets';
 
 export function currentInputImageName(bgPath: string): string {
     const prefix = '/input/images/';
@@ -18,15 +23,16 @@ export function currentInputImageName(bgPath: string): string {
 }
 
 export function defaultTool(): Tool {
+    const defaultToolAsset = EDITOR_ASSETS[TOOL_FV_ASSET_KEY];
     return {
         variant: 'select',
         draw_style: 'object',
-        asset_key: 'faridun_ropes4',
-        line_asset_key: 'faridun_ropes4',
-        fill_asset_key: 'faridun_ropes4',
+        asset_key: TOOL_FV_ASSET_KEY,
+        line_asset_key: TOOL_FV_ASSET_KEY,
+        fill_asset_key: TOOL_FV_ASSET_KEY,
         spacing: 0,
         margin: 2,
-        fv: 3,
+        fv: defaultToolAsset.defaultFv,
         brush_width_view: 18,
         fill_step_world: 4,
         fill_max_placements: 120,
@@ -75,6 +81,13 @@ export function cloneBatches(batches: PaintedBatch[]): PaintedBatch[] {
     return batches.map((b) => ({
         ...b,
         placements: b.placements.map((p) => ({ ...p })),
+    }));
+}
+
+export function cloneLayers(layers: PaintLayer[]): PaintLayer[] {
+    return layers.map((layer) => ({
+        ...layer,
+        batches: cloneBatches(layer.batches),
     }));
 }
 

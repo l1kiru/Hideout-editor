@@ -1,0 +1,61 @@
+{
+    "sceneVersion": 2,
+    "paintLayerKinds": [
+        "default",
+        "decorations",
+        "palette",
+        "user"
+    ],
+    "drawStyles": [
+        "line",
+        "brush",
+        "object"
+    ],
+    "toolVariants": [
+        "faridun_ropes4",
+        "faridun_ropes1",
+        "moss",
+        "sand",
+        "maraketh_rubble1",
+        "faridun_tools5",
+        "leaf_pile3",
+        "eraser",
+        "select",
+        "line",
+        "fill"
+    ],
+    "legacyToolVariants": [
+        "rope"
+    ],
+    "acceptedToolVariants": [
+        "faridun_ropes4",
+        "faridun_ropes1",
+        "moss",
+        "sand",
+        "maraketh_rubble1",
+        "faridun_tools5",
+        "leaf_pile3",
+        "eraser",
+        "select",
+        "line",
+        "fill",
+        "rope"
+    ],
+    "fillModes": [
+        "four_way",
+        "eight_way_free",
+        "eight_way_corner_safe",
+        "orthogonal_first",
+        "radius_limited",
+        "narrow_passage_block",
+        "weighted"
+    ],
+    "fillConnectivity": [
+        4,
+        8
+    ],
+    "fillWallsScope": [
+        "all_layers",
+        "active_layer"
+    ]
+}

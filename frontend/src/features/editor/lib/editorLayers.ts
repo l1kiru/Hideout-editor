@@ -6,6 +6,8 @@ import type {
     PaintedBatch,
 } from '../../../types/scene';
 
+// Runtime import seam: uploaded or persisted scenes may still carry localized
+// system-layer titles instead of stable `kind` values.
 const LEGACY_SYSTEM_LAYER_KINDS: Readonly<Record<string, PaintLayerKind>> = {
     'объекты по умолчанию': 'default',
     'default objects': 'default',
@@ -38,6 +40,21 @@ export function isDefaultMapLayer(
         layer?.kind === 'default'
         || legacySystemLayerKindFromTitle(layer?.title) === 'default'
     );
+}
+
+export function isImportedDecorationsLayer(
+    layer: PaintLayer | null | undefined,
+): boolean {
+    return (
+        layer?.kind === 'decorations'
+        || legacySystemLayerKindFromTitle(layer?.title) === 'decorations'
+    );
+}
+
+export function isNonDeletableSystemLayer(
+    layer: PaintLayer | null | undefined,
+): boolean {
+    return isDefaultMapLayer(layer) || isImportedDecorationsLayer(layer);
 }
 
 export function normalizePaintLayer(layer: PaintLayer): PaintLayer {

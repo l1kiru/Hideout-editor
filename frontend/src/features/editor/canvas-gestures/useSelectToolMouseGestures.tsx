@@ -30,7 +30,6 @@ import {
     MAX_GROUP_MOVE_PLACEMENTS,
 } from '../lib/editorConstants';
 import { findHitPlacementAtView } from '../lib/editorFindPlacement';
-import { layerId } from '../lib/editorIds';
 import {
     aabbCornersInsideBoundary,
     buildSelectionCentersAABB,
@@ -52,13 +51,18 @@ import {
 import {
     collectRefsInMarqueeView,
     normalizeSelectionLayer0,
+    parseRefKey,
     refEqual,
     refKey,
+    subtractRefs,
     uniqRefs,
-    parseRefKey,
 } from '../lib/placementSelection';
 import type { PlacementRef, SelectDragSession } from '../model/editorSessionTypes';
 import type { DragOverlaySnapshot } from '../components/scene/DragOverlayLayer';
+import { invertEditorCommand } from '../lib/editorCommandExecutor';
+import { cloneBatches } from '../lib/editorDefaults';
+import { eraseLayerBatchesAtView } from '../lib/editorErase';
+import useEditorStore from '../../../stores/editorStore';
 
 import type {
     BackgroundResizeHit,
@@ -69,6 +73,7 @@ export type SelectToolMouseGestureCtx = {
     selectDragRef: MutableRefObject<SelectDragSession | null>;
     selectDragCleanupRef: MutableRefObject<(() => void) | null>;
     bgInteractCleanupRef: MutableRefObject<(() => void) | null>;
+    eraseCleanupRef: MutableRefObject<(() => void) | null>;
     clearSelectRotate: (svgEl: SVGSVGElement | null) => void;
     clearBgRotate: (svgEl: SVGSVGElement | null) => void;
     setMarqueeView: Dispatch<
@@ -99,7 +104,6 @@ export function useSelectToolMouseGestures(
         cameraDeg,
         selected,
         setSelected,
-        setLayers,
         setPanDrag,
         setViewBox,
         setCursorView,
@@ -109,7 +113,6 @@ export function useSelectToolMouseGestures(
         placeStrokeRef,
         lineBrushActiveRef,
         lineDraftRef,
-        eraseAt,
         placeObjectAt,
         placeFillAt,
         backgroundRef,
@@ -117,13 +120,18 @@ export function useSelectToolMouseGestures(
         setBackground,
         setBgSelected,
         pushBackgroundUndo,
-        pushMultiUndoForRefs,
     } = args;
+    const executeEditorCommand = useEditorStore(
+        (state) => state.executeEditorCommand,
+    );
+    const pushCommandUndo = useEditorStore((state) => state.pushCommandUndo);
+    const updateLayer = useEditorStore((state) => state.updateLayer);
 
     const {
         selectDragRef,
         selectDragCleanupRef,
         bgInteractCleanupRef,
+        eraseCleanupRef,
         clearSelectRotate,
         clearBgRotate,
         setMarqueeView,
@@ -132,9 +140,18 @@ export function useSelectToolMouseGestures(
         setDragOverlay,
     } = ctx;
 
+    const cloneSelection = (refs: PlacementRef[]): PlacementRef[] =>
+        refs.map((ref) => ({
+            layerIdx: ref.layerIdx,
+            batchIdx: ref.batchIdx,
+            placementIdx: ref.placementIdx,
+        }));
+
     const onMouseDownSvg = (e: ReactMouseEvent) => {
         const svg = svgRef.current;
         if (!svg) return;
+        eraseCleanupRef.current?.();
+        eraseCleanupRef.current = null;
         const panMode =
             e.button === 1 || (e.button === 0 && args.spaceDownRef.current);
         if (panMode) {
@@ -301,6 +318,8 @@ export function useSelectToolMouseGestures(
                             r: p.r,
                             template_hash: b.template_hash,
                             facet_fv: b.facet_fv ?? null,
+                            lineStroke:
+                                b.line_stroke === true && ak === 'maraketh_rubble1',
                             assetKey: ak,
                             footprintWidthView: fp.widthView,
                             footprintHeightView: fp.heightView,
@@ -394,11 +413,9 @@ export function useSelectToolMouseGestures(
                         );
                     }
 
-                    // Typed move validation against the static occupancy
-                    // (excluding the moving group). Internal duplicates are
-                    // allowed for uniform drag because relative layout does
-                    // not change, and imported duplicates must not block any
-                    // shift.
+                    // Typed move validation. For drag/move we allow overlaps
+                    // with both the moving group and external objects; only
+                    // boundary validity is enforced here.
                     const moveValidation = validateGroupMoveCells(
                         sess.staticOccupiedCells,
                         sess.snaps,
@@ -512,34 +529,42 @@ export function useSelectToolMouseGestures(
                         return;
                     }
 
-                    // One setLayers + one pushMultiUndoForRefs for the whole gesture.
-                    pushMultiUndoForRefs(sessUp.refs, t('status.moveLabel'));
-                    const moveKeys = new Set(sessUp.refs.map(refKey));
                     const dwxFinal = lastDwx;
                     const dwyFinal = lastDwy;
-                    setLayers((ls) =>
-                        ls.map((l, li) => ({
-                            ...l,
-                            batches: l.batches.map((b0, bi) => ({
-                                ...b0,
-                                placements: b0.placements.map((p0, pi) => {
-                                    const rk = refKey({
-                                        layerIdx: layerId(li),
-                                        batchIdx: bi,
-                                        placementIdx: pi,
-                                    });
-                                    if (!moveKeys.has(rk)) return p0;
-                                    const sp = sessUp.snaps[rk];
-                                    if (!sp) return p0;
-                                    return {
-                                        ...p0,
-                                        x: Math.round(sp.wx + dwxFinal),
-                                        y: Math.round(sp.wy + dwyFinal),
-                                    };
-                                }),
-                            })),
-                        })),
-                    );
+                    const after = sessUp.refs
+                        .map((ref) => {
+                            const sp = sessUp.snaps[refKey(ref)];
+                            if (!sp) return null;
+                            return {
+                                ref,
+                                x: Math.round(sp.wx + dwxFinal),
+                                y: Math.round(sp.wy + dwyFinal),
+                                r: sp.r,
+                            };
+                        })
+                        .filter((update) => update !== null);
+                    const before = sessUp.refs
+                        .map((ref) => {
+                            const sp = sessUp.snaps[refKey(ref)];
+                            if (!sp) return null;
+                            return {
+                                ref,
+                                x: sp.wx,
+                                y: sp.wy,
+                                r: sp.r,
+                            };
+                        })
+                        .filter((update) => update !== null);
+
+                    executeEditorCommand({
+                        command: {
+                            type: 'placement_transform',
+                            before,
+                            after,
+                            clearBgSelection: true,
+                        },
+                        label: t('status.moveLabel'),
+                    });
 
                     setStatus(
                         sessUp.refs.length > 1
@@ -738,8 +763,8 @@ export function useSelectToolMouseGestures(
             setBgSelected(false);
             const sx = x;
             const sy = y;
-            const marqueeAdditive = additive;
-            const marqueeBaseSelection: PlacementRef[] = marqueeAdditive
+            const marqueeSubtractive = additive && selected.length > 0;
+            const marqueeBaseSelection: PlacementRef[] = marqueeSubtractive
                 ? [...selected]
                 : [];
             let marqueePastThreshold = false;
@@ -799,13 +824,13 @@ export function useSelectToolMouseGestures(
                         sy,
                         my,
                     );
-                    const combined = marqueeAdditive
-                        ? [...marqueeBaseSelection, ...hits]
+                    const combined = marqueeSubtractive
+                        ? subtractRefs(marqueeBaseSelection, hits)
                         : hits;
                     setSelected(
                         normalizeSelectionLayer0(uniqRefs(combined)),
                     );
-                } else if (!marqueeAdditive) {
+                } else if (!marqueeSubtractive) {
                     setSelected([]);
                 }
                 cleanup();
@@ -819,7 +844,97 @@ export function useSelectToolMouseGestures(
         }
         if (tool.variant === 'eraser') {
             setBgSelected(false);
-            eraseAt(x, y);
+            const layerIdx = activeLayerIdx;
+            const layerAtStart = useEditorStore.getState().layers[layerIdx];
+            if (!layerAtStart || layerAtStart.locked)
+                return;
+
+            const beforeBatches = cloneBatches(layerAtStart.batches);
+            const previousSelection = cloneSelection(selected);
+            let changed = false;
+            let totalRemoved = 0;
+
+            const applyErase = (vx: number, vy: number) => {
+                const currentLayer = useEditorStore.getState().layers[layerIdx];
+                if (!currentLayer || currentLayer.locked)
+                    return;
+                const result = eraseLayerBatchesAtView({
+                    batches: currentLayer.batches,
+                    tool,
+                    cameraDeg: cameraDegRef.current,
+                    eraserRadius: Math.max(tool.brush_width_view * 0.5, 2),
+                    vx,
+                    vy,
+                });
+                if (result.needsTargetSelection) {
+                    setStatus(t('status.eraserNeedTarget'));
+                    return;
+                }
+                if (result.removed === 0)
+                    return;
+                totalRemoved += result.removed;
+                changed = true;
+                setSelected([]);
+                updateLayer(layerIdx, (layer) => ({
+                    ...layer,
+                    batches: result.nextBatches,
+                }));
+                setStatus(t('status.erasedCount', { count: totalRemoved }));
+            };
+
+            const finalizeErase = () => {
+                window.removeEventListener('mousemove', onWinMoveErase);
+                window.removeEventListener('mouseup', onWinUpErase);
+                eraseCleanupRef.current = null;
+                if (!changed) {
+                    setStatus(t('status.eraserNoHit'));
+                    return;
+                }
+                const finalLayer = useEditorStore.getState().layers[layerIdx];
+                if (!finalLayer)
+                    return;
+                const command = {
+                    type: 'layer_replace_batches' as const,
+                    layerIdx,
+                    before: cloneBatches(beforeBatches),
+                    after: cloneBatches(finalLayer.batches),
+                    previousSelection,
+                    nextSelection: [],
+                    clearBgSelection: false,
+                };
+                pushCommandUndo(
+                    invertEditorCommand(command),
+                    t('status.eraserLabel'),
+                );
+                setStatus(t('status.erasedCount', { count: totalRemoved }));
+            };
+
+            const onWinMoveErase = (ev: MouseEvent) => {
+                if ((ev.buttons & 1) === 0)
+                    return;
+                const svgEl = svgRef.current;
+                if (!svgEl)
+                    return;
+                const point = svgClientToMplView(
+                    svgEl,
+                    ev.clientX,
+                    ev.clientY,
+                    viewBoxRef.current,
+                );
+                setCursorView([point.x, point.y]);
+                applyErase(point.x, point.y);
+            };
+
+            const onWinUpErase = (ev: MouseEvent) => {
+                if (ev.button !== 0)
+                    return;
+                finalizeErase();
+            };
+
+            applyErase(x, y);
+            eraseCleanupRef.current = finalizeErase;
+            window.addEventListener('mousemove', onWinMoveErase);
+            window.addEventListener('mouseup', onWinUpErase);
             return;
         }
         if (tool.variant === 'line') {
@@ -887,8 +1002,6 @@ export function useSelectToolMouseGestures(
                 return next;
             });
         }
-        if (e.buttons === 1 && tool.variant === 'eraser' && ui.drawing_enabled)
-            eraseAt(x, y);
     };
 
     return {

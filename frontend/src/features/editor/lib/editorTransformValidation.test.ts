@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { layerId, placementObjectId, worldCellKey } from './editorIds';
 import {
     findFirstStaticCollision,
-    MOVE_TRANSFORM_OPERATION,
+    MIRROR_TRANSFORM_OPERATION,
     proposedMoveCellsFromSnaps,
     validateGroupMoveCells,
     validateProposedPlacementCells,
@@ -12,7 +12,11 @@ import type { PlacementSnapWorld } from '../model/editorSessionTypes';
 import { refKey } from './placementSelection';
 import type { PlacementRef } from '../model/editorSessionTypes';
 
-const ROT_OP = { type: 'rotate', allowInternalOverlap: false } as const;
+const ROT_OP = {
+    type: 'rotate',
+    allowInternalOverlap: false,
+    allowExternalOverlap: false,
+} as const;
 
 describe('editorTransformValidation', () => {
     const r0: PlacementRef = { layerIdx: layerId(0), batchIdx: 0, placementIdx: 0 };
@@ -46,14 +50,25 @@ describe('editorTransformValidation', () => {
         expect(res).toEqual({ ok: true });
     });
 
-    it('external collision includes conflictingObject', () => {
+    it('move allows overlap with external occupied cells', () => {
+        const blocker = placementObjectId('9:9:9');
+        const occ = new Map([[worldCellKey('0,0'), blocker]]);
+        const snaps: Record<string, PlacementSnapWorld> = {
+            [refKey(r0)]: snap(0, 0),
+        };
+
+        const res = validateGroupMoveCells(occ, snaps, [r0], 0, 0);
+        expect(res).toEqual({ ok: true });
+    });
+
+    it('external collision includes conflictingObject for non-move operations', () => {
         const blocker = placementObjectId('9:9:9');
         const cell = worldCellKey('5,5');
         const occ = new Map([[cell, blocker]]);
         const res = validateProposedPlacementCells(
             occ,
             [[5, 5]],
-            MOVE_TRANSFORM_OPERATION,
+            ROT_OP,
         );
         expect(res).toEqual({
             ok: false,
@@ -75,6 +90,36 @@ describe('editorTransformValidation', () => {
         );
         expect(res.ok).toBe(false);
         if (res.ok === false) expect(res.reason).toBe('internal_collision');
+    });
+
+    it('mirror operation allows internal overlap', () => {
+        const occ = new Map();
+        const res = validateProposedPlacementCells(
+            occ,
+            [
+                [1, 1],
+                [1, 1],
+            ],
+            MIRROR_TRANSFORM_OPERATION,
+        );
+        expect(res).toEqual({ ok: true });
+    });
+
+    it('mirror operation still rejects external collision', () => {
+        const blocker = placementObjectId('4:4:4');
+        const cell = worldCellKey('1,1');
+        const occ = new Map([[cell, blocker]]);
+        const res = validateProposedPlacementCells(
+            occ,
+            [[1, 1]],
+            MIRROR_TRANSFORM_OPERATION,
+        );
+        expect(res).toEqual({
+            ok: false,
+            reason: 'external_collision',
+            conflictingCell: cell,
+            conflictingObject: blocker,
+        });
     });
 
     it('findFirstStaticCollision', () => {

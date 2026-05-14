@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { mplViewPointToSvg, worldToView } from '../../../../lib/coords';
 import { DECORATIONS } from '../../../../lib/sceneDecorations';
 import type { AssetKey } from '../../../../types/scene';
-import { previewRotateDegForDoodad } from '../../lib/editorPreview';
+import { previewRenderRotateDegForDoodad } from '../../lib/editorPreview';
 import type { ViewBox } from '../../lib/editorViewport';
 
 export type PlacementGlyphProps = {
@@ -14,6 +14,7 @@ export type PlacementGlyphProps = {
     r: number;
     template_hash: number;
     facet_fv?: number | null;
+    lineStroke?: boolean;
     assetKey: AssetKey | null;
     footprintWidthView: number;
     footprintHeightView: number;
@@ -38,6 +39,7 @@ function PlacementGlyphInner(props: PlacementGlyphProps) {
         r,
         template_hash,
         facet_fv,
+        lineStroke,
         assetKey,
         footprintWidthView,
         footprintHeightView,
@@ -54,11 +56,12 @@ function PlacementGlyphInner(props: PlacementGlyphProps) {
     const asset = assetKey ? DECORATIONS[assetKey] : null;
     const hx = sx - footprintWidthView / 2;
     const hy = sy - footprintHeightView / 2;
-    const rotDeg = previewRotateDegForDoodad(
+    const rotDeg = previewRenderRotateDegForDoodad(
         r,
         cameraDeg,
         template_hash,
         facet_fv ?? null,
+        lineStroke === true,
     );
 
     return (

@@ -8,7 +8,7 @@ import type {
 import type { Background, PaintLayer, Tool, UiState } from '../../../types/scene';
 import type { LayerId } from '../lib/editorIds';
 import type { ViewBox } from '../lib/editorViewport';
-import type { PlacementRef, SelectionState } from '../model/editorSessionTypes';
+import type { SelectionState } from '../model/editorSessionTypes';
 import type { BackgroundHitZone } from '../lib/editorBackgroundGeometry';
 
 export type BackgroundRotateSession = {
@@ -40,7 +40,6 @@ export type UseEditorCanvasGesturesArgs = {
     layerIdx: LayerId;
     selected: SelectionState;
     setSelected: Dispatch<SetStateAction<SelectionState>>;
-    setLayers: Dispatch<SetStateAction<PaintLayer[]>>;
     setPanDrag: Dispatch<
         SetStateAction<{ lastCx: number; lastCy: number } | null>
     >;
@@ -57,7 +56,6 @@ export type UseEditorCanvasGesturesArgs = {
     // Read-only viewing (base map): pan and zoom allowed, scene edits disabled.
     sceneReadOnly: boolean;
 
-    pushMultiUndoForRefs: (refs: PlacementRef[], label: string) => void;
     // Pop the last action from the undo stack (used after a failed final footprint check).
     undo: () => void;
 

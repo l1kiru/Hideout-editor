@@ -2,11 +2,13 @@ import type { Dispatch, MutableRefObject, SetStateAction } from 'react';
 import { useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import useEditorStore from '../../../stores/editorStore';
 import {
     backgroundWidthViewBaseForFit,
     zoneViewLimitsWithPad,
 } from '../../../lib/viewLimits';
 import type { Background } from '../../../types/scene';
+import { defaultBackground } from '../lib/editorDefaults';
 
 type UseEditorBackgroundControllerArgs = {
     background: Background;
@@ -15,11 +17,7 @@ type UseEditorBackgroundControllerArgs = {
     bgNaturalSize: { w: number; h: number } | null;
     boundary: [number, number][];
     cameraDeg: number;
-    setBackground: Dispatch<SetStateAction<Background>>;
-    setBgSelected: Dispatch<SetStateAction<boolean>>;
     setStatus: Dispatch<SetStateAction<string>>;
-    defaultBackground: () => Background;
-    pushBackgroundUndo: (snap: Background, label: string) => void;
 };
 
 export function useEditorBackgroundController(args: UseEditorBackgroundControllerArgs) {
@@ -31,12 +29,9 @@ export function useEditorBackgroundController(args: UseEditorBackgroundControlle
         bgNaturalSize,
         boundary,
         cameraDeg,
-        setBackground,
-        setBgSelected,
         setStatus,
-        defaultBackground,
-        pushBackgroundUndo,
     } = args;
+    const transformBackground = useEditorStore((state) => state.transformBackground);
 
     const rotateBackground = useCallback(
         (deltaDeg: number) => {
@@ -45,34 +40,35 @@ export function useEditorBackgroundController(args: UseEditorBackgroundControlle
                 setStatus(t('status.bgLockedRotate'));
                 return;
             }
-            pushBackgroundUndo({ ...background }, t('status.bgRotateLabel'));
-            setBackground((b) => ({
-                ...b,
-                rotation_deg: (b.rotation_deg ?? 0) + deltaDeg,
-            }));
+            transformBackground({
+                label: t('status.bgRotateLabel'),
+                updater: (prev) => ({
+                    ...prev,
+                    rotation_deg: (prev.rotation_deg ?? 0) + deltaDeg,
+                }),
+            });
         },
-        [background, pushBackgroundUndo, setBackground, setStatus, t],
+        [background, setStatus, t, transformBackground],
     );
 
     const clearBackground = useCallback(() => {
         if (!background.path) return;
-        pushBackgroundUndo({ ...background }, t('status.bgDeleteLabel'));
-        setBackground((b) => ({
-            ...defaultBackground(),
-            locked: b.locked,
-            lock_anchor_view_x: null,
-            lock_anchor_view_y: null,
-        }));
-        setBgSelected(false);
+        transformBackground({
+            label: t('status.bgDeleteLabel'),
+            updater: (prev) => ({
+                ...defaultBackground(),
+                locked: prev.locked,
+                lock_anchor_view_x: null,
+                lock_anchor_view_y: null,
+            }),
+            clearBgSelection: true,
+        });
         setStatus(t('status.bgRemoved'));
     }, [
         background,
-        pushBackgroundUndo,
-        setBackground,
-        setBgSelected,
         setStatus,
-        defaultBackground,
         t,
+        transformBackground,
     ]);
 
     const bgWheelLastTsRef = useRef(0);
@@ -87,18 +83,20 @@ export function useEditorBackgroundController(args: UseEditorBackgroundControlle
                 bgWheelUndoPushedRef.current = false;
             }
             bgWheelLastTsRef.current = now;
-            if (!bgWheelUndoPushedRef.current) {
-                pushBackgroundUndo({ ...bg }, t('status.bgScaleLabel'));
-                bgWheelUndoPushedRef.current = true;
-            }
+            const shouldRecordUndo = !bgWheelUndoPushedRef.current;
+            bgWheelUndoPushedRef.current = true;
             const f = e.deltaY > 0 ? 0.93 : 1.08;
-            setBackground((b) => ({
-                ...b,
-                scale: Math.max(0.05, Math.min(4, (b.scale ?? 1) * f)),
-            }));
+            transformBackground({
+                label: t('status.bgScaleLabel'),
+                updater: (prev) => ({
+                    ...prev,
+                    scale: Math.max(0.05, Math.min(4, (prev.scale ?? 1) * f)),
+                }),
+                recordUndo: shouldRecordUndo,
+            });
             return true;
         },
-        [bgSelectedRef, backgroundRef, pushBackgroundUndo, setBackground, t],
+        [bgSelectedRef, backgroundRef, t, transformBackground],
     );
 
     const applyBackgroundFitToZone = useCallback(() => {
@@ -121,14 +119,18 @@ export function useEditorBackgroundController(args: UseEditorBackgroundControlle
             bgNaturalSize.w,
             bgNaturalSize.h,
         );
-        setBackground((b) => ({
-            ...b,
-            width_view_base: fitted,
-            offset_x: cx,
-            offset_y: cy,
-        }));
+        transformBackground({
+            label: t('status.bgFitted'),
+            updater: (prev) => ({
+                ...prev,
+                width_view_base: fitted,
+                offset_x: cx,
+                offset_y: cy,
+            }),
+            recordUndo: false,
+        });
         setStatus(t('status.bgFitted'));
-    }, [bgNaturalSize, boundary, cameraDeg, setBackground, setStatus, t]);
+    }, [bgNaturalSize, boundary, cameraDeg, setStatus, t, transformBackground]);
 
     return {
         rotateBackground,

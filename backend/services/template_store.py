@@ -126,6 +126,20 @@ def get(template_id: str) -> StoredTemplate | None:
     tid = template_id.strip()
     if not tid:
         return None
+    # map_tpl_{N}: SQLite is the canonical source. Do not trust RAM/disk cache
+    # first here because those entries can go stale across template updates or
+    # isolated test databases that reuse the same stable template ids.
+    m = _MAP_TPL_RE.match(tid)
+    if m is not None:
+        loaded = _load_from_sqlite_for_map(int(m.group(1)))
+        if loaded is None:
+            return None
+        _store[tid] = loaded
+        try:
+            _persist_disk(tid, loaded)
+        except OSError:
+            pass
+        return loaded
     hit = _store.get(tid)
     if hit is not None:
         return hit
@@ -133,17 +147,5 @@ def get(template_id: str) -> StoredTemplate | None:
     if loaded is not None:
         _store[tid] = loaded
         return loaded
-    # map_tpl_{N}: template is always in SQLite (create/duplicate write template_hideout_json)
-    # but may not yet be in RAM or the file cache.
-    m = _MAP_TPL_RE.match(tid)
-    if m is not None:
-        loaded = _load_from_sqlite_for_map(int(m.group(1)))
-        if loaded is not None:
-            _store[tid] = loaded
-            try:
-                _persist_disk(tid, loaded)
-            except OSError:
-                pass
-            return loaded
     return None
 

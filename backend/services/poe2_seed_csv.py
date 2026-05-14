@@ -290,7 +290,7 @@ def write_seed_csv(rows: list[dict[str, str]], output_path: Path) -> int:
             f,
             fieldnames=list(CSV_HEADERS),
             delimiter=";",
-            lineterminator="\n",
+            lineterminator="\r\n",
         )
         writer.writeheader()
         for row in rows:

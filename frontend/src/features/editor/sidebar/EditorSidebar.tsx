@@ -23,12 +23,7 @@ export function EditorSidebar(props: EditorSidebarProps) {
         <aside className={`leftSidebar ${showTopPanel ? '' : 'collapsed'}`}>
             <SidebarFilesSection {...files} />
             <SidebarBackgroundSection {...bgProps} sceneReadOnly={sceneReadOnly} />
-            <SidebarToolSection
-                {...toolProps}
-                sceneReadOnly={sceneReadOnly}
-                saveLayerSnapshotAt={lyProps.saveLayerSnapshotAt}
-                setLayers={lyProps.setLayers}
-            />
+            <SidebarToolSection {...toolProps} sceneReadOnly={sceneReadOnly} />
             <SidebarLayersSection {...lyProps} sceneReadOnly={sceneReadOnly} />
             {showHotkeysHint ? (
                 <p className="sideHint subtle">
@@ -45,6 +40,5 @@ export type {
     EditorSidebarFilesProps,
     EditorSidebarLayersProps,
     EditorSidebarProps,
-    EditorSidebarToolBindingsProps,
     EditorSidebarToolProps,
 } from './editorSidebarTypes';

@@ -18,7 +18,6 @@ from backend.services.maps_repo import (
     promote_map_to_base,
     save_boundary_order,
     save_editor_scene_json,
-    split_import_pairs_for_base_map,
 )
 from backend.services.maps_sqlite import db_conn
 from backend.services.maps_sqlite import POE2_LOCALE_SUFFIXES
@@ -78,16 +77,6 @@ class TestHideoutMapsSsot(unittest.TestCase):
         name = m["display_name"]
         with self.assertRaises(ValueError):
             create_new_map(name)
-
-    def test_split_import_without_template_is_all_extra(self) -> None:
-        init_db()
-        user = create_new_map("ssot-user-map-xyz")
-        pairs = [
-            ("Тайник", {"hash": 1, "x": 0, "y": 0, "r": 0}),
-        ]
-        base_part, extra_part = split_import_pairs_for_base_map(int(user["id"]), pairs)
-        self.assertEqual(base_part, [])
-        self.assertEqual(len(extra_part), 1)
 
     def _insert_catalog_row(
         self,
@@ -254,6 +243,26 @@ class TestHideoutMapsSsot(unittest.TestCase):
         self.assertNotIn("title", doc["layers"][0])
         self.assertEqual(doc["layers"][1]["kind"], "decorations")
         self.assertNotIn("title", doc["layers"][1])
+
+    def test_hideout_import_scene_uses_user_layer_when_no_imported_decorations(self) -> None:
+        scene_txt = _editor_scene_json_for_hideout_import(
+            map_display_name="Imported map",
+            map_id=42,
+            boundary_doc={
+                "points": [
+                    {"x": 0, "y": 0},
+                    {"x": 10, "y": 0},
+                    {"x": 10, "y": 10},
+                ],
+            },
+            base_pairs=[("Тайник", {"hash": 1, "x": 0, "y": 0, "r": 0})],
+            decoration_pairs=[],
+        )
+        doc = json.loads(scene_txt)
+        self.assertEqual(doc["layers"][0]["kind"], "default")
+        self.assertEqual(doc["layers"][1]["kind"], "user")
+        self.assertNotIn("title", doc["layers"][1])
+        self.assertEqual(doc["layers"][1]["batches"], [])
 
 
 if __name__ == "__main__":

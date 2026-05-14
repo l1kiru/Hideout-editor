@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 
 @dataclass
@@ -15,11 +15,3 @@ class PaintedBatch:
 
     def count(self) -> int:
         return len(self.placements)
-
-
-@dataclass
-class PaintLayer:
-    visible: bool = True
-    locked: bool = False
-    title: str = "Layer"
-    batches: list[PaintedBatch] = field(default_factory=list)

@@ -58,7 +58,7 @@ export function appendBrushPoint(
 
 export function placementsForPolyline(
   viewPoints: [number, number][],
-  asset: { widthView: number; heightView: number },
+  _asset: { widthView: number; heightView: number },
   spacing: number,
   cameraDeg: number,
   lineAssetKey: AssetKey,
@@ -78,7 +78,10 @@ export function placementsForPolyline(
     if (!allowWorld(wx, wy))
       return;
     const wAng = viewDirectionToWorldAngleRad(segDx, segDy, cameraDeg);
-    const rot = normR((wAng / (Math.PI * 2)) * ROT_FULL);
+    const storedAngle = lineAssetKey === 'maraketh_rubble1'
+      ? -wAng
+      : wAng;
+    const rot = normR((storedAngle / (Math.PI * 2)) * ROT_FULL);
     const xi = Math.round(wx);
     const yi = Math.round(wy);
     const last = out[out.length - 1];
@@ -108,18 +111,9 @@ export function placementsForPolyline(
     const ux = dx / L;
     const uy = dy / L;
     const angle = Math.atan2(dy, dx);
-    const isRopeAsset = lineAssetKey.startsWith('faridun_ropes');
-    const spriteAlongSeg =
-      isRopeAsset
-        ? angle + (ROT_LINE_ROPE_OFFSET / ROT_FULL) * (Math.PI * 2)
-        : angle;
-    const footprintForStep =
-      isRopeAsset
-        ? ROPE_POLYLINE_FOOTPRINT
-        : {
-            widthView: Math.max(1, asset.widthView - 5),
-            heightView: Math.max(1, asset.heightView - 5),
-          };
+    const spriteAlongSeg
+      = angle + (ROT_LINE_ROPE_OFFSET / ROT_FULL) * (Math.PI * 2);
+    const footprintForStep = ROPE_POLYLINE_FOOTPRINT;
     const step = Math.max(
       0.5,
       projectedFootprint(footprintForStep, spriteAlongSeg) + spacing,

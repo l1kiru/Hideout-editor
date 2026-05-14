@@ -4,9 +4,6 @@ import './index.css'
 import App from './App.tsx'
 import { i18nReady } from './i18n'
 import './i18n/types'
-import { migrateLegacyLocalStorageKeys } from './utils/legacyStorageMigration'
-
-migrateLegacyLocalStorageKeys()
 
 void i18nReady.then(() => {
   createRoot(document.getElementById('root')!).render(

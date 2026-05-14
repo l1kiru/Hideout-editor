@@ -1,9 +1,8 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { DEFAULT_MAP_LAYER_INDEX } from '../../lib/editorConstants';
-import { layerId } from '../../lib/editorIds';
-import { refKey } from '../../lib/placementSelection';
+import { partitionSelectionForCountChange } from '../../lib/editorPlacementEligibility';
+import useEditorStore from '../../../../stores/editorStore';
 
 import type { PlacementActionsCtx } from './types';
 
@@ -12,63 +11,57 @@ export function useDeleteSelected(ctx: PlacementActionsCtx) {
     const {
         selected,
         layers,
-        pushMultiUndoForRefs,
-        setLayers,
         setSelected,
         setStatus,
     } = ctx;
+    const deleteSelectedInStore = useEditorStore((state) => state.deleteSelected);
 
     return useCallback(() => {
         if (selected.length === 0) return;
-        const deletable = selected.filter(
-            (r) => r.layerIdx !== layerId(DEFAULT_MAP_LAYER_INDEX),
+        const {
+            lockedRefs,
+            defaultLayerRefs,
+            eligibleRefs,
+            skippedRefs,
+        } = partitionSelectionForCountChange(
+            layers,
+            selected,
         );
-        if (deletable.length === 0) {
-            setStatus(t('status.cannotDeleteDefaultObjects'));
-            return;
-        }
-        if (deletable.some((r) => layers[r.layerIdx]?.locked)) {
+        if (lockedRefs.length > 0) {
             setStatus(t('status.lockedLayerExists'));
             return;
         }
-        const nSel = deletable.length;
-        pushMultiUndoForRefs(deletable, t('selection.deleteTitle'));
-        const delSet = new Set(deletable.map(refKey));
-        setLayers((ls) =>
-            ls.map((l, li) => ({
-                ...l,
-                batches: l.batches
-                    .map((b, bi) => ({
-                        ...b,
-                        placements: b.placements.filter(
-                            (_, pi) =>
-                                !delSet.has(
-                                    refKey({
-                                        layerIdx: layerId(li),
-                                        batchIdx: bi,
-                                        placementIdx: pi,
-                                    }),
-                                ),
-                        ),
-                    }))
-                    .filter((b) => b.placements.length > 0),
-            })),
-        );
-        setSelected((prev) =>
-            prev.filter((r) => r.layerIdx === layerId(DEFAULT_MAP_LAYER_INDEX)),
-        );
+        setSelected([]);
+        if (eligibleRefs.length === 0) {
+            setStatus(
+                defaultLayerRefs.length > 0
+                    ? t('status.cannotDeleteDefaultObjects')
+                    : t('status.deleteNoEligible'),
+            );
+            return;
+        }
+        const nSel = eligibleRefs.length;
+        deleteSelectedInStore({
+            refs: eligibleRefs,
+            label: t('selection.deleteTitle'),
+        });
+        const skippedCount = skippedRefs.length + defaultLayerRefs.length;
         setStatus(
-            nSel > 1
-                ? t('status.deletedMany', { count: nSel })
-                : t('status.deletedOne'),
+            skippedCount > 0
+                ? t('status.deletedPartial', {
+                      count: nSel,
+                      skipped: skippedCount,
+                  })
+                : nSel > 1
+                  ? t('status.deletedMany', { count: nSel })
+                  : t('status.deletedOne'),
         );
     }, [
         selected,
         layers,
-        pushMultiUndoForRefs,
-        setLayers,
         setSelected,
         setStatus,
+        deleteSelectedInStore,
         t,
     ]);
 }

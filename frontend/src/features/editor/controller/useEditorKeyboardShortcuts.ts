@@ -2,9 +2,42 @@ import type { Dispatch, MutableRefObject, SetStateAction } from 'react';
 import { useEffect } from 'react';
 
 import { ROT_FULL, ROT_STEP } from '../lib/editorConstants';
+import type { Tool } from '../../../types/scene';
+import { syncToolDigitShortcut } from '../lib/editorToolVariant';
 
 // Background rotation step in degrees for Q/E, matched to the placement rotation step.
 const BG_ROT_STEP_DEG = (ROT_STEP / ROT_FULL) * 360;
+
+type BlurCapableTarget = {
+    blur: () => void;
+};
+
+function isBlurCapableTarget(
+    value: unknown,
+): value is BlurCapableTarget {
+    if (!value || typeof value !== 'object') return false;
+    if (typeof HTMLElement !== 'undefined' && value instanceof HTMLElement)
+        return true;
+    return (
+        'tagName' in value &&
+        typeof (value as { blur?: unknown }).blur === 'function'
+    );
+}
+
+export function blurKeyboardShortcutFocus(
+    target: unknown,
+    activeElement: unknown = typeof document !== 'undefined'
+        ? document.activeElement
+        : null,
+) {
+    if (isBlurCapableTarget(target)) {
+        target.blur();
+        return;
+    }
+    if (isBlurCapableTarget(activeElement)) {
+        activeElement.blur();
+    }
+}
 
 export function useEditorKeyboardShortcuts(opts: {
     sceneReadOnly: boolean;
@@ -16,6 +49,7 @@ export function useEditorKeyboardShortcuts(opts: {
     setShowTopPanel: Dispatch<SetStateAction<boolean>>;
     deleteSelected: () => void;
     rotateSelected: (delta: number) => void;
+    setTool: Dispatch<SetStateAction<Tool>>;
     copySelected: () => void;
     pasteClipboard: () => void;
     bgSelected: boolean;
@@ -32,6 +66,7 @@ export function useEditorKeyboardShortcuts(opts: {
         setShowTopPanel,
         deleteSelected,
         rotateSelected,
+        setTool,
         copySelected,
         pasteClipboard,
         bgSelected,
@@ -122,16 +157,30 @@ export function useEditorKeyboardShortcuts(opts: {
                 pasteClipboard();
                 return;
             }
+            if (!e.ctrlKey && !e.metaKey && !e.altKey && !e.shiftKey) {
+                if (
+                    e.code === 'Digit1'
+                    || e.code === 'Digit2'
+                    || e.code === 'Digit3'
+                    || e.code === 'Digit4'
+                    || e.code === 'Digit5'
+                ) {
+                    e.preventDefault();
+                    blurKeyboardShortcutFocus(target);
+                    setTool((tool) => syncToolDigitShortcut(tool, e.code) ?? tool);
+                    return;
+                }
+            }
             if (e.code === 'Delete' || e.code === 'Backspace') {
                 if (bgSelected) clearBackground();
                 else deleteSelected();
             }
             if (e.code === 'KeyQ') {
-                if (bgSelected) rotateBackground(-BG_ROT_STEP_DEG);
+                if (bgSelected) rotateBackground(BG_ROT_STEP_DEG);
                 else rotateSelected(ROT_STEP);
             }
             if (e.code === 'KeyE' && !e.shiftKey) {
-                if (bgSelected) rotateBackground(BG_ROT_STEP_DEG);
+                if (bgSelected) rotateBackground(-BG_ROT_STEP_DEG);
                 else rotateSelected(-ROT_STEP);
             }
         };
@@ -157,6 +206,7 @@ export function useEditorKeyboardShortcuts(opts: {
         setShowTopPanel,
         deleteSelected,
         rotateSelected,
+        setTool,
         copySelected,
         pasteClipboard,
         bgSelected,

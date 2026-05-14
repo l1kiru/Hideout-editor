@@ -2,7 +2,7 @@ import { mplViewPointToSvg, worldToView } from '../../../../lib/coords';
 import { DECORATIONS } from '../../../../lib/sceneDecorations';
 import type { AssetKey } from '../../../../types/scene';
 import { placementsForPolyline } from '../../lib/editorLineBrush';
-import { previewRotateDegForDoodad } from '../../lib/editorPreview';
+import { previewRenderRotateDegForDoodad } from '../../lib/editorPreview';
 import type { ViewBox } from '../../lib/editorViewport';
 
 export function EditorSvgLineDraft(props: {
@@ -63,7 +63,7 @@ export function EditorSvgLineDraft(props: {
                     <g
                         key={`preview-${idx}`}
                         opacity={0.45}
-                        transform={`rotate(${previewRotateDegForDoodad(p.r, cameraDeg, DECORATIONS[activeAssetKey].hash, DECORATIONS[activeAssetKey].fv)} ${sx} ${sy})`}
+                        transform={`rotate(${previewRenderRotateDegForDoodad(p.r, cameraDeg, DECORATIONS[activeAssetKey].hash, DECORATIONS[activeAssetKey].fv, activeAssetKey === 'maraketh_rubble1')} ${sx} ${sy})`}
                     >
                         <image
                             href={asset.src}

@@ -1,95 +1,51 @@
+import {
+    EDITOR_ASSETS,
+    EDITOR_ASSET_ORDER,
+    LINE_FOOTPRINTS,
+    TOOL_FV_ASSET_KEY as GENERATED_TOOL_FV_ASSET_KEY,
+    UNKNOWN_DOODAD_VIEW_BOX as GENERATED_UNKNOWN_DOODAD_VIEW_BOX,
+} from '../shared/generated/editorAssets';
 import type { AssetKey } from '../types/scene';
 
-export const DRAWING_ASSET_KEYS: AssetKey[] = [
-    'faridun_ropes4',
-    'faridun_ropes1',
-    'moss',
-    'sand',
-    'maraketh_rubble1',
-    'faridun_tools5',
-    'leaf_pile3',
-];
+export const DRAWING_ASSET_KEYS: AssetKey[] = [...EDITOR_ASSET_ORDER] as AssetKey[];
 
-export const DECORATIONS: Record<
-    AssetKey,
-    {
-        title: string;
-        nameRu: string;
-        hash: number;
-        fv: number;
-        src: string;
-        widthView: number;
-        heightView: number;
-    }
-> = {
-    faridun_ropes4: {
-        title: 'Faridun Ropes 4',
-        nameRu: 'Фаридунские верёвки 4',
-        hash: 1675705915,
-        fv: 3,
-        src: '/decorations/FaridunRopes.webp',
-        widthView: 10,
-        heightView: 14,
-    },
-    faridun_ropes1: {
-        title: 'Faridun Ropes 1',
-        nameRu: 'Фаридунские верёвки 1',
-        hash: 1675705915,
-        fv: 0,
-        src: '/decorations/faridun_ropes1.png',
-        widthView: 13,
-        heightView: 13,
-    },
-    sand: {
-        title: 'Falling Sand 1',
-        nameRu: 'Летающий песок',
-        hash: 3853073345,
-        fv: 0,
-        src: '/decorations/FallingSand.webp',
-        widthView: 12,
-        heightView: 12,
-    },
-    moss: {
-        title: 'Fringe Moss 3',
-        nameRu: 'Мох с опушки 3',
-        hash: 1459723677,
-        fv: 2,
-        src: '/decorations/FringeMoss.webp',
-        widthView: 11,
-        heightView: 10,
-    },
-    maraketh_rubble1: {
-        title: 'Maraketh Rubble 1',
-        nameRu: 'Маракетский щебень 1',
-        hash: 3012657298,
-        fv: 0,
-        src: '/decorations/maraketh_rubble1.png',
-        widthView: 15,
-        heightView: 15,
-    },
-    faridun_tools5: {
-        title: 'Faridun Tools 5',
-        nameRu: 'Фаридунские инструменты 5',
-        hash: 2233574719,
-        fv: 4,
-        src: '/decorations/faridun_tools5.png',
-        widthView: 12,
-        heightView: 12,
-    },
-    leaf_pile3: {
-        title: 'Leaf Pile 3',
-        nameRu: 'Куча листьев 3',
-        hash: 4294658310,
-        fv: 2,
-        src: '/decorations/leaf_pile3.png',
-        widthView: 12,
-        heightView: 16,
-    },
+type Decoration = {
+    title: string;
+    nameRu: string;
+    hash: number;
+    fv: number;
+    src: string;
+    widthView: number;
+    heightView: number;
 };
 
+export const DECORATIONS: Record<AssetKey, Decoration> = Object.fromEntries(
+    DRAWING_ASSET_KEYS.map((key) => {
+        const spec = EDITOR_ASSETS[key];
+        return [
+            key,
+            {
+                title: spec.title,
+                nameRu: spec.nameRu,
+                hash: spec.templateHash,
+                fv: spec.defaultFv,
+                src: spec.src,
+                widthView: spec.widthView,
+                heightView: spec.heightView,
+            },
+        ];
+    }),
+) as Record<AssetKey, Decoration>;
+
 // Line tool step: matches the rope's widthView/heightView before preview icon scaling.
-export const ROPE_POLYLINE_FOOTPRINT = { widthView: 4, heightView: 5 };
-export const TOOL_FV_ASSET_KEY: AssetKey = 'faridun_ropes4';
+export const ROPE_POLYLINE_FOOTPRINT = LINE_FOOTPRINTS[
+    GENERATED_TOOL_FV_ASSET_KEY
+];
+export const TOOL_FV_ASSET_KEY: AssetKey = GENERATED_TOOL_FV_ASSET_KEY;
+export const LINE_STROKE_ANALYSIS_FOOTPRINT = {
+    widthView: DECORATIONS[TOOL_FV_ASSET_KEY].widthView,
+    heightView: DECORATIONS[TOOL_FV_ASSET_KEY].heightView,
+};
 
 export function assetKeyForTemplate(
     hash: number,
@@ -115,13 +71,8 @@ export function assetKeyForTemplate(
     return null;
 }
 
-// Legacy helper for old call sites; prefer `assetKeyForTemplate(hash, facetFv)`.
-export function assetKeyForHash(hash: number): AssetKey | null {
-    return assetKeyForTemplate(hash, null);
-}
-
 // Fallback footprint for .hideout doodads that have no local asset (hit-test and zone checks).
-export const UNKNOWN_DOODAD_VIEW_BOX = { widthView: 12, heightView: 12 };
+export const UNKNOWN_DOODAD_VIEW_BOX = GENERATED_UNKNOWN_DOODAD_VIEW_BOX;
 
 // Sprite size in view coordinates (used by hit-test, selection frame, zone limits).
 export function templatePlacementFootprintView(

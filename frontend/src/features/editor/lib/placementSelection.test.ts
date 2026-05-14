@@ -7,6 +7,7 @@ import {
     parseRefKey,
     refEqual,
     refKey,
+    subtractRefs,
     uniqRefs,
     viewAabbOverlap,
 } from './placementSelection';
@@ -40,12 +41,19 @@ describe('placementSelection', () => {
         expect(uniqRefs(a)).toEqual([r(0, 0, 0), r(0, 0, 1), r(1, 0, 0)]);
     });
 
+    it('subtractRefs removes only matching refs and preserves base order', () => {
+        expect(
+            subtractRefs(
+                [r(0, 0, 0), r(0, 0, 1), r(1, 0, 0)],
+                [r(0, 0, 1), r(9, 9, 9)],
+            ),
+        ).toEqual([r(0, 0, 0), r(1, 0, 0)]);
+    });
+
     it('layerIndicesFromRefs returns sorted LayerId list', () => {
-        expect(layerIndicesFromRefs([r(2, 0, 0), r(0, 0, 0), r(1, 0, 0)])).toEqual([
-            layerId(0),
-            layerId(1),
-            layerId(2),
-        ]);
+        expect(
+            layerIndicesFromRefs([r(2, 0, 0), r(0, 0, 0), r(1, 0, 0)]),
+        ).toEqual([layerId(0), layerId(1), layerId(2)]);
     });
 
     it('normalizeSelectionLayer0 matches uniqRefs', () => {

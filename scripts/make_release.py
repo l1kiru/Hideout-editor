@@ -19,12 +19,10 @@ MAX_RELEASE_BYTES = 50_000_000
 
 INCLUDE_PATHS = (
     "backend",
-    "config",
     "docs",
     "frontend",
     "hideout_core",
     "input/hideout",
-    "tests",
     ".gitignore",
     "LICENSE",
     "package-lock.json",

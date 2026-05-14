@@ -2,28 +2,23 @@ import type { Dispatch, SetStateAction } from 'react';
 import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import type { PaintLayer } from '../../../types/scene';
+import useEditorStore from '../../../stores/editorStore';
 import { DEFAULT_MAP_LAYER_INDEX } from '../lib/editorConstants';
-import type { LayerId } from '../lib/editorIds';
-import { layerId } from '../lib/editorIds';
-import { createUserPaintLayer } from '../lib/editorLayers';
-import type { SelectionState } from '../model/editorSessionTypes';
+import {
+    isImportedDecorationsLayer,
+} from '../lib/editorLayers';
 
 export function useEditorLayerActions(opts: {
-    layers: PaintLayer[];
-    setLayers: Dispatch<SetStateAction<PaintLayer[]>>;
-    setLayerIdx: Dispatch<SetStateAction<LayerId>>;
-    setSelected: Dispatch<SetStateAction<SelectionState>>;
     setStatus: Dispatch<SetStateAction<string>>;
 }) {
     const { t } = useTranslation('editor');
-    const {
-        layers,
-        setLayers,
-        setLayerIdx,
-        setSelected,
-        setStatus,
-    } = opts;
+    const { setStatus } = opts;
+    const layers = useEditorStore((state) => state.layers);
+    const setSelected = useEditorStore((state) => state.setSelected);
+    const addUserLayer = useEditorStore((state) => state.addUserLayer);
+    const removeLayerFromStore = useEditorStore((state) => state.removeLayer);
+    const setLayerLocked = useEditorStore((state) => state.setLayerLocked);
+    const setLayerVisible = useEditorStore((state) => state.setLayerVisible);
 
     useEffect(() => {
         setSelected((prev) => {
@@ -37,29 +32,42 @@ export function useEditorLayerActions(opts: {
     }, [layers, setSelected]);
 
     const addLayer = useCallback(() => {
-        const nl = layers.length + 1;
-        setLayers([...layers, createUserPaintLayer()]);
-        setLayerIdx(layerId(nl - 1));
-    }, [layers, setLayers, setLayerIdx]);
+        addUserLayer();
+    }, [addUserLayer]);
 
     const removeLayer = useCallback(
         (i: number) => {
+            const layer = layers[i];
             if (i === DEFAULT_MAP_LAYER_INDEX) {
                 setStatus(t('status.cannotDeleteDefaultLayer'));
+                return;
+            }
+            if (isImportedDecorationsLayer(layer)) {
+                setStatus(t('status.cannotDeleteImportedDecorationsLayer'));
                 return;
             }
             if (layers.length <= 2) {
                 setStatus(t('status.needAtLeastOneUserLayer'));
                 return;
             }
-            setLayers((ls) => ls.filter((_, j) => j !== i));
-            setLayerIdx((prev) =>
-                layerId(Math.max(0, Math.min(Number(prev), layers.length - 2))),
-            );
-            setSelected([]);
+            removeLayerFromStore(i);
         },
-        [layers.length, setLayers, setLayerIdx, setSelected, setStatus, t],
+        [layers, removeLayerFromStore, setStatus, t],
     );
 
-    return { addLayer, removeLayer };
+    const onLayerLockedToggle = useCallback(
+        (layerIndex: number, locked: boolean) => {
+            setLayerLocked(layerIndex, locked);
+        },
+        [setLayerLocked],
+    );
+
+    const onLayerVisibilityToggle = useCallback(
+        (layerIndex: number, visible: boolean) => {
+            setLayerVisible(layerIndex, visible);
+        },
+        [setLayerVisible],
+    );
+
+    return { addLayer, removeLayer, onLayerLockedToggle, onLayerVisibilityToggle };
 }

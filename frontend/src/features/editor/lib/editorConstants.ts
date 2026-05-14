@@ -26,9 +26,6 @@ export const MAX_GROUP_MOVE_PLACEMENTS = EDITOR_LIMITS.maxGroupMovePlacements;
 export const MAX_GROUP_ROTATE_PLACEMENTS =
     EDITOR_LIMITS.maxGroupRotatePlacements;
 
-// Back-compat alias for older imports. New call sites must pick the MOVE- or ROTATE-specific limit.
-export const MAX_GROUP_TRANSFORM_PLACEMENTS = MAX_GROUP_ROTATE_PLACEMENTS;
-
 // In-game hard ceiling for hideout placement count. Exceeding it is allowed
 // locally, but export prompts a confirmation because the game accepts such
 // .hideout files poorly.
@@ -49,27 +46,10 @@ export const MARQUEE_MIN_DRAG_VIEW = 4;
 // Minimum distance (view units) between consecutive polyline vertices for the brush tool.
 export const LINE_BRUSH_VERTEX_DIST = 2.5;
 
-// Legacy single-scene storage key (one scene shared across maps). Newer scenes use per-map keys.
-export const SCENE_STORAGE_KEY = 'hideout-editor-scene-v2-web-only';
-
 export function sceneStorageKeyForMap(mapId: number): string {
     return `hideout-editor-scene-v2-map-${mapId}`;
 }
 export const ACTIVE_MAP_ID_LS = 'hideout-editor-active-map-id';
-
-// localStorage keys from earlier app versions that must be renamed to the
-// current names on first launch after the rename.
-export const LEGACY_LOCALSTORAGE_KEY_RENAMES: ReadonlyArray<
-    readonly [string, string]
-> = [
-    ['hideout-creator-scene-v2-web-only', SCENE_STORAGE_KEY],
-    ['hideout-creator-active-map-id', ACTIVE_MAP_ID_LS],
-];
-
-// Key prefixes whose every occurrence (with arbitrary suffix, e.g. map id) must be migrated.
-export const LEGACY_LOCALSTORAGE_PREFIX_RENAMES: ReadonlyArray<
-    readonly [string, string]
-> = [['hideout-creator-scene-v2-map-', 'hideout-editor-scene-v2-map-']];
 
 // Default UI map pick: the base map with the lowest base_priority (API-provided).
 export function firstBaseHideoutMap(

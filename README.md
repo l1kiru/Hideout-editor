@@ -46,11 +46,14 @@ When the script says that everything is up, open:
 - API docs: http://127.0.0.1:8000/api/docs
 - backend health check: http://127.0.0.1:8000/api/health
 
-You can start the same script through npm:
+If your system resolves `python` to Python 3, you can use the root npm wrapper:
 
 ```bash
 npm start
 ```
+
+If your machine only has `python3`, prefer `python3 dev.py` directly because the
+root npm script still calls `python`.
 
 To stop the app, return to the terminal and press `Ctrl+C`.
 
@@ -63,6 +66,8 @@ git pull
 python dev.py
 ```
 
+If your machine only has `python3`, use `python3 dev.py` after `git pull`.
+
 On Windows, `UpdateAndStart.bat` does the same thing: it runs `git pull` and then starts the app.
 
 If dependencies changed, or the project starts with strange errors, rebuild local dependencies:
@@ -70,6 +75,8 @@ If dependencies changed, or the project starts with strange errors, rebuild loca
 ```bash
 python dev.py --reinstall
 ```
+
+If your machine only has `python3`, run `python3 dev.py --reinstall`.
 
 Your local data is stored in `hideout_settings/`, `hideout_scenes/`, `input/images/`, and `logs/`. These folders are ignored by Git and are not added to the release archive. The `input/hideout/` folder is the exception: it ships a small set of sample `.hideout` maps to use as starting points (see [Boundary marking page](#boundary-marking-page)).
 
@@ -132,7 +139,7 @@ decorations on top, and export the final `.hideout`.
 - `frontend/` — React/Vite interface.
 - `hideout_core/` — shared Python logic.
 - `backend/seed_data/` — catalog data needed by the backend.
-- `config/` — shared app configuration used by the frontend.
+- `shared/` — generated scene contract artifacts and editor asset catalog.
 - `docs/` — installation, update, and troubleshooting notes.
 - `input/hideout/` — sample base `.hideout` maps shipped with the project,
   exposed on the boundary marking page as **Sample maps**.

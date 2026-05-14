@@ -52,6 +52,7 @@ export function useEditorCanvasGestures(args: UseEditorCanvasGesturesArgs) {
     const bgInteractCleanupRef = useRef<(() => void) | null>(null);
     const bgRotateRef = useRef<BackgroundRotateSession | null>(null);
     const bgRotateSnapshotPushedRef = useRef(false);
+    const eraseCleanupRef = useRef<(() => void) | null>(null);
 
     const clearSelectRotate = useCallback((svgEl: SVGSVGElement | null) => {
         const sess = selectRotateRef.current;
@@ -95,6 +96,8 @@ export function useEditorCanvasGestures(args: UseEditorCanvasGesturesArgs) {
 
     const abortCanvasInteractions = useCallback(
         (svgEl: SVGSVGElement | null) => {
+            eraseCleanupRef.current?.();
+            eraseCleanupRef.current = null;
             bgInteractCleanupRef.current?.();
             bgInteractCleanupRef.current = null;
             selectDragCleanupRef.current?.();
@@ -112,6 +115,7 @@ export function useEditorCanvasGestures(args: UseEditorCanvasGesturesArgs) {
 
     useEffect(
         () => () => {
+            eraseCleanupRef.current?.();
             bgInteractCleanupRef.current?.();
             selectDragCleanupRef.current?.();
             clearSelectRotate(svgRef.current);
@@ -135,6 +139,7 @@ export function useEditorCanvasGestures(args: UseEditorCanvasGesturesArgs) {
         bgInteractCleanupRef,
         selectDragRef,
         setSelectDrag,
+        eraseCleanupRef,
         setSelectRmbRotate,
         clearSelectRotate,
         clearBgRotate,
@@ -148,6 +153,7 @@ export function useEditorCanvasGestures(args: UseEditorCanvasGesturesArgs) {
         bgInteractCleanupRef,
         clearSelectRotate,
         clearBgRotate,
+        eraseCleanupRef,
         setMarqueeView,
         setSelectDrag,
         dragOverlayHandleRef,

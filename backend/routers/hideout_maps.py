@@ -8,15 +8,13 @@ from pathlib import Path
 from typing import Any
 
 from fastapi import APIRouter, File, Form, Response, UploadFile
+from pydantic import ValidationError
 
 from hideout_core.config.settings import settings
 
 from backend.schemas.hideout_map import HideoutMapCreate, HideoutMapOut
-from backend.schemas.scene import TemplateLoadResponse
-from backend.services import maps_repo
-from backend.services.base_map_template_doodad_names import (
-    doodad_template_ordered_names_ru_from_hideout_json,
-)
+from backend.schemas.scene import SceneModel, TemplateLoadResponse
+from backend.services import maps_repo, template_store
 from backend.services.hideout_template_ingest import (
     extract_hideout_shell_and_pairs,
     ingest_doodads_pairs,
@@ -26,6 +24,37 @@ from backend.services.api_errors import api_error
 router = APIRouter(prefix="/maps", tags=["maps"])
 
 _MAX_UPLOAD_BYTES = settings.max_upload_size_bytes
+
+
+def _ordered_template_doodad_names(
+    template: template_store.StoredTemplate | None,
+) -> list[str]:
+    if template is None:
+        return []
+    out: list[str] = []
+    seen: set[str] = set()
+    for name, _spec in template["doodads_pairs"]:
+        normalized = str(name).strip()
+        if not normalized:
+            continue
+        key = normalized.casefold()
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(normalized)
+    return out
+
+
+def _validate_editor_scene_payload(body: dict[str, Any]) -> SceneModel:
+    try:
+        return SceneModel.model_validate(body)
+    except ValidationError as e:
+        raise api_error(
+            status_code=400,
+            code="maps.invalid_request",
+            detail="Некорректный JSON сцены",
+            params={"validation_errors": e.errors()},
+        ) from e
 
 
 @router.get("", response_model=list[HideoutMapOut])
@@ -45,8 +74,7 @@ def layer0_doodad_names(map_id: int) -> list[str]:
             detail="Карта не найдена",
             params={"map_id": map_id},
         )
-    raw = maps_repo.get_map_template_hideout_json(map_id)
-    return doodad_template_ordered_names_ru_from_hideout_json(raw)
+    return _ordered_template_doodad_names(template_store.get(f"map_tpl_{map_id}"))
 
 
 @router.post("", response_model=HideoutMapOut)
@@ -131,29 +159,14 @@ def load_map_template(map_id: int) -> TemplateLoadResponse:
             detail="Карта не найдена",
             params={"map_id": map_id},
         )
-    raw_tpl = maps_repo.get_map_template_hideout_json(map_id)
-    if raw_tpl:
-        try:
-            data = json.loads(raw_tpl)
-            meta = dict(data.get("meta_shell") or {})
-            seq = data.get("doodads_pairs") or []
-            pairs: list[tuple[str, dict[str, Any]]] = []
-            for item in seq:
-                if (
-                    isinstance(item, (list, tuple))
-                    and len(item) >= 2
-                    and isinstance(item[1], dict)
-                ):
-                    pairs.append((str(item[0]), dict(item[1])))
-            if pairs:
-                stable_tid = f"map_tpl_{map_id}"
-                return ingest_doodads_pairs(
-                    meta,
-                    pairs,
-                    template_id_override=stable_tid,
-                )
-        except (json.JSONDecodeError, TypeError, ValueError, KeyError):
-            pass
+    stable_tid = f"map_tpl_{map_id}"
+    stored = template_store.get(stable_tid)
+    if stored and stored["doodads_pairs"]:
+        return ingest_doodads_pairs(
+            dict(stored["meta_shell"]),
+            [(name, dict(spec)) for name, spec in stored["doodads_pairs"]],
+            template_id_override=stable_tid,
+        )
     raise api_error(
         status_code=404,
         code="maps.template_missing",
@@ -185,7 +198,8 @@ def put_editor_scene(map_id: int, body: dict[str, Any]) -> Response:
             detail="Карта не найдена",
             params={"map_id": map_id},
         )
-    text = json.dumps(body, ensure_ascii=False)
+    scene = _validate_editor_scene_payload(body)
+    text = scene.model_dump_json(exclude_none=True)
     if len(text.encode("utf-8")) > settings.max_editor_scene_json_bytes:
         raise api_error(
             status_code=413,

@@ -1,6 +1,8 @@
-import { TOOL_VARIANTS, type Scene } from '../../../types/scene';
-
-const LAYER_KINDS = ['default', 'decorations', 'palette', 'user'] as const;
+import {
+    ACCEPTED_TOOL_VARIANTS,
+    PAINT_LAYER_KINDS,
+} from '../../../shared/generated/editorSceneContract';
+import type { Scene } from '../../../types/scene';
 
 function isRecord(x: unknown): x is Record<string, unknown> {
     return x !== null && typeof x === 'object' && !Array.isArray(x);
@@ -99,7 +101,7 @@ export function validateEditorSceneJson(
                 && ly.kind !== null
                 && (
                     typeof ly.kind !== 'string'
-                    || !(LAYER_KINDS as readonly string[]).includes(ly.kind)
+                    || !(PAINT_LAYER_KINDS as readonly string[]).includes(ly.kind)
                 ))
             || typeof ly.visible !== 'boolean'
             || typeof ly.locked !== 'boolean'
@@ -165,7 +167,7 @@ export function validateEditorSceneJson(
     const variant = parsed.tool.variant;
     if (
         typeof variant !== 'string'
-        || !(TOOL_VARIANTS as readonly string[]).includes(variant)
+        || !(ACCEPTED_TOOL_VARIANTS as readonly string[]).includes(variant)
     ) {
         // Do not lose a drawn scene because of a new/unknown tool variant
         // (e.g. a build that saved a tool absent from this validator); fall

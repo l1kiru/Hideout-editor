@@ -42,6 +42,7 @@ def _effective_base_display_casefold(scene: SceneModel) -> str | None:
 
 def _meta_shell_for_export(scene: SceneModel, meta_shell: dict) -> dict:
     out = dict(meta_shell)
+    out["language"] = "English"
     eff = _effective_base_display_casefold(scene)
     if not eff:
         return out

@@ -189,7 +189,6 @@ function repoDataFoldersPlugin(): Plugin {
       server.middlewares.use(mount('hideout_scenes', '/hideout_scenes'))
       server.middlewares.use(mount(INPUT_IMAGES_SUBDIR, '/input/images'))
       server.middlewares.use(mount(INPUT_HIDEOUT_SUBDIR, '/input/hideout'))
-      server.middlewares.use(mount('config', '/config'))
     },
     closeBundle() {
       const outDir = path.resolve(config.root ?? __dirname, config.build.outDir)
@@ -197,7 +196,6 @@ function repoDataFoldersPlugin(): Plugin {
       const scenesSrc = path.join(repoRoot, 'hideout_scenes')
       const inputImgSrc = path.join(repoRoot, INPUT_IMAGES_SUBDIR)
       const inputHideoutSrc = path.join(repoRoot, INPUT_HIDEOUT_SUBDIR)
-      const configSrc = path.join(repoRoot, 'config')
       if (fs.existsSync(mapSrc))
         fs.cpSync(mapSrc, path.join(outDir, 'hideout_map'), { recursive: true })
       if (fs.existsSync(scenesSrc))
@@ -206,8 +204,6 @@ function repoDataFoldersPlugin(): Plugin {
         fs.cpSync(inputImgSrc, path.join(outDir, INPUT_IMAGES_SUBDIR), { recursive: true })
       if (fs.existsSync(inputHideoutSrc))
         fs.cpSync(inputHideoutSrc, path.join(outDir, INPUT_HIDEOUT_SUBDIR), { recursive: true })
-      if (fs.existsSync(configSrc))
-        fs.cpSync(configSrc, path.join(outDir, 'config'), { recursive: true })
       const imagesIndexPayload = JSON.stringify(listInputImageFilenames(inputImgSrc))
       fs.writeFileSync(path.join(outDir, 'input_images_index.json'), imagesIndexPayload, 'utf-8')
       const hideoutIndexPayload = JSON.stringify(listInputHideoutFilenames(inputHideoutSrc))

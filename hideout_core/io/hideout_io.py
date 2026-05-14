@@ -194,7 +194,7 @@ def write_hideout_ordered(path: Path | str, meta: dict) -> None:
         raise TypeError("doodads must be list of pairs (name, dict)")
     vr = meta.get("version", 1)
     version = int(vr if vr is not None else 1)
-    language = meta.get("language") or "Russian"
+    language = meta.get("language") or "English"
     hideout_name = meta.get("hideout_name") or "Убежище"
     hh = meta.get("hideout_hash", 0)
     hideout_hash = int(hh if hh is not None else 0)

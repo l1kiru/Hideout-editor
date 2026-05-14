@@ -15,6 +15,7 @@ import {
     placementsHaveInternalCoordDuplicates,
     worldPlacementCoordKey,
 } from '../../lib/editorPlacementCoords';
+import useEditorStore from '../../../../stores/editorStore';
 
 import type { PlacementActionsCtx } from './types';
 
@@ -27,11 +28,9 @@ export function usePlaceStrokeAt(ctx: PlacementActionsCtx) {
         tool,
         boundary,
         cameraDeg,
-        saveLayerSnapshot,
-        setLayers,
-        setSelected,
         setStatus,
     } = ctx;
+    const appendBatchToLayer = useEditorStore((state) => state.appendBatchToLayer);
 
     return useCallback(
         (viewPoints: [number, number][]) => {
@@ -71,7 +70,6 @@ export function usePlaceStrokeAt(ctx: PlacementActionsCtx) {
                     return;
                 }
             }
-            saveLayerSnapshot(t('status.strokeLabel', { asset: asset.title }));
             const batch: PaintedBatch = {
                 template_name_ru: asset.nameRu,
                 template_hash: asset.hash,
@@ -79,12 +77,12 @@ export function usePlaceStrokeAt(ctx: PlacementActionsCtx) {
                 facet_fv: activeAssetKey === TOOL_FV_ASSET_KEY ? tool.fv : asset.fv,
                 line_stroke: true,
             };
-            setLayers((ls) =>
-                ls.map((l, i) =>
-                    i === Number(layerIdx) ? { ...l, batches: [...l.batches, batch] } : l,
-                ),
-            );
-            setSelected([]);
+            appendBatchToLayer({
+                layerIdx,
+                batch,
+                label: t('status.strokeLabel', { asset: asset.title }),
+                nextSelected: [],
+            });
             setStatus(t('status.strokeDone', { count: placements.length }));
         },
         [
@@ -96,10 +94,8 @@ export function usePlaceStrokeAt(ctx: PlacementActionsCtx) {
             tool.fv,
             boundary,
             cameraDeg,
-            saveLayerSnapshot,
-            setLayers,
-            setSelected,
             setStatus,
+            appendBatchToLayer,
             t,
         ],
     );

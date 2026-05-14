@@ -5,7 +5,10 @@ import {
     worldToView,
 } from '../../../lib/coords';
 import { worldPointAllowed } from '../../../lib/polygon';
-import { templatePlacementFootprintView } from '../../../lib/sceneDecorations';
+import {
+    LINE_STROKE_ANALYSIS_FOOTPRINT,
+    templatePlacementFootprintView,
+} from '../../../lib/sceneDecorations';
 import type { PaintLayer } from '../../../types/scene';
 import type {
     PlacementRef,
@@ -26,8 +29,11 @@ export function placementFootprintAllowed(
     templateHash: number,
     templateFv: number | null | undefined,
     viewBox: ViewBox,
+    lineStroke = false,
 ): boolean {
-    const fp = templatePlacementFootprintView(templateHash, templateFv);
+    const fp = lineStroke
+        ? LINE_STROKE_ANALYSIS_FOOTPRINT
+        : templatePlacementFootprintView(templateHash, templateFv);
     const hw = fp.widthView / 2;
     const hh = fp.heightView / 2;
     const svgDeg = previewRotateDegForDoodad(
@@ -35,6 +41,7 @@ export function placementFootprintAllowed(
         cameraDeg,
         templateHash,
         templateFv,
+        lineStroke,
     );
     const θ = (svgDeg * Math.PI) / 180;
     const cos = Math.cos(θ);
@@ -182,6 +189,7 @@ export function everyRefPlacementFootprintAllowed(
                 b.template_hash,
                 b.facet_fv,
                 viewBox,
+                b.line_stroke === true,
             )
         )
             return false;
@@ -192,7 +200,7 @@ export function everyRefPlacementFootprintAllowed(
 // Same as everyRefPlacementFootprintAllowed but positions are taken from
 // `snaps` with a shift (dwx, dwy). Needed when the final state has not been
 // committed to layersRef/layers yet (e.g. right after drag-up, before
-// setLayers syncs layersRef via an effect).
+// the store update syncs layersRef via an effect).
 export function everyRefPlacementFootprintAllowedAfterShift(
     snaps: Record<string, PlacementSnapWorld>,
     refs: PlacementRef[],
@@ -219,6 +227,7 @@ export function everyRefPlacementFootprintAllowedAfterShift(
                 sp.template_hash,
                 sp.facet_fv,
                 viewBox,
+                sp.line_stroke === true,
             )
         )
             return false;

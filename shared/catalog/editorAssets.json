@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "assetOrder": [
+    "faridun_ropes4",
+    "faridun_ropes1",
+    "moss",
+    "sand",
+    "maraketh_rubble1",
+    "faridun_tools5",
+    "leaf_pile3"
+  ],
+  "legacyAliases": {
+    "rope": "faridun_ropes4"
+  },
+  "toolFvAssetKey": "faridun_ropes4",
+  "unknownDoodadFootprint": {
+    "widthView": 12,
+    "heightView": 12
+  },
+  "lineFootprints": {
+    "faridun_ropes4": {
+      "widthView": 4,
+      "heightView": 5
+    }
+  },
+  "assets": {
+    "faridun_ropes4": {
+      "title": "Faridun Ropes 4",
+      "nameRu": "Фаридунские верёвки 4",
+      "exportName": "Faridun Ropes",
+      "templateHash": 1675705915,
+      "defaultFv": 3,
+      "src": "/decorations/FaridunRopes.webp",
+      "widthView": 10,
+      "heightView": 14,
+      "paletteExact": true,
+      "allowToolFvOverride": true,
+      "exportFvMode": "scene_tool_or_batch"
+    },
+    "faridun_ropes1": {
+      "title": "Faridun Ropes 1",
+      "nameRu": "Фаридунские верёвки 1",
+      "exportName": "Faridun Ropes",
+      "templateHash": 1675705915,
+      "defaultFv": 0,
+      "src": "/decorations/faridun_ropes1.png",
+      "widthView": 13,
+      "heightView": 13,
+      "paletteExact": false,
+      "allowToolFvOverride": false,
+      "exportFvMode": "batch_or_zero"
+    },
+    "moss": {
+      "title": "Fringe Moss 3",
+      "nameRu": "Мох с опушки 3",
+      "exportName": "Fringe Moss",
+      "templateHash": 1459723677,
+      "defaultFv": 2,
+      "src": "/decorations/FringeMoss.webp",
+      "widthView": 11,
+      "heightView": 10,
+      "paletteExact": true,
+      "allowToolFvOverride": false,
+      "exportFvMode": "fixed",
+      "fixedExportFv": 2
+    },
+    "sand": {
+      "title": "Falling Sand 1",
+      "nameRu": "Летающий песок",
+      "exportName": "Falling Sand",
+      "templateHash": 3853073345,
+      "defaultFv": 0,
+      "src": "/decorations/FallingSand.webp",
+      "widthView": 12,
+      "heightView": 12,
+      "paletteExact": true,
+      "allowToolFvOverride": false,
+      "exportFvMode": "fixed",
+      "fixedExportFv": 0
+    },
+    "maraketh_rubble1": {
+      "title": "Maraketh Rubble 1",
+      "nameRu": "Маракетский щебень 1",
+      "exportName": "Maraketh Rubble",
+      "templateHash": 3012657298,
+      "defaultFv": 0,
+      "src": "/decorations/maraketh_rubble1.png",
+      "widthView": 15,
+      "heightView": 15,
+      "paletteExact": false,
+      "allowToolFvOverride": false,
+      "exportFvMode": "batch_or_zero"
+    },
+    "faridun_tools5": {
+      "title": "Faridun Tools 5",
+      "nameRu": "Фаридунские инструменты 5",
+      "exportName": "Faridun Tools",
+      "templateHash": 2233574719,
+      "defaultFv": 4,
+      "src": "/decorations/faridun_tools5.png",
+      "widthView": 12,
+      "heightView": 12,
+      "paletteExact": false,
+      "allowToolFvOverride": false,
+      "exportFvMode": "batch_or_zero"
+    },
+    "leaf_pile3": {
+      "title": "Leaf Pile 3",
+      "nameRu": "Куча листьев 3",
+      "exportName": "Leaf Pile",
+      "templateHash": 4294658310,
+      "defaultFv": 2,
+      "src": "/decorations/leaf_pile3.png",
+      "widthView": 12,
+      "heightView": 16,
+      "paletteExact": false,
+      "allowToolFvOverride": false,
+      "exportFvMode": "batch_or_zero"
+    }
+  }
+}

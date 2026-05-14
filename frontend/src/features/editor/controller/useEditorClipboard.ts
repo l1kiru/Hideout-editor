@@ -11,23 +11,25 @@ import type {
 import {
     DECORATIONS,
     TOOL_FV_ASSET_KEY,
-    assetKeyForTemplate,
 } from '../../../lib/sceneDecorations';
 import { placementFootprintAllowed } from '../lib/editorPlacementValidate';
 import { DEFAULT_MAP_LAYER_INDEX } from '../lib/editorConstants';
 import type { LayerId } from '../lib/editorIds';
 import { layerId } from '../lib/editorIds';
 import {
+    getPlacementEligibility,
+    partitionClipboardBatchesForClipboard,
+    partitionSelectionForClipboard,
+} from '../lib/editorPlacementEligibility';
+import {
     normalizeSelectionLayer0,
     readPlacement,
     uniqRefs,
 } from '../lib/placementSelection';
-import type {
-    PlacementRef,
-    SelectionState,
-} from '../model/editorSessionTypes';
+import type { PlacementRef, SelectionState } from '../model/editorSessionTypes';
 import type { ViewBox } from '../lib/editorViewport';
 import { viewToWorld } from '../../../lib/coords';
+import useEditorStore from '../../../stores/editorStore';
 
 const PASTE_OFFSET_WORLD = 24;
 
@@ -95,6 +97,7 @@ function footprintOkForShiftedClip(
                     entry.template_hash,
                     entry.facet_fv,
                     vb,
+                    entry.line_stroke === true,
                 )
             )
                 return false;
@@ -143,26 +146,45 @@ export type EditorClipboardBatch = {
     line_stroke?: boolean | undefined;
 };
 
-const SS_CLIP_KEY = 'hideout-editor-placement-clipboard-v1';
+export const SS_CLIP_KEY = 'hideout-editor-placement-clipboard-v1';
 
 type ClipboardEnvelope = { v: 1; batches: EditorClipboardBatch[] };
 
-function writeClipboardSs(batches: EditorClipboardBatch[]): void {
+export function clearClipboardSs(): void {
     try {
-        const env: ClipboardEnvelope = { v: 1, batches };
+        sessionStorage.removeItem(SS_CLIP_KEY);
+    } catch {
+        /* ignore */
+    }
+}
+
+export function writeClipboardSs(batches: EditorClipboardBatch[]): void {
+    try {
+        const { eligibleBatches } = partitionClipboardBatchesForClipboard(batches);
+        if (eligibleBatches.length === 0) {
+            sessionStorage.removeItem(SS_CLIP_KEY);
+            return;
+        }
+        const env: ClipboardEnvelope = { v: 1, batches: eligibleBatches };
         sessionStorage.setItem(SS_CLIP_KEY, JSON.stringify(env));
     } catch {
         /* ignore */
     }
 }
 
-function readClipboardSs(): EditorClipboardBatch[] | null {
+export function readClipboardSs(): EditorClipboardBatch[] | null {
     try {
         const raw = sessionStorage.getItem(SS_CLIP_KEY);
         if (!raw) return null;
         const p = JSON.parse(raw) as ClipboardEnvelope;
         if (!p || p.v !== 1 || !Array.isArray(p.batches)) return null;
-        return p.batches.length > 0 ? p.batches : null;
+        const { eligibleBatches } = partitionClipboardBatchesForClipboard(
+            p.batches,
+        );
+        if (eligibleBatches.length !== p.batches.length) {
+            writeClipboardSs(eligibleBatches);
+        }
+        return eligibleBatches.length > 0 ? eligibleBatches : null;
     } catch {
         return null;
     }
@@ -170,12 +192,12 @@ function readClipboardSs(): EditorClipboardBatch[] | null {
 
 function buildClipboardBatches(
     layers: PaintLayer[],
-    selected: SelectionState,
+    refs: ReadonlyArray<PlacementRef>,
 ): EditorClipboardBatch[] {
-    const refs = uniqRefs(selected);
-    if (refs.length === 0) return [];
+    const selected = uniqRefs(refs);
+    if (selected.length === 0) return [];
 
-    refs.sort(
+    selected.sort(
         (a, b) =>
             a.layerIdx - b.layerIdx ||
             a.batchIdx - b.batchIdx ||
@@ -183,7 +205,7 @@ function buildClipboardBatches(
     );
 
     const byBatch = new Map<string, PlacementRef[]>();
-    for (const r of refs) {
+    for (const r of selected) {
         const k = `${r.layerIdx}:${r.batchIdx}`;
         if (!byBatch.has(k)) byBatch.set(k, []);
         byBatch.get(k)!.push(r);
@@ -233,11 +255,8 @@ export function useEditorClipboard(opts: {
     toolMarginRef: MutableRefObject<number>;
     viewBoxRef: MutableRefObject<ViewBox>;
     cursorViewRef: MutableRefObject<[number, number] | null>;
-    saveLayerSnapshot: (label: string) => void;
-    setLayers: Dispatch<SetStateAction<PaintLayer[]>>;
     setSelected: Dispatch<SetStateAction<SelectionState>>;
     setStatus: Dispatch<SetStateAction<string>>;
-    setBgSelected: Dispatch<SetStateAction<boolean>>;
 }) {
     const { t } = useTranslation('editor');
     const {
@@ -251,12 +270,12 @@ export function useEditorClipboard(opts: {
         toolMarginRef,
         viewBoxRef,
         cursorViewRef,
-        saveLayerSnapshot,
-        setLayers,
         setSelected,
         setStatus,
-        setBgSelected,
     } = opts;
+    const appendBatchesToLayer = useEditorStore(
+        (state) => state.appendBatchesToLayer,
+    );
 
     const clipboardRef = useRef<EditorClipboardBatch[] | null>(null);
 
@@ -267,28 +286,49 @@ export function useEditorClipboard(opts: {
 
     const copySelected = useCallback(() => {
         const ls = layersRef.current;
-        if (selected.some((r) => r.layerIdx === layerId(DEFAULT_MAP_LAYER_INDEX))) {
-            setStatus(t('status.copyDefaultLocked'));
-            return;
-        }
-        if (selected.some((r) => ls[r.layerIdx]?.locked)) {
+        const {
+            lockedRefs,
+            defaultLayerRefs,
+            eligibleRefs,
+            skippedRefs,
+        } = partitionSelectionForClipboard(ls, selected);
+        if (lockedRefs.length > 0) {
             setStatus(t('status.copyLockedLayer'));
             return;
         }
-        const batches = buildClipboardBatches(ls, selected);
+        setSelected(normalizeSelectionLayer0(eligibleRefs));
+        if (eligibleRefs.length === 0) {
+            clipboardRef.current = null;
+            clearClipboardSs();
+            setStatus(
+                defaultLayerRefs.length > 0
+                    ? t('status.copyDefaultLocked')
+                    : t('status.copyNoEligible'),
+            );
+            return;
+        }
+        const batches = buildClipboardBatches(ls, eligibleRefs);
         if (batches.length === 0) {
+            clipboardRef.current = null;
+            clearClipboardSs();
             setStatus(t('status.copyNothing'));
             return;
         }
         clipboardRef.current = batches;
         writeClipboardSs(batches);
         const n = batches.reduce((acc, b) => acc + b.placements.length, 0);
+        const skippedCount = skippedRefs.length + defaultLayerRefs.length;
         setStatus(
-            n > 1
-                ? t('status.copiedMany', { count: n })
-                : t('status.copiedOne'),
+            skippedCount > 0
+                ? t('status.copiedPartial', {
+                      count: n,
+                      skipped: skippedCount,
+                  })
+                : n > 1
+                  ? t('status.copiedMany', { count: n })
+                  : t('status.copiedOne'),
         );
-    }, [layersRef, selected, setStatus, t]);
+    }, [layersRef, selected, setSelected, setStatus, t]);
 
     const pasteClipboard = useCallback(() => {
         let clip = clipboardRef.current;
@@ -303,6 +343,16 @@ export function useEditorClipboard(opts: {
             setStatus(t('status.clipboardEmpty'));
             return;
         }
+        const clipPartition = partitionClipboardBatchesForClipboard(clip);
+        if (clipPartition.eligibleBatches.length !== clip.length) {
+            clip = clipPartition.eligibleBatches;
+            clipboardRef.current = clip.length > 0 ? clip : null;
+            writeClipboardSs(clip);
+        }
+        if (!clip?.length) {
+            setStatus(t('status.pasteClipboardNoEligible'));
+            return;
+        }
         if (!ui.drawing_enabled) {
             setStatus(t('status.drawingDisabled'));
             return;
@@ -314,9 +364,7 @@ export function useEditorClipboard(opts: {
         if (targetIdx === DEFAULT_MAP_LAYER_INDEX) {
             const ji = ls.findIndex((l, i) => i > 0 && !l.locked);
             if (ji === -1) {
-                setStatus(
-                    t('status.pasteOnTemplateLocked'),
-                );
+                setStatus(t('status.pasteOnTemplateLocked'));
                 return;
             }
             targetIdx = ji;
@@ -342,9 +390,7 @@ export function useEditorClipboard(opts: {
             cursorViewRef,
         );
         if (!delta) {
-            setStatus(
-                t('status.pasteOutOfZone'),
-            );
+            setStatus(t('status.pasteOutOfZone'));
             return;
         }
         const { dx, dy } = delta;
@@ -352,8 +398,10 @@ export function useEditorClipboard(opts: {
         const newBatches: PaintLayer['batches'] = [];
 
         for (const entry of clip) {
-            const ak = assetKeyForTemplate(entry.template_hash, entry.facet_fv);
-            const asset = ak ? DECORATIONS[ak] : undefined;
+            const eligibility = getPlacementEligibility(entry);
+            const asset = eligibility.assetKey
+                ? DECORATIONS[eligibility.assetKey]
+                : undefined;
 
             const shifted: XYZRPlacement[] = entry.placements.map((p) => ({
                 x: Math.round(p.x + dx),
@@ -364,7 +412,7 @@ export function useEditorClipboard(opts: {
             const facetFv =
                 entry.facet_fv !== undefined && entry.facet_fv !== null
                     ? entry.facet_fv
-                    : ak === TOOL_FV_ASSET_KEY
+                    : eligibility.assetKey === TOOL_FV_ASSET_KEY
                       ? tool.fv
                       : (asset?.fv ?? 0);
 
@@ -382,8 +430,6 @@ export function useEditorClipboard(opts: {
             return;
         }
 
-        saveLayerSnapshot(t('status.pasteLabel'));
-
         const startBatchIdx = ls[targetIdx]!.batches.length;
         const newSelected: PlacementRef[] = [];
         let bi = startBatchIdx;
@@ -398,20 +444,22 @@ export function useEditorClipboard(opts: {
             bi += 1;
         }
 
-        setLayers((prev) =>
-            prev.map((l, li) =>
-                li !== targetIdx
-                    ? l
-                    : { ...l, batches: [...l.batches, ...newBatches] },
-            ),
-        );
-
-        setSelected(normalizeSelectionLayer0(uniqRefs(newSelected)));
-        setBgSelected(false);
+        appendBatchesToLayer({
+            layerIdx: layerId(targetIdx),
+            batches: newBatches,
+            label: t('status.pasteLabel'),
+            nextSelected: normalizeSelectionLayer0(uniqRefs(newSelected)),
+            clearBgSelection: true,
+        });
         setStatus(
-            newSelected.length > 1
-                ? t('status.pastedMany', { count: newSelected.length })
-                : t('status.pastedOne'),
+            clipPartition.skippedPlacementCount > 0
+                ? t('status.pastedPartial', {
+                      count: newSelected.length,
+                      skipped: clipPartition.skippedPlacementCount,
+                  })
+                : newSelected.length > 1
+                  ? t('status.pastedMany', { count: newSelected.length })
+                  : t('status.pastedOne'),
         );
     }, [
         boundaryRef,
@@ -419,15 +467,12 @@ export function useEditorClipboard(opts: {
         cursorViewRef,
         layerIdx,
         layersRef,
-        saveLayerSnapshot,
-        setBgSelected,
-        setLayers,
-        setSelected,
         setStatus,
         tool.fv,
         toolMarginRef,
         ui.drawing_enabled,
         viewBoxRef,
+        appendBatchesToLayer,
         t,
     ]);
 

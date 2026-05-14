@@ -12,6 +12,7 @@ import {
     occupiedCoordKeysExcludingRefs,
     worldPlacementCoordKey,
 } from '../../lib/editorPlacementCoords';
+import useEditorStore from '../../../../stores/editorStore';
 
 import type { PlacementActionsCtx } from './types';
 
@@ -24,11 +25,9 @@ export function usePlaceObjectAt(ctx: PlacementActionsCtx) {
         boundary,
         tool,
         activeAssetKey,
-        saveLayerSnapshot,
-        setLayers,
-        setSelected,
         setStatus,
     } = ctx;
+    const appendBatchToLayer = useEditorStore((state) => state.appendBatchToLayer);
 
     return useCallback(
         (vx: number, vy: number) => {
@@ -66,14 +65,13 @@ export function usePlaceObjectAt(ctx: PlacementActionsCtx) {
                 facet_fv: activeAssetKey === TOOL_FV_ASSET_KEY ? tool.fv : asset.fv,
                 line_stroke: false,
             };
-            saveLayerSnapshot(t('status.addLabel', { asset: asset.title }));
             const newBatchIdx = ly.batches.length;
-            setLayers((ls) =>
-                ls.map((l, i) =>
-                    i === layerIdx ? { ...l, batches: [...l.batches, batch] } : l,
-                ),
-            );
-            setSelected([{ layerIdx, batchIdx: newBatchIdx, placementIdx: 0 }]);
+            appendBatchToLayer({
+                layerIdx,
+                batch,
+                label: t('status.addLabel', { asset: asset.title }),
+                nextSelected: [{ layerIdx, batchIdx: newBatchIdx, placementIdx: 0 }],
+            });
             setStatus(t('status.addedObject', { asset: asset.title }));
         },
         [
@@ -84,10 +82,8 @@ export function usePlaceObjectAt(ctx: PlacementActionsCtx) {
             tool.margin,
             tool.fv,
             activeAssetKey,
-            saveLayerSnapshot,
-            setLayers,
-            setSelected,
             setStatus,
+            appendBatchToLayer,
             t,
         ],
     );

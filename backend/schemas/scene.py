@@ -2,54 +2,70 @@ from __future__ import annotations
 
 # JSON scene: boundary, template ref, layers, batches, background, tool.
 
-import json
-from pathlib import Path
 from typing import Literal
 
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator
+from hideout_core.config.editor_assets import (
+    asset_specs_by_key,
+    drawing_asset_keys,
+    legacy_asset_aliases,
+    load_editor_assets_manifest,
+)
 
 SCENE_VERSION = 2
+MIN_SCENE_COORD = -1_000_000
+MAX_SCENE_COORD = 1_000_000
+MIN_SCENE_ROTATION = -360_000
+MAX_SCENE_ROTATION = 360_000
+MAX_TEMPLATE_HASH = 4_294_967_295
+
+PAINT_LAYER_KINDS = ("default", "decorations", "palette", "user")
+DRAW_STYLES = ("line", "brush", "object")
+TOOL_MODE_VARIANTS = ("eraser", "select", "line", "fill")
+FILL_MODES = (
+    "four_way",
+    "eight_way_free",
+    "eight_way_corner_safe",
+    "orthogonal_first",
+    "radius_limited",
+    "narrow_passage_block",
+    "weighted",
+)
+FILL_CONNECTIVITY = (4, 8)
+FILL_WALLS_SCOPE = ("all_layers", "active_layer")
+TOOL_VARIANTS = (*drawing_asset_keys(), *TOOL_MODE_VARIANTS)
+# Runtime import seam: persisted/uploaded scenes may still arrive with a legacy
+# alias such as `rope`, even though the editor now stores manifest-backed asset
+# keys in the canonical tool contract.
+LEGACY_TOOL_VARIANTS = tuple(legacy_asset_aliases().keys())
+ACCEPTED_TOOL_VARIANTS = (*TOOL_VARIANTS, *LEGACY_TOOL_VARIANTS)
+DEFAULT_TOOL_VARIANT = str(load_editor_assets_manifest()["toolFvAssetKey"])
+DEFAULT_TOOL_FV = int(asset_specs_by_key()[DEFAULT_TOOL_VARIANT]["defaultFv"])
 
 
-def _load_tool_variants_from_shared_schema() -> tuple[str, ...]:
-    fallback = (
-        "faridun_ropes4",
-        "faridun_ropes1",
-        "moss",
-        "sand",
-        "maraketh_rubble1",
-        "faridun_tools5",
-        "rope",
-        "eraser",
-        "select",
-        "line",
-        "fill",
-    )
-    try:
-        root = Path(__file__).resolve().parents[2]
-        schema_path = root / "frontend" / "src" / "shared" / "editorSchema.json"
-        data = json.loads(schema_path.read_text(encoding="utf-8"))
-        seq = data.get("toolVariants")
-        if not isinstance(seq, list):
-            return fallback
-        vals = tuple(str(v).strip() for v in seq if str(v).strip())
-        return vals if vals else fallback
-    except (OSError, json.JSONDecodeError, TypeError, ValueError):
-        return fallback
-
-
-TOOL_VARIANTS = _load_tool_variants_from_shared_schema()
+def build_editor_scene_contract_artifact() -> dict[str, object]:
+    return {
+        "sceneVersion": SCENE_VERSION,
+        "paintLayerKinds": list(PAINT_LAYER_KINDS),
+        "drawStyles": list(DRAW_STYLES),
+        "toolVariants": list(TOOL_VARIANTS),
+        "legacyToolVariants": list(LEGACY_TOOL_VARIANTS),
+        "acceptedToolVariants": list(ACCEPTED_TOOL_VARIANTS),
+        "fillModes": list(FILL_MODES),
+        "fillConnectivity": list(FILL_CONNECTIVITY),
+        "fillWallsScope": list(FILL_WALLS_SCOPE),
+    }
 
 
 class XY(BaseModel):
-    x: int
-    y: int
+    x: int = Field(ge=MIN_SCENE_COORD, le=MAX_SCENE_COORD)
+    y: int = Field(ge=MIN_SCENE_COORD, le=MAX_SCENE_COORD)
 
 
 class XYZRPlacement(BaseModel):
-    x: int
-    y: int
-    r: int
+    x: int = Field(ge=MIN_SCENE_COORD, le=MAX_SCENE_COORD)
+    y: int = Field(ge=MIN_SCENE_COORD, le=MAX_SCENE_COORD)
+    r: int = Field(ge=MIN_SCENE_ROTATION, le=MAX_SCENE_ROTATION)
 
 
 class BoundaryModel(BaseModel):
@@ -58,10 +74,11 @@ class BoundaryModel(BaseModel):
 
 class PaintedBatchModel(BaseModel):
     template_name_ru: str
-    template_hash: int
+    template_hash: int = Field(ge=0, le=MAX_TEMPLATE_HASH)
     placements: list[XYZRPlacement] = Field(default_factory=list)
     facet_fv: int | None = Field(
         default=None,
+        ge=0,
         description="Fv в экспорте .hideout; если None — берётся tool.fv сцены.",
     )
     line_stroke: bool | None = Field(
@@ -79,13 +96,15 @@ class PaintLayerModel(BaseModel):
 
 
 class ToolModel(BaseModel):
-    model_config = {"extra": "allow"}
+    # Tool settings are intentionally forward-compatible: frontend may persist
+    # tool-specific options unknown to this backend version.
+    model_config = ConfigDict(extra="allow")
 
-    variant: str = "faridun_ropes4"
+    variant: str = DEFAULT_TOOL_VARIANT
     draw_style: Literal["line", "brush", "object"] = "object"
     spacing: float = 3.0
     margin: float = 3.0
-    fv: int = 3
+    fv: int = DEFAULT_TOOL_FV
     brush_width_view: float = 24.0
     fill_step_world: float | None = Field(
         default=None,
@@ -142,9 +161,10 @@ class ToolModel(BaseModel):
     @classmethod
     def validate_variant(cls, v: str) -> str:
         vv = str(v).strip()
-        if vv not in TOOL_VARIANTS:
+        if vv not in ACCEPTED_TOOL_VARIANTS:
             raise ValueError(
-                f"Input should be one of: {', '.join(repr(x) for x in TOOL_VARIANTS)}",
+                "Input should be one of: "
+                + ", ".join(repr(x) for x in ACCEPTED_TOOL_VARIANTS),
             )
         return vv
 
@@ -185,13 +205,13 @@ class UiModel(BaseModel):
 
 
 class SceneModel(BaseModel):
-    model_config = {"extra": "ignore"}
+    model_config = ConfigDict(extra="ignore")
 
-    scene_version: int = SCENE_VERSION
+    scene_version: Literal[2] = SCENE_VERSION
     camera_deg: float = Field(default=45.0, ge=-180, le=180)
     boundary: BoundaryModel
     template: TemplateRefModel = Field(default_factory=TemplateRefModel)
-    layers: list[PaintLayerModel]
+    layers: list[PaintLayerModel] = Field(min_length=1)
     tool: ToolModel = Field(default_factory=ToolModel)
     background: BackgroundModel = Field(default_factory=BackgroundModel)
     ui: UiModel | None = None

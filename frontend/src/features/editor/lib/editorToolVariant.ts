@@ -12,6 +12,25 @@ function resolvedStoredAssetKey(
     return isAssetKey(value) ? value : fallback;
 }
 
+export function syncToolDigitShortcut(
+    tool: Tool,
+    code: string,
+): Tool | null {
+    if (code === 'Digit1')
+        return syncToolVariantSelection(tool, 'select');
+    if (code === 'Digit2') {
+        const assetKey = resolvedStoredAssetKey(tool.asset_key);
+        return syncToolVariantSelection(tool, assetKey);
+    }
+    if (code === 'Digit3')
+        return syncToolVariantSelection(tool, 'eraser');
+    if (code === 'Digit4')
+        return syncToolVariantSelection(tool, 'line');
+    if (code === 'Digit5')
+        return syncToolVariantSelection(tool, 'fill');
+    return null;
+}
+
 export function syncToolVariantSelection(
     tool: Tool,
     nextVariant: Tool['variant'],

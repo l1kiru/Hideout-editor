@@ -15,9 +15,6 @@ from backend.schemas.scene import (
     TemplateRefModel,
     XY,
 )
-from backend.services.base_map_template_doodad_names import (
-    doodad_names_casefold_set_from_template_hideout_json,
-)
 from backend.services.hideout_decoration_layers import (
     split_decoration_pairs_for_hideout_import,
 )
@@ -56,24 +53,6 @@ def _reject_reserved_base_map_name(name: str) -> None:
         raise ValueError(
             f"Имя «{stripped}» зарезервировано для карты типа «Базовая карта»",
         )
-
-
-def split_import_pairs_for_base_map(
-    base_map_id: int,
-    pairs: list[tuple[str, dict[str, Any]]],
-) -> tuple[list[tuple[str, dict[str, Any]]], list[tuple[str, dict[str, Any]]]]:
-    # Base doodad names from SQLite template; if no template, treat all as extras.
-    raw = get_map_template_hideout_json(base_map_id)
-    allowed_cf = doodad_names_casefold_set_from_template_hideout_json(raw)
-    base_out: list[tuple[str, dict[str, Any]]] = []
-    extra_out: list[tuple[str, dict[str, Any]]] = []
-    for n, d in pairs:
-        key = str(n).strip().casefold()
-        if key in allowed_cf:
-            base_out.append((n, d))
-        else:
-            extra_out.append((n, d))
-    return base_out, extra_out
 
 
 def _list_maps_sort_key(rec: dict[str, Any]) -> tuple[Any, ...]:
@@ -268,7 +247,7 @@ def _editor_scene_json_for_hideout_import(
         layer1_batches = painted_batches_from_doodad_pairs(decoration_pairs)
         paint_layers = [
             PaintLayerModel(
-                kind="decorations",
+                kind="decorations" if layer1_batches else "user",
                 visible=True,
                 locked=False,
                 batches=layer1_batches,
@@ -585,5 +564,4 @@ __all__ = [
     "merge_export_meta_into_shell",
     "save_boundary_order",
     "save_editor_scene_json",
-    "split_import_pairs_for_base_map",
 ]

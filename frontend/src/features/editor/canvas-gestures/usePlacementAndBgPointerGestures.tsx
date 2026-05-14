@@ -22,7 +22,6 @@ import {
     resolveBackgroundDisplayMetrics,
 } from '../lib/editorBackgroundGeometry';
 import { findHitPlacementAtView } from '../lib/editorFindPlacement';
-import { layerId } from '../lib/editorIds';
 import {
     GROUP_TRANSFORM_DETAIL_FOOTPRINT_INTERACTIVE_MAX,
     MAX_GROUP_ROTATE_PLACEMENTS,
@@ -53,6 +52,7 @@ import {
     templatePlacementFootprintView,
 } from '../../../lib/sceneDecorations';
 import type { DragOverlaySnapshot } from '../components/scene/DragOverlayLayer';
+import useEditorStore from '../../../stores/editorStore';
 
 import type { BackgroundRotateSession, UseEditorCanvasGesturesArgs } from './types';
 
@@ -80,6 +80,7 @@ export type PlacementPointerGestureCtx = {
     bgInteractCleanupRef: MutableRefObject<(() => void) | null>;
     selectDragRef: MutableRefObject<SelectDragSession | null>;
     setSelectDrag: Dispatch<SetStateAction<SelectDragSession | null>>;
+    eraseCleanupRef: MutableRefObject<(() => void) | null>;
     setSelectRmbRotate: Dispatch<SetStateAction<boolean>>;
     clearSelectRotate: (svgEl: SVGSVGElement | null) => void;
     clearBgRotate: (svgEl: SVGSVGElement | null) => void;
@@ -104,19 +105,20 @@ export function usePlacementAndBgPointerGestures(
         cameraDeg,
         selected,
         setSelected,
-        setLayers,
         setCursorView,
         setStatus,
         ui,
         tool,
         viewBox,
-        pushMultiUndoForRefs,
         backgroundRef,
         bgNaturalSizeRef,
         setBackground,
         setBgSelected,
         pushBackgroundUndo,
     } = args;
+    const executeEditorCommand = useEditorStore(
+        (state) => state.executeEditorCommand,
+    );
 
     const {
         selectRotateRef,
@@ -133,6 +135,7 @@ export function usePlacementAndBgPointerGestures(
         bgInteractCleanupRef,
         selectDragRef,
         setSelectDrag,
+        eraseCleanupRef,
         setSelectRmbRotate,
         clearSelectRotate,
         clearBgRotate,
@@ -152,6 +155,8 @@ export function usePlacementAndBgPointerGestures(
 
         selectDragCleanupRef.current?.();
         selectDragCleanupRef.current = null;
+        eraseCleanupRef.current?.();
+        eraseCleanupRef.current = null;
         selectDragRef.current = null;
         setSelectDrag(null);
         bgInteractCleanupRef.current?.();
@@ -255,6 +260,8 @@ export function usePlacementAndBgPointerGestures(
                         r: p.r,
                         template_hash: b.template_hash,
                         facet_fv: b.facet_fv ?? null,
+                        lineStroke:
+                            b.line_stroke === true && ak === 'maraketh_rubble1',
                         assetKey: ak,
                         footprintWidthView: fp.widthView,
                         footprintHeightView: fp.heightView,
@@ -446,6 +453,7 @@ export function usePlacementAndBgPointerGestures(
                         sp.template_hash,
                         sp.facet_fv,
                         vb,
+                        sp.line_stroke === true,
                     )
                 ) {
                     boundaryValid = false;
@@ -587,6 +595,7 @@ export function usePlacementAndBgPointerGestures(
                         sp.template_hash,
                         sp.facet_fv,
                         vb,
+                        sp.line_stroke === true,
                     )
                 ) {
                     setStatus(t('status.rotateCancelledOutOfBoundary'));
@@ -628,32 +637,40 @@ export function usePlacementAndBgPointerGestures(
             }
         }
 
-        pushMultiUndoForRefs(sess.refs, t('status.rotateRmbLabel'));
-        const refKeySet = new Set(sess.refs.map(refKey));
-        setLayers((ls) =>
-            ls.map((l, li) => ({
-                ...l,
-                batches: l.batches.map((b, bi) => ({
-                    ...b,
-                    placements: b.placements.map((p0, pi) => {
-                        const rk = refKey({
-                            layerIdx: layerId(li),
-                            batchIdx: bi,
-                            placementIdx: pi,
-                        });
-                        if (!refKeySet.has(rk)) return p0;
-                        const pr = proposedFinal.get(rk);
-                        if (!pr) return p0;
-                        return {
-                            ...p0,
-                            x: pr.wx,
-                            y: pr.wy,
-                            r: Math.round(pr.r),
-                        };
-                    }),
-                })),
-            })),
-        );
+        const after = sess.refs
+            .map((ref) => {
+                const pr = proposedFinal.get(refKey(ref));
+                if (!pr) return null;
+                return {
+                    ref,
+                    x: pr.wx,
+                    y: pr.wy,
+                    r: Math.round(pr.r),
+                };
+            })
+            .filter((update) => update !== null);
+        const before = sess.refs
+            .map((ref) => {
+                const sp = sess.snaps[refKey(ref)];
+                if (!sp) return null;
+                return {
+                    ref,
+                    x: sp.wx,
+                    y: sp.wy,
+                    r: sp.r,
+                };
+            })
+            .filter((update) => update !== null);
+
+        executeEditorCommand({
+            command: {
+                type: 'placement_transform',
+                before,
+                after,
+                clearBgSelection: true,
+            },
+            label: t('status.rotateRmbLabel'),
+        });
         setStatus(
             sess.refs.length > 1
                 ? t('status.rotatedMany', { count: sess.refs.length })

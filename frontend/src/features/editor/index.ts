@@ -12,8 +12,16 @@ export type {
     EditorApiPorts,
     UseEditorControllerOptions,
     UseEditorControllerReturn,
+    UseEditorControllerResultReturn,
 } from './hooks/useEditorController';
-export { useEditorController } from './hooks/useEditorController';
+export {
+    useEditorController,
+    useEditorControllerResult,
+} from './hooks/useEditorController';
+export type {
+    EditorControllerResult,
+    LegacyEditorControllerResult,
+} from './controller/types';
 export {
     EditorSidebar,
     type EditorSidebarBackgroundProps,
@@ -21,12 +29,13 @@ export {
     type EditorSidebarFilesProps,
     type EditorSidebarLayersProps,
     type EditorSidebarProps,
-    type EditorSidebarToolBindingsProps,
     type EditorSidebarToolProps,
 } from './sidebar/EditorSidebar';
 export type {
+    EditorCommand,
     PlacementRef,
     PlacementSnapWorld,
+    PlacementTransformUpdate,
     SelectDragSession,
     SelectRotateSession,
     SelectionState,

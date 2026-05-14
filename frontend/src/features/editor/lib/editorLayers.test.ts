@@ -4,6 +4,8 @@ import { describe, expect, it } from 'vitest';
 import type { PaintLayer } from '../../../types/scene';
 import {
     getLayerDisplayTitle,
+    isImportedDecorationsLayer,
+    isNonDeletableSystemLayer,
     normalizePaintLayer,
 } from './editorLayers';
 
@@ -89,5 +91,53 @@ describe('editorLayers', () => {
                 kind: 'palette',
             }),
         );
+        expect(
+            normalizePaintLayer(
+                makeLayer({
+                    title: 'Imported decorations',
+                    visible: false,
+                }),
+            ),
+        ).toEqual(
+            makeLayer({
+                kind: 'decorations',
+                visible: false,
+            }),
+        );
+    });
+
+    it('keeps custom user titles instead of collapsing them into system kinds', () => {
+        expect(
+            normalizePaintLayer(
+                makeLayer({
+                    title: 'My custom layer',
+                }),
+            ),
+        ).toEqual(
+            makeLayer({
+                title: 'My custom layer',
+            }),
+        );
+    });
+
+    it('recognizes imported decorations as a dedicated system layer', () => {
+        expect(isImportedDecorationsLayer(makeLayer({ kind: 'decorations' }))).toBe(
+            true,
+        );
+        expect(
+            isImportedDecorationsLayer(makeLayer({ title: 'Imported decorations' })),
+        ).toBe(true);
+        expect(isImportedDecorationsLayer(makeLayer({ kind: 'user' }))).toBe(false);
+    });
+
+    it('marks only default and decorations layers as non-deletable system layers', () => {
+        expect(isNonDeletableSystemLayer(makeLayer({ kind: 'default' }))).toBe(true);
+        expect(
+            isNonDeletableSystemLayer(makeLayer({ kind: 'decorations' })),
+        ).toBe(true);
+        expect(isNonDeletableSystemLayer(makeLayer({ kind: 'palette' }))).toBe(
+            false,
+        );
+        expect(isNonDeletableSystemLayer(makeLayer({ kind: 'user' }))).toBe(false);
     });
 });

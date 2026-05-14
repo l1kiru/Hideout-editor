@@ -29,7 +29,7 @@ export function SidebarLayersSection(props: EditorSidebarLayersProps) {
         layerIdx,
         setLayerIdx,
         removeLayer,
-        setLayers,
+        setLayerVisible,
         selected,
         onSelectSidebarPlacement,
         onLayerLockedToggle,
@@ -189,18 +189,7 @@ export function SidebarLayersSection(props: EditorSidebarLayersProps) {
                                         checked={ly.visible}
                                         disabled={ro}
                                         onChange={(e) =>
-                                            setLayers((ls) =>
-                                                ls.map((l, j) =>
-                                                    j === i
-                                                        ? {
-                                                              ...l,
-                                                              visible:
-                                                                  e.target
-                                                                      .checked,
-                                                          }
-                                                        : l,
-                                                ),
-                                            )
+                                            setLayerVisible(i, e.target.checked)
                                         }
                                     />
                                     {ly.visible ? (

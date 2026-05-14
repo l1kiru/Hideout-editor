@@ -6,11 +6,9 @@ from typing import Any
 
 from hideout_core.config.constants import (
     EXCLUDE_FROM_OUTPUT,
-    FLYING_SAND_HASH,
-    MOSS_EDGE_3_HASH,
-    ROPE_TEMPLATE_HASH,
     ROT_FULL,
 )
+from hideout_core.config.editor_assets import export_fv_for_batch, export_name_for_batch
 from hideout_core.rope_paint.paint_data import PaintedBatch
 
 
@@ -22,20 +20,20 @@ def append_painted_batch_as_doodads(
 ) -> None:
     tpl_hash = batch.template_hash
     th = int(tpl_hash)
-    if th == ROPE_TEMPLATE_HASH:
-        eff_fv = int(batch.facet_fv) if batch.facet_fv is not None else int(fv)
-    elif th == FLYING_SAND_HASH:
-        eff_fv = 0
-    elif th == MOSS_EDGE_3_HASH:
-        eff_fv = 2
-    else:
-        # Map decor and palette objects: fv comes from the batch only; tool.fv is rope-specific.
-        eff_fv = int(batch.facet_fv) if batch.facet_fv is not None else 0
+    export_name = export_name_for_batch(
+        th,
+        int(batch.facet_fv) if batch.facet_fv is not None else None,
+    ) or batch.template_name_ru
+    eff_fv = export_fv_for_batch(
+        th,
+        batch_facet_fv=int(batch.facet_fv) if batch.facet_fv is not None else None,
+        scene_tool_fv=int(fv),
+    )
     for bx, by, br in batch.placements:
         out_r = int(br) % ROT_FULL
         new_pairs.append(
             (
-                batch.template_name_ru,
+                export_name,
                 {
                     "hash": tpl_hash,
                     "x": bx,

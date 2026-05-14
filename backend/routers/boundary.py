@@ -25,7 +25,6 @@ from hideout_core.config.settings import settings
 router = APIRouter(prefix="/boundary", tags=["boundary"])
 
 _MAX_BYTES = settings.max_upload_size_bytes // 6  # Smaller limit for boundary files
-_REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
 def _points_from_boundary_dict(raw: dict[str, Any]) -> list[XY]:
@@ -274,9 +273,5 @@ def publish_boundary_order(body: BoundaryOrderPublish) -> dict[str, Any]:
         "written": True,
         "map_id": mid,
         "display_name": m["display_name"],
-        "sqlite": str(
-            (_REPO_ROOT / "hideout_settings" / "hideout_maps.sqlite").relative_to(
-                _REPO_ROOT
-            )
-        ),
+        "sqlite": str(settings.hideout_maps_sqlite),
     }

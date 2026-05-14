@@ -1,40 +1,25 @@
 // JSON scene type for the hideout-editor web app.
-import editorSchema from '../shared/editorSchema.json';
+import type { EditorAssetKey } from '../shared/generated/editorAssets';
+import {
+    DRAW_STYLES as GENERATED_DRAW_STYLES,
+    FILL_CONNECTIVITY as GENERATED_FILL_CONNECTIVITY,
+    FILL_MODES as GENERATED_FILL_MODES,
+    FILL_WALLS_SCOPE as GENERATED_FILL_WALLS_SCOPE,
+    PAINT_LAYER_KINDS as GENERATED_PAINT_LAYER_KINDS,
+    SCENE_VERSION as GENERATED_SCENE_VERSION,
+    TOOL_VARIANTS as GENERATED_TOOL_VARIANTS,
+} from '../shared/generated/editorSceneContract';
 
-export type PaintVariant =
-    | 'faridun_ropes4'
-    | 'faridun_ropes1'
-    | 'moss'
-    | 'sand'
-    | 'maraketh_rubble1'
-    | 'faridun_tools5'
-    | 'leaf_pile3'
-    | 'eraser'
-    | 'select'
-    | 'fill'
-    | 'line';
-// Runtime tool list sourced from the shared schema file (used by the validator).
-export const TOOL_VARIANTS = editorSchema.toolVariants as PaintVariant[];
-export type AssetKey =
-    | 'faridun_ropes4'
-    | 'faridun_ropes1'
-    | 'moss'
-    | 'sand'
-    | 'maraketh_rubble1'
-    | 'faridun_tools5'
-    | 'leaf_pile3';
-export type DrawStyle = 'object';
-export type FillConnectivity = 4 | 8;
-export type FillWallsScope = 'all_layers' | 'active_layer';
-export type FillMode =
-    | 'four_way'
-    | 'eight_way_free'
-    | 'eight_way_corner_safe'
-    | 'orthogonal_first'
-    | 'radius_limited'
-    | 'narrow_passage_block'
-    | 'weighted';
-export const FILL_MODES = editorSchema.fillModes as FillMode[];
+export type PaintVariant = (typeof GENERATED_TOOL_VARIANTS)[number];
+// Runtime tool list sourced from the generated backend contract artifact.
+export const TOOL_VARIANTS = [...GENERATED_TOOL_VARIANTS] as PaintVariant[];
+export type AssetKey = EditorAssetKey;
+export type DrawStyle = (typeof GENERATED_DRAW_STYLES)[number];
+export type FillConnectivity = (typeof GENERATED_FILL_CONNECTIVITY)[number];
+export type FillWallsScope = (typeof GENERATED_FILL_WALLS_SCOPE)[number];
+export type FillMode = (typeof GENERATED_FILL_MODES)[number];
+export const FILL_MODES = [...GENERATED_FILL_MODES] as FillMode[];
+export const SCENE_VERSION = GENERATED_SCENE_VERSION;
 export type FillModeParams = {
     radius_world?: number;
     min_passage_width_world?: number;
@@ -67,7 +52,7 @@ export interface PaintedBatch {
     line_stroke?: boolean;
 }
 
-export type PaintLayerKind = 'default' | 'decorations' | 'palette' | 'user';
+export type PaintLayerKind = (typeof GENERATED_PAINT_LAYER_KINDS)[number];
 
 export interface PaintLayer {
     // Stable semantic layer kind used for locale-aware UI labels.

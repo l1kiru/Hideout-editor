@@ -1,11 +1,11 @@
-import type { Scene } from '../../types/scene';
+import { SCENE_VERSION, type Scene } from '../../types/scene';
 
 // Canonical, hand-crafted Scene used by the export-format test suite.
 // Touch carefully: changes here ripple through buildExportPayload,
 // editorSceneJsonValidate and exportHideout API tests.
 export function sampleEditorScene(): Scene {
     return {
-        scene_version: 2,
+        scene_version: SCENE_VERSION,
         camera_deg: 45,
         boundary: {
             points: [

@@ -14,6 +14,7 @@ import {
     normalizedFillStep,
     resolvedFillMode,
 } from './fillConfig';
+import useEditorStore from '../../../../stores/editorStore';
 import type { PlacementActionsCtx } from './types';
 
 export function usePlaceFillAt(ctx: PlacementActionsCtx) {
@@ -27,10 +28,8 @@ export function usePlaceFillAt(ctx: PlacementActionsCtx) {
         cameraDeg,
         activeAssetKey,
         viewBoxRef,
-        saveLayerSnapshot,
-        setLayers,
-        setSelected,
     } = ctx;
+    const appendBatchToLayer = useEditorStore((state) => state.appendBatchToLayer);
 
     return useCallback(
         (vx: number, vy: number) => {
@@ -97,12 +96,6 @@ export function usePlaceFillAt(ctx: PlacementActionsCtx) {
             }
 
             const asset = DECORATIONS[activeAssetKey];
-            saveLayerSnapshot(
-                t('status.fillLabel', {
-                    count: placements.length,
-                    asset: asset.title,
-                }),
-            );
             const batch: PaintedBatch = {
                 template_name_ru: asset.nameRu,
                 template_hash: asset.hash,
@@ -110,12 +103,15 @@ export function usePlaceFillAt(ctx: PlacementActionsCtx) {
                 facet_fv: activeAssetKey === TOOL_FV_ASSET_KEY ? tool.fv : asset.fv,
                 line_stroke: false,
             };
-            setLayers((ls) =>
-                ls.map((l, i) =>
-                    i === Number(layerIdx) ? { ...l, batches: [...l.batches, batch] } : l,
-                ),
-            );
-            setSelected([]);
+            appendBatchToLayer({
+                layerIdx,
+                batch,
+                label: t('status.fillLabel', {
+                    count: placements.length,
+                    asset: asset.title,
+                }),
+                nextSelected: [],
+            });
             setStatus(t('status.fillDone', { count: placements.length }));
         },
         [
@@ -127,9 +123,7 @@ export function usePlaceFillAt(ctx: PlacementActionsCtx) {
             cameraDeg,
             activeAssetKey,
             viewBoxRef,
-            saveLayerSnapshot,
-            setLayers,
-            setSelected,
+            appendBatchToLayer,
             t,
         ],
     );

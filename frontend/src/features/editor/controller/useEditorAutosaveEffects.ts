@@ -9,11 +9,11 @@ type UseEditorAutosaveEffectsArgs = {
   activeMapId: number | null
   sceneReadOnly: boolean
   api: EditorApiPorts
-  buildScene: () => Scene
+  sceneSnapshot: Scene
 }
 
 export function useEditorAutosaveEffects(args: UseEditorAutosaveEffectsArgs) {
-  const { activeMapId, sceneReadOnly, api, buildScene } = args
+  const { activeMapId, sceneReadOnly, api, sceneSnapshot } = args
 
   useEffect(() => {
     if (activeMapId == null || sceneReadOnly)
@@ -22,7 +22,7 @@ export function useEditorAutosaveEffects(args: UseEditorAutosaveEffectsArgs) {
       try {
         localStorage.setItem(
           sceneStorageKeyForMap(activeMapId),
-          JSON.stringify(buildScene()),
+          JSON.stringify(sceneSnapshot),
         )
         logEditorDevEvent('scene.save.local.ok', { mapId: activeMapId })
       } catch {
@@ -30,7 +30,7 @@ export function useEditorAutosaveEffects(args: UseEditorAutosaveEffectsArgs) {
       }
     }, 50)
     return () => window.clearTimeout(t)
-  }, [buildScene, activeMapId, sceneReadOnly])
+  }, [sceneSnapshot, activeMapId, sceneReadOnly])
 
   useEffect(() => {
     if (activeMapId == null || sceneReadOnly)
@@ -38,7 +38,7 @@ export function useEditorAutosaveEffects(args: UseEditorAutosaveEffectsArgs) {
     const t = window.setTimeout(() => {
       try {
         void api
-          .putEditorSceneForMap(activeMapId, buildScene())
+          .putEditorSceneForMap(activeMapId, sceneSnapshot)
           .then(() => {
             logEditorDevEvent('scene.save.remote.ok', { mapId: activeMapId })
           })
@@ -53,15 +53,14 @@ export function useEditorAutosaveEffects(args: UseEditorAutosaveEffectsArgs) {
       }
     }, 300)
     return () => window.clearTimeout(t)
-  }, [buildScene, activeMapId, api, sceneReadOnly])
+  }, [sceneSnapshot, activeMapId, api, sceneReadOnly])
 
   useEffect(() => {
     if (activeMapId == null || sceneReadOnly)
       return
     const flush = () => {
       try {
-        const payload = buildScene()
-        const json = JSON.stringify(payload)
+        const json = JSON.stringify(sceneSnapshot)
         try {
           localStorage.setItem(sceneStorageKeyForMap(activeMapId), json)
         } catch {
@@ -87,5 +86,5 @@ export function useEditorAutosaveEffects(args: UseEditorAutosaveEffectsArgs) {
       window.removeEventListener('beforeunload', flush)
       window.removeEventListener('pagehide', flush)
     }
-  }, [activeMapId, buildScene, sceneReadOnly])
+  }, [activeMapId, sceneSnapshot, sceneReadOnly])
 }

@@ -15,7 +15,6 @@ import {
     firstBaseHideoutMap,
 } from '../lib/editorConstants';
 import {
-    migrateLegacySharedSceneToMap,
     readSceneForMapFromLocalStorage,
 } from '../lib/editorSceneStorage';
 import { sanitizeEditorSceneLayer0 } from '../lib/editorSceneDedupe';
@@ -126,8 +125,6 @@ export function useEditorSceneBootstrap(opts: {
         const gen = mapApiGenerationRef.current;
 
         void (async () => {
-            migrateLegacySharedSceneToMap(activeMapId, meta.display_name);
-
             let stored = readSceneForMapFromLocalStorage(activeMapId);
             if (!stored) {
                 try {

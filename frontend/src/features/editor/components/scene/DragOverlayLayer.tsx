@@ -130,6 +130,7 @@ function DragOverlayLayerInner(
                     r={s.r}
                     template_hash={s.template_hash}
                     facet_fv={s.facet_fv ?? null}
+                    lineStroke={s.lineStroke}
                     assetKey={s.assetKey}
                     footprintWidthView={s.footprintWidthView}
                     footprintHeightView={s.footprintHeightView}

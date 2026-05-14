@@ -3,5 +3,7 @@
 export type { EditorApiPorts, UseEditorControllerOptions } from './editorApiPorts';
 export {
     useEditorController,
+    useEditorControllerResult,
     type UseEditorControllerReturn,
+    type UseEditorControllerResultReturn,
 } from '../controller/useEditorController';

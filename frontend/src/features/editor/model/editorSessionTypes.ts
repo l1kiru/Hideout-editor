@@ -1,4 +1,4 @@
-import type { Background, PaintedBatch } from '../../../types/scene';
+import type { Background, PaintLayer, PaintedBatch } from '../../../types/scene';
 import type { LayerId, OccupiedWorldCells } from '../lib/editorIds';
 
 // Reference to a single placement in the scene.
@@ -19,6 +19,92 @@ export type PlacementSnapWorld = {
     facet_fv?: number | null;
     line_stroke: boolean | undefined;
 };
+
+export type PlacementTransformUpdate = {
+    ref: PlacementRef;
+    x: number;
+    y: number;
+    r: number;
+};
+
+export type PlacementTransformCommand = {
+    type: 'placement_transform';
+    before: PlacementTransformUpdate[];
+    after: PlacementTransformUpdate[];
+    clearBgSelection?: boolean;
+};
+
+export type BackgroundTransformCommand = {
+    type: 'background_transform';
+    before: Background;
+    after: Background;
+    clearBgSelection?: boolean;
+};
+
+export type RemovedBatchSnapshot = {
+    layerIdx: LayerId;
+    batchIdx: number;
+    itemIdx?: number;
+    batch: PaintedBatch;
+};
+
+export type PlacementAppendCommand = {
+    type: 'placement_append';
+    layerIdx: LayerId;
+    batches: PaintedBatch[];
+    insertAt: number;
+    selectInserted?: boolean;
+    previousSelection: PlacementRef[];
+    nextSelection: PlacementRef[];
+    clearBgSelection?: boolean;
+};
+
+export type PlacementDeleteCommand = {
+    type: 'placement_delete';
+    refs: PlacementRef[];
+    removed: RemovedBatchSnapshot[];
+    previousSelection: PlacementRef[];
+    nextSelection: PlacementRef[];
+    clearBgSelection?: boolean;
+};
+
+export type PlacementRestoreCommand = {
+    type: 'placement_restore';
+    removed: RemovedBatchSnapshot[];
+    previousSelection: PlacementRef[];
+    nextSelection: PlacementRef[];
+    clearBgSelection?: boolean;
+};
+
+export type LayerReplaceBatchesCommand = {
+    type: 'layer_replace_batches';
+    layerIdx: LayerId;
+    before: PaintedBatch[];
+    after: PaintedBatch[];
+    previousSelection: PlacementRef[];
+    nextSelection: PlacementRef[];
+    clearBgSelection?: boolean;
+};
+
+export type LayerStructureCommand = {
+    type: 'layer_structure';
+    before: PaintLayer[];
+    after: PaintLayer[];
+    previousActiveLayerIdx: LayerId;
+    nextActiveLayerIdx: LayerId;
+    previousSelection: PlacementRef[];
+    nextSelection: PlacementRef[];
+    clearBgSelection?: boolean;
+};
+
+export type EditorCommand =
+    | PlacementTransformCommand
+    | BackgroundTransformCommand
+    | PlacementAppendCommand
+    | PlacementDeleteCommand
+    | PlacementRestoreCommand
+    | LayerReplaceBatchesCommand
+    | LayerStructureCommand;
 
 export type SelectDragSession = {
     refs: PlacementRef[];
@@ -53,18 +139,12 @@ export type SelectRotateSession = {
 
 export type UndoEntry =
     | {
-          kind: 'snapshot';
-          layerIdx: LayerId;
-          batches: PaintedBatch[];
-          label: string;
-      }
-    | {
-          kind: 'multi';
-          snapshots: { layerIdx: LayerId; batches: PaintedBatch[] }[];
-          label: string;
-      }
-    | {
           kind: 'background';
           snapshot: Background;
+          label: string;
+      }
+    | {
+          kind: 'command';
+          command: EditorCommand;
           label: string;
       };

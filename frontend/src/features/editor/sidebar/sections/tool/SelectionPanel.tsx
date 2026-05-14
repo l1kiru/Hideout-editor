@@ -1,16 +1,17 @@
-import { Redo2, RotateCcw, RotateCw, Trash2 } from 'lucide-react';
+import { Layers3, Redo2, RotateCcw, RotateCw, Trash2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 import { IconButton } from '../../../../../components/IconButton';
-import type {
-    EditorSidebarToolBindingsProps,
-    EditorSidebarToolProps,
-} from '../../editorSidebarTypes';
+import useEditorStore from '../../../../../stores/editorStore';
+import type { EditorSidebarToolProps } from '../../editorSidebarTypes';
 
 type SelectionPanelProps = Pick<
     EditorSidebarToolProps,
     | 'selected'
     | 'rotateSelected'
+    | 'mirrorSelectedHorizontal'
+    | 'mirrorSelectedVertical'
+    | 'moveSelectedToNewLayer'
     | 'deleteSelected'
     | 'redo'
     | 'canRedo'
@@ -18,16 +19,18 @@ type SelectionPanelProps = Pick<
     | 'rToDeg'
     | 'degToR'
     | 'rotStep'
-> &
-    Pick<EditorSidebarToolBindingsProps, 'saveLayerSnapshotAt' | 'setLayers'> & {
-        disabled: boolean;
-    };
+> & {
+    disabled: boolean;
+};
 
 export function SelectionPanel(props: SelectionPanelProps) {
     const { t } = useTranslation('editor');
     const {
         selected,
         rotateSelected,
+        mirrorSelectedHorizontal,
+        mirrorSelectedVertical,
+        moveSelectedToNewLayer,
         deleteSelected,
         redo,
         canRedo,
@@ -35,11 +38,12 @@ export function SelectionPanel(props: SelectionPanelProps) {
         rToDeg,
         degToR,
         rotStep,
-        saveLayerSnapshotAt,
-        setLayers,
         disabled,
     } = props;
     const selOne = selected.length === 1 ? selected[0] : undefined;
+    const executeEditorCommand = useEditorStore(
+        (state) => state.executeEditorCommand,
+    );
 
     return (
         <>
@@ -67,6 +71,26 @@ export function SelectionPanel(props: SelectionPanelProps) {
                 <IconButton
                     size="sm"
                     variant="muted"
+                    title={t('selection.mirrorHorizontalTitle')}
+                    aria-label={t('selection.mirrorHorizontalAria')}
+                    disabled={disabled || selected.length === 0}
+                    onClick={mirrorSelectedHorizontal}
+                >
+                    <span aria-hidden>X</span>
+                </IconButton>
+                <IconButton
+                    size="sm"
+                    variant="muted"
+                    title={t('selection.mirrorVerticalTitle')}
+                    aria-label={t('selection.mirrorVerticalAria')}
+                    disabled={disabled || selected.length === 0}
+                    onClick={mirrorSelectedVertical}
+                >
+                    <span aria-hidden>Y</span>
+                </IconButton>
+                <IconButton
+                    size="sm"
+                    variant="muted"
                     title={t('selection.redoTitle')}
                     aria-label={t('selection.redoAria')}
                     disabled={disabled || !canRedo}
@@ -85,6 +109,17 @@ export function SelectionPanel(props: SelectionPanelProps) {
                     <Trash2 aria-hidden />
                 </IconButton>
             </div>
+            <button
+                type="button"
+                className="iconBtnLabeled sideBtnWide sideBtnMuted"
+                title={t('selection.moveToNewLayerTitle')}
+                aria-label={t('selection.moveToNewLayerAria')}
+                disabled={disabled || selected.length === 0}
+                onClick={moveSelectedToNewLayer}
+            >
+                <Layers3 aria-hidden />
+                {t('selection.moveToNewLayerButton')}
+            </button>
             {selected.length > 1 ? (
                 <p className="sideHint subtle">
                     {t('selection.selectedManyHint', { count: selected.length })}
@@ -108,27 +143,31 @@ export function SelectionPanel(props: SelectionPanelProps) {
                                 const h = selOne;
                                 if (!h) return;
                                 const deg = Number(e.target.value);
-                                saveLayerSnapshotAt(h.layerIdx, t('selection.rotationSnapshotLabel'));
                                 const r = degToR(deg);
-                                setLayers((ls) =>
-                                    ls.map((l, li) => {
-                                        if (li !== Number(h.layerIdx)) return l;
-                                        return {
-                                            ...l,
-                                            batches: l.batches.map((b, bi) => {
-                                                if (bi !== h.batchIdx) return b;
-                                                return {
-                                                    ...b,
-                                                    placements: b.placements.map((p0, pi) =>
-                                                        pi === h.placementIdx
-                                                            ? { ...p0, r }
-                                                            : p0,
-                                                    ),
-                                                };
-                                            }),
-                                        };
-                                    }),
-                                );
+                                if (!selectionDetail) return;
+                                executeEditorCommand({
+                                    command: {
+                                        type: 'placement_transform',
+                                        before: [
+                                            {
+                                                ref: h,
+                                                x: selectionDetail.p.x,
+                                                y: selectionDetail.p.y,
+                                                r: selectionDetail.p.r,
+                                            },
+                                        ],
+                                        after: [
+                                            {
+                                                ref: h,
+                                                x: selectionDetail.p.x,
+                                                y: selectionDetail.p.y,
+                                                r,
+                                            },
+                                        ],
+                                        clearBgSelection: true,
+                                    },
+                                    label: t('selection.rotationSnapshotLabel'),
+                                });
                             }}
                         />
                     </label>

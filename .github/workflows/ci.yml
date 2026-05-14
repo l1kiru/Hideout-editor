@@ -25,6 +25,8 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install -r requirements-api.txt
+      - name: Verify generated editor artifacts
+        run: python scripts/generate_editor_shared_artifacts.py --check
       - name: Run backend tests
         run: python -m unittest discover tests
 
@@ -85,9 +87,9 @@ jobs:
               "README.md",
               "docs/INSTALL.md",
               "requirements-api.txt",
+              "dev.py",
               "backend/main.py",
               "backend/seed_data/poe2_objects_database_all.csv",
-              "config/app-config.json",
               "frontend/package.json",
               "Start.bat",
               "UpdateAndStart.bat",

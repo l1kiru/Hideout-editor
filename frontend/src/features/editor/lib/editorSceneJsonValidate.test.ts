@@ -103,4 +103,16 @@ describe('validateEditorSceneJson', () => {
             expect(result.scene.tool.variant).toBe('select');
         }
     });
+
+    it('accepts legacy "rope" tool variants for backward compatibility', () => {
+        const scene = JSON.parse(JSON.stringify(sampleEditorScene()));
+        scene.tool.variant = 'rope';
+        const result = validateEditorSceneJson(scene);
+        expect(result.ok).toBe(true);
+        if (result.ok) {
+            expect((result.scene as { tool: { variant: string } }).tool.variant).toBe(
+                'rope',
+            );
+        }
+    });
 });

@@ -1,14 +1,10 @@
-import type {
-    EditorSidebarToolBindingsProps,
-    EditorSidebarToolProps,
-} from '../editorSidebarTypes';
+import type { EditorSidebarToolProps } from '../editorSidebarTypes';
 import { useTranslation } from 'react-i18next';
 import { SelectionPanel } from './tool/SelectionPanel';
 import { ToolPicker } from './tool/ToolPicker';
 import { ToolSettings } from './tool/ToolSettings';
 
-export type SidebarToolSectionProps = EditorSidebarToolProps &
-    EditorSidebarToolBindingsProps;
+export type SidebarToolSectionProps = EditorSidebarToolProps;
 
 export function SidebarToolSection(props: SidebarToolSectionProps) {
     const { t } = useTranslation('editor');
@@ -20,14 +16,15 @@ export function SidebarToolSection(props: SidebarToolSectionProps) {
         rotStep,
         selected,
         rotateSelected,
+        mirrorSelectedHorizontal,
+        mirrorSelectedVertical,
+        moveSelectedToNewLayer,
         deleteSelected,
         redo,
         canRedo,
         selectionDetail,
         rToDeg,
         degToR,
-        saveLayerSnapshotAt,
-        setLayers,
         sceneReadOnly,
     } = props;
 
@@ -80,6 +77,9 @@ export function SidebarToolSection(props: SidebarToolSectionProps) {
             <SelectionPanel
                 selected={selected}
                 rotateSelected={rotateSelected}
+                mirrorSelectedHorizontal={mirrorSelectedHorizontal}
+                mirrorSelectedVertical={mirrorSelectedVertical}
+                moveSelectedToNewLayer={moveSelectedToNewLayer}
                 deleteSelected={deleteSelected}
                 redo={redo}
                 canRedo={canRedo}
@@ -87,8 +87,6 @@ export function SidebarToolSection(props: SidebarToolSectionProps) {
                 rToDeg={rToDeg}
                 degToR={degToR}
                 rotStep={rotStep}
-                saveLayerSnapshotAt={saveLayerSnapshotAt}
-                setLayers={setLayers}
                 disabled={ro}
             />
         </section>

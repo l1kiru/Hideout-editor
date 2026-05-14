@@ -1,23 +1,22 @@
 import '../App.css';
 
-import { EditorCanvas, useEditorController } from '../features/editor';
+import { EditorCanvas, useEditorControllerResult } from '../features/editor';
 import { EditorHeaderBar } from './editor/EditorHeaderBar';
 import { EditorSidebar } from './editor/EditorSidebar';
 
 export default function EditorPage() {
-    const { sidebarProps, headerProps, canvasProps, status } =
-        useEditorController();
+    const { view } = useEditorControllerResult();
 
     return (
         <div className="appRoot">
-            <EditorSidebar {...sidebarProps} />
+            <EditorSidebar {...view.sidebar} />
 
             <div className="mainColumn">
-                <EditorHeaderBar {...headerProps} />
+                <EditorHeaderBar {...view.header} />
 
-                <EditorCanvas {...canvasProps} />
+                <EditorCanvas {...view.canvas} />
 
-                <p className="status">{status}</p>
+                <p className="status">{view.status}</p>
             </div>
         </div>
     );

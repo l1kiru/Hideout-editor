@@ -55,6 +55,9 @@ export type EditorSidebarToolProps = {
     rotStep: number;
     selected: PlacementRef[];
     rotateSelected: (deltaR: number) => void;
+    mirrorSelectedHorizontal: () => void;
+    mirrorSelectedVertical: () => void;
+    moveSelectedToNewLayer: () => void;
     deleteSelected: () => void;
     redo: () => void;
     canRedo: boolean;
@@ -70,8 +73,7 @@ export type EditorSidebarToolProps = {
 export type EditorSidebarLayersProps = {
     sceneReadOnly?: boolean;
     boundary: [number, number][];
-    saveLayerSnapshotAt: (layerIdx: LayerId, label: string) => void;
-    setLayers: Dispatch<SetStateAction<PaintLayer[]>>;
+    setLayerVisible: (layerIndex: number, visible: boolean) => void;
     layers: PaintLayer[];
     layerIdx: LayerId;
     setLayerIdx: Dispatch<SetStateAction<LayerId>>;
@@ -98,8 +100,3 @@ export type EditorSidebarProps = {
     layers: EditorSidebarLayersProps;
 };
 
-// Layer fields the tool section needs to edit the current selection.
-export type EditorSidebarToolBindingsProps = Pick<
-    EditorSidebarLayersProps,
-    'saveLayerSnapshotAt' | 'setLayers'
->;

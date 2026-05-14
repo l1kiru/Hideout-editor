@@ -5,7 +5,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from pydantic import Field
+from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -15,8 +15,20 @@ class AppSettings(BaseSettings):
     )
 
     api_title: str = "Hideout Editor API"
-    api_version: str = "1.0.1"
+    api_version: str = "1.1.0"
     debug: bool = False
+
+    @field_validator("debug", mode="before")
+    @classmethod
+    def normalize_debug_mode(cls, value: Any) -> Any:
+        if not isinstance(value, str):
+            return value
+        normalized = value.strip().casefold()
+        if normalized in {"release", "prod", "production"}:
+            return False
+        if normalized in {"dev", "development", "debug"}:
+            return True
+        return value
 
     # Local dev default: whitelist bundled Vite origins instead of "*".
     # Override via env if the backend must be reachable from other hosts.

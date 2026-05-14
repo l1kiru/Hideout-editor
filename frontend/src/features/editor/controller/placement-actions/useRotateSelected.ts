@@ -9,7 +9,7 @@ import { placementFootprintAllowed } from '../../lib/editorPlacementValidate';
 import { rigidRotatePlacementsAroundSelectionCentroidView } from '../../lib/editorRigidRotate';
 import { readPlacement, refKey } from '../../lib/placementSelection';
 import { MAX_GROUP_ROTATE_PLACEMENTS } from '../../lib/editorConstants';
-import { layerId } from '../../lib/editorIds';
+import useEditorStore from '../../../../stores/editorStore';
 
 import type { PlacementActionsCtx } from './types';
 
@@ -22,10 +22,9 @@ export function useRotateSelected(ctx: PlacementActionsCtx) {
         boundaryRef,
         cameraDegRef,
         toolMarginRef,
-        pushMultiUndoForRefs,
-        setLayers,
         setStatus,
     } = ctx;
+    const rotateSelectedInStore = useEditorStore((state) => state.rotateSelected);
 
     return useCallback(
         (delta: number) => {
@@ -91,6 +90,7 @@ export function useRotateSelected(ctx: PlacementActionsCtx) {
                         b.template_hash,
                         b.facet_fv,
                         vb,
+                        b.line_stroke === true,
                     )
                 ) {
                     setStatus(t('status.rotateOutOfZone'));
@@ -108,26 +108,22 @@ export function useRotateSelected(ctx: PlacementActionsCtx) {
                 return;
             }
 
-            pushMultiUndoForRefs(selected, t('selection.rotateCwAria'));
-            setLayers((ls) =>
-                ls.map((l, li) => ({
-                    ...l,
-                    batches: l.batches.map((b, bi) => ({
-                        ...b,
-                        placements: b.placements.map((p, pi) => {
-                            const rk = refKey({
-                                layerIdx: layerId(li),
-                                batchIdx: bi,
-                                placementIdx: pi,
-                            });
-                            if (!keySet.has(rk)) return p;
-                            const pr = proposed.get(rk);
-                            if (!pr) return p;
-                            return { ...p, x: pr.wx, y: pr.wy, r: pr.r };
-                        }),
-                    })),
-                })),
-            );
+            rotateSelectedInStore({
+                refs: selected,
+                updates: selected
+                    .map((ref) => {
+                        const next = proposed.get(refKey(ref));
+                        if (!next) return null;
+                        return {
+                            ref,
+                            x: next.wx,
+                            y: next.wy,
+                            r: next.r,
+                        };
+                    })
+                    .filter((update) => update !== null),
+                label: t('selection.rotateCwAria'),
+            });
         },
         [
             selected,
@@ -136,9 +132,8 @@ export function useRotateSelected(ctx: PlacementActionsCtx) {
             boundaryRef,
             cameraDegRef,
             toolMarginRef,
-            pushMultiUndoForRefs,
-            setLayers,
             setStatus,
+            rotateSelectedInStore,
             t,
         ],
     );

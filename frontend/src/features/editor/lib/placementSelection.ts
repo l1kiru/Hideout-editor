@@ -12,9 +12,7 @@ import {
 } from './editorIds';
 
 export function refKey(r: PlacementRef): PlacementObjectId {
-    return placementObjectId(
-        `${r.layerIdx}:${r.batchIdx}:${r.placementIdx}`,
-    );
+    return placementObjectId(`${r.layerIdx}:${r.batchIdx}:${r.placementIdx}`);
 }
 
 // Inverse of refKey. Returns null if the string is not three non-negative integers.
@@ -25,12 +23,12 @@ export function parseRefKey(id: PlacementObjectId): PlacementRef | null {
     const bi = Number(parts[1]);
     const pi = Number(parts[2]);
     if (
-        !Number.isInteger(li)
-        || !Number.isInteger(bi)
-        || !Number.isInteger(pi)
-        || li < 0
-        || bi < 0
-        || pi < 0
+        !Number.isInteger(li) ||
+        !Number.isInteger(bi) ||
+        !Number.isInteger(pi) ||
+        li < 0 ||
+        bi < 0 ||
+        pi < 0
     ) {
         return null;
     }
@@ -70,6 +68,17 @@ export function uniqRefs(refs: ReadonlyArray<PlacementRef>): PlacementRef[] {
         }
     }
     return out;
+}
+
+export function subtractRefs(
+    base: ReadonlyArray<PlacementRef>,
+    refsToRemove: ReadonlyArray<PlacementRef>,
+): PlacementRef[] {
+    if (base.length === 0 || refsToRemove.length === 0) {
+        return [...base];
+    }
+    const removalKeys = new Set(refsToRemove.map(refKey));
+    return base.filter((ref) => !removalKeys.has(refKey(ref)));
 }
 
 export function layerIndicesFromRefs(
@@ -134,9 +143,7 @@ export function collectRefsInMarqueeView(
                 const R = vx + hw;
                 const B = vy - hh;
                 const T = vy + hh;
-                if (
-                    viewAabbOverlap(L, R, B, T, mLeft, mRight, mBottom, mTop)
-                )
+                if (viewAabbOverlap(L, R, B, T, mLeft, mRight, mBottom, mTop))
                     out.push({
                         layerIdx: layerId(li),
                         batchIdx: bi,

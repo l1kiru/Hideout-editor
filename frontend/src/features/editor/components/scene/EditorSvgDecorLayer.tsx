@@ -97,6 +97,10 @@ export function EditorSvgDecorLayer(props: {
                                       r={p.r}
                                       template_hash={b.template_hash}
                                       facet_fv={b.facet_fv ?? null}
+                                      lineStroke={
+                                          b.line_stroke === true
+                                          && ak === 'maraketh_rubble1'
+                                      }
                                       assetKey={ak}
                                       footprintWidthView={fp.widthView}
                                       footprintHeightView={fp.heightView}

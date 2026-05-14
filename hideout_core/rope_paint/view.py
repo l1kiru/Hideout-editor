@@ -21,9 +21,6 @@ class CameraViewTransform:
         c, s = math.cos(t), math.sin(t)
         return vx * c + vy * s, -vx * s + vy * c
 
-    def vec_view_to_world(self, vtx: float, vty: float) -> tuple[float, float]:
-        return self.view_to_world(vtx, vty)
-
 
 def polygon_view_vertices(
     boundary_xy: list[tuple[int, int]],

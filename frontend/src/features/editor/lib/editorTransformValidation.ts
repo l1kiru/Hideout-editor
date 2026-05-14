@@ -8,13 +8,37 @@ import { worldPlacementCoordKey } from './editorPlacementCoords';
 import { refKey } from './placementSelection';
 
 export type TransformOperation =
-    | { readonly type: 'move'; readonly allowInternalOverlap: true }
-    | { readonly type: 'rotate'; readonly allowInternalOverlap: false }
-    | { readonly type: 'paste'; readonly allowInternalOverlap: false };
+    | {
+          readonly type: 'move';
+          readonly allowInternalOverlap: true;
+          readonly allowExternalOverlap: true;
+      }
+    | {
+          readonly type: 'mirror';
+          readonly allowInternalOverlap: true;
+          readonly allowExternalOverlap: false;
+      }
+    | {
+          readonly type: 'rotate';
+          readonly allowInternalOverlap: false;
+          readonly allowExternalOverlap: false;
+      }
+    | {
+          readonly type: 'paste';
+          readonly allowInternalOverlap: false;
+          readonly allowExternalOverlap: false;
+      };
 
 export const MOVE_TRANSFORM_OPERATION: TransformOperation = {
     type: 'move',
     allowInternalOverlap: true,
+    allowExternalOverlap: true,
+};
+
+export const MIRROR_TRANSFORM_OPERATION: TransformOperation = {
+    type: 'mirror',
+    allowInternalOverlap: true,
+    allowExternalOverlap: false,
 };
 
 export type MoveValidationResult =
@@ -58,7 +82,7 @@ export function validateProposedPlacementCells(
     for (const [x, y] of proposedRounded) {
         const cell = worldPlacementCoordKey(x, y);
         const blocker = staticOccupied.get(cell);
-        if (blocker !== undefined) {
+        if (!operation.allowExternalOverlap && blocker !== undefined) {
             return {
                 ok: false,
                 reason: 'external_collision',

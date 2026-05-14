@@ -9,8 +9,8 @@ from hideout_core.config.constants import (
     MOSS_EDGE_3_HASH,
     ROPE_TEMPLATE_HASH,
 )
+from hideout_core.config.editor_assets import is_palette_exact_doodad_spec
 from backend.services.hideout_decoration_layers import (
-    is_editor_palette_exact_doodad,
     split_decoration_pairs_for_hideout_import,
 )
 
@@ -18,24 +18,24 @@ from backend.services.hideout_decoration_layers import (
 class TestHideoutDecorationLayers(unittest.TestCase):
     def test_palette_exact_hash_fv(self) -> None:
         self.assertTrue(
-            is_editor_palette_exact_doodad(
+            is_palette_exact_doodad_spec(
                 {"hash": ROPE_TEMPLATE_HASH, "fv": 3, "x": 0, "y": 0, "r": 0},
             ),
         )
         self.assertTrue(
-            is_editor_palette_exact_doodad(
+            is_palette_exact_doodad_spec(
                 {"hash": MOSS_EDGE_3_HASH, "fv": 2, "x": 0, "y": 0, "r": 0},
             ),
         )
         self.assertTrue(
-            is_editor_palette_exact_doodad(
+            is_palette_exact_doodad_spec(
                 {"hash": FLYING_SAND_HASH, "fv": 0, "x": 0, "y": 0, "r": 0},
             ),
         )
 
     def test_palette_wrong_fv_not_exact(self) -> None:
         self.assertFalse(
-            is_editor_palette_exact_doodad(
+            is_palette_exact_doodad_spec(
                 {"hash": ROPE_TEMPLATE_HASH, "fv": 5, "x": 0, "y": 0, "r": 0},
             ),
         )
