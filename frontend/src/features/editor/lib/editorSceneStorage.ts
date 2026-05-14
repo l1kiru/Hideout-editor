@@ -50,7 +50,7 @@ export function copyStoredSceneBetweenMaps(
         const parsed: unknown = JSON.parse(raw);
         const checked = validateEditorSceneJson(parsed);
         if (!checked.ok) return;
-        let scene: Scene = {
+        const scene: Scene = {
             ...checked.scene,
             hideout_map_display_name: newDisplayName,
         };

@@ -30,6 +30,7 @@ export const EDITOR_ASSET_MANIFEST = {
         "faridun_ropes4": {
             "title": "Faridun Ropes 4",
             "nameRu": "Фаридунские верёвки 4",
+            "exportName": "Faridun Ropes",
             "templateHash": 1675705915,
             "defaultFv": 3,
             "src": "/decorations/FaridunRopes.webp",
@@ -42,6 +43,7 @@ export const EDITOR_ASSET_MANIFEST = {
         "faridun_ropes1": {
             "title": "Faridun Ropes 1",
             "nameRu": "Фаридунские верёвки 1",
+            "exportName": "Faridun Ropes",
             "templateHash": 1675705915,
             "defaultFv": 0,
             "src": "/decorations/faridun_ropes1.png",
@@ -54,6 +56,7 @@ export const EDITOR_ASSET_MANIFEST = {
         "moss": {
             "title": "Fringe Moss 3",
             "nameRu": "Мох с опушки 3",
+            "exportName": "Fringe Moss",
             "templateHash": 1459723677,
             "defaultFv": 2,
             "src": "/decorations/FringeMoss.webp",
@@ -67,6 +70,7 @@ export const EDITOR_ASSET_MANIFEST = {
         "sand": {
             "title": "Falling Sand 1",
             "nameRu": "Летающий песок",
+            "exportName": "Falling Sand",
             "templateHash": 3853073345,
             "defaultFv": 0,
             "src": "/decorations/FallingSand.webp",
@@ -80,6 +84,7 @@ export const EDITOR_ASSET_MANIFEST = {
         "maraketh_rubble1": {
             "title": "Maraketh Rubble 1",
             "nameRu": "Маракетский щебень 1",
+            "exportName": "Maraketh Rubble",
             "templateHash": 3012657298,
             "defaultFv": 0,
             "src": "/decorations/maraketh_rubble1.png",
@@ -92,6 +97,7 @@ export const EDITOR_ASSET_MANIFEST = {
         "faridun_tools5": {
             "title": "Faridun Tools 5",
             "nameRu": "Фаридунские инструменты 5",
+            "exportName": "Faridun Tools",
             "templateHash": 2233574719,
             "defaultFv": 4,
             "src": "/decorations/faridun_tools5.png",
@@ -104,6 +110,7 @@ export const EDITOR_ASSET_MANIFEST = {
         "leaf_pile3": {
             "title": "Leaf Pile 3",
             "nameRu": "Куча листьев 3",
+            "exportName": "Leaf Pile",
             "templateHash": 4294658310,
             "defaultFv": 2,
             "src": "/decorations/leaf_pile3.png",
