@@ -15,7 +15,7 @@ class AppSettings(BaseSettings):
     )
 
     api_title: str = "Hideout Editor API"
-    api_version: str = "1.1.0"
+    api_version: str = "1.1.1"
     debug: bool = False
 
     @field_validator("debug", mode="before")

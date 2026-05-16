@@ -22,6 +22,9 @@ INCLUDE_PATHS = (
     "docs",
     "frontend",
     "hideout_core",
+    "shared",
+    "scripts",
+    "tests",
     "input/hideout",
     ".gitignore",
     "LICENSE",
@@ -33,6 +36,16 @@ INCLUDE_PATHS = (
     "dev.py",
     "Start.bat",
     "UpdateAndStart.bat",
+)
+
+# Runtime and repo-tooling paths that must be present in every release archive.
+REQUIRED_RELEASE_PATHS = (
+    "shared/catalog/editorAssets.json",
+    "shared/contracts/scene/editorSceneContract.json",
+    "scripts/make_release.py",
+    "scripts/generate_editor_shared_artifacts.py",
+    "backend/main.py",
+    "dev.py",
 )
 
 # Patterns that re-include files which would otherwise match EXCLUDE_PATTERNS.
@@ -107,9 +120,21 @@ def _format_bytes(n: int) -> str:
     return f"{n} bytes"
 
 
+def _assert_required_release_files(files: list[Path]) -> None:
+    rel_paths = {path.relative_to(PROJECT_ROOT).as_posix() for path in files}
+    missing = [rel for rel in REQUIRED_RELEASE_PATHS if rel not in rel_paths]
+    if missing:
+        raise SystemExit(
+            "release archive is missing required paths:\n"
+            + "\n".join(f"  - {rel}" for rel in missing)
+            + "\nUpdate INCLUDE_PATHS in scripts/make_release.py."
+        )
+
+
 def build_archive(output: Path, *, max_bytes: int = MAX_RELEASE_BYTES) -> Path:
     output.parent.mkdir(parents=True, exist_ok=True)
     files = _iter_release_files()
+    _assert_required_release_files(files)
     with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED) as zf:
         for path in files:
             zf.write(path, path.relative_to(PROJECT_ROOT).as_posix())
