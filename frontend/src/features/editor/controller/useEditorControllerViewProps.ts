@@ -45,7 +45,6 @@ type UseEditorControllerViewPropsArgs = {
         setBackground: (updater: Background | ((prev: Background) => Background)) => void;
         setLayerIdx: EditorSidebarProps['layers']['setLayerIdx'];
         setTool: (updater: Tool | ((prev: Tool) => Tool)) => void;
-        setUi: (updater: UiState | ((prev: UiState) => UiState)) => void;
     };
     interactionActions: {
         setPanDrag: EditorCanvasProps['setPanDrag'];
@@ -165,8 +164,6 @@ export function useEditorControllerViewProps(
             applyBackgroundFitToZone: interactionEffects.applyBackgroundFitToZone,
         },
         tool: {
-            ui: documentState.ui,
-            setUi: documentActions.setUi,
             tool: documentState.tool,
             setTool: documentActions.setTool,
             selected: interactionState.selected,
@@ -208,7 +205,7 @@ export function useEditorControllerViewProps(
         zonePolygonPoints: canvasWorkflow.zonePolygonPoints,
         boundaryViewLen: canvasWorkflow.boundaryView.length,
         backgroundSvg: backgroundViewState.backgroundSvg,
-        showTemplateDots: documentState.ui.show_template_dots,
+        showTemplateDots: true,
         dotsViewSvg: canvasWorkflow.dotsViewSvg,
         templateDotRadius: canvasWorkflow.templateDotRadius,
         layers: documentState.layers,

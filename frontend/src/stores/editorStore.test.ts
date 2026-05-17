@@ -403,8 +403,6 @@ describe('editorStore', () => {
                 rotation_deg: 15,
             },
             ui: {
-                drawing_enabled: false,
-                show_template_dots: false,
                 placement_preview_scale: 1.5,
             },
             template_dots_cache: [
@@ -452,9 +450,6 @@ describe('editorStore', () => {
             draw_style: 'object',
         });
         expect(next.ui).toEqual({
-            ...defaultUi(),
-            drawing_enabled: false,
-            show_template_dots: false,
             placement_preview_scale: 1.5,
         });
         expect(next.background).toEqual({

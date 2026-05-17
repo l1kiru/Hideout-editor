@@ -89,7 +89,10 @@ export function useBoundaryMapController(
     [],
   );
 
-  const onUploadHideout = async (files: FileList | null) => {
+  const onUploadHideout = async (
+    files: FileList | null,
+    options?: { prefillMapDisplayName?: string },
+  ) => {
     const f = files?.[0];
     if (!f)
       return;
@@ -100,6 +103,9 @@ export function useBoundaryMapController(
       const body = await api.parseHideoutPlacements(f);
       setParsed(body);
       setSourceFileName(f.name);
+      if (options?.prefillMapDisplayName) {
+        setMapDisplayName(options.prefillMapDisplayName);
+      }
       const choices = distinctMarkerChoices(body.placements);
       const top = mostFrequentPlacementType(body.placements);
       if (top) {
@@ -282,7 +288,7 @@ export function useBoundaryMapController(
     const { name: mn } = markerFromFields();
     const name = mapDisplayName.trim();
     if (name.length === 0) {
-      setStatus(t('status.needMapName'));
+      await dialogs.alert(t('status.needMapName'), { centerMessage: true });
       return;
     }
     const orderedErr = validateOrderedRing(ordered);
@@ -312,6 +318,7 @@ export function useBoundaryMapController(
       await dialogs.alert(
         t('status.savedAlert', { name: res.display_name }),
       );
+      setMapDisplayName('');
     }
     catch (e) {
       setStatus(t('status.saveError', { error: localizeApiError(t, e) }));

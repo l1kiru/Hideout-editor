@@ -4,6 +4,7 @@ import { initReactI18next } from 'react-i18next';
 
 import {
     DEFAULT_LANGUAGE,
+    LANGUAGE_STORAGE_KEY,
     SUPPORTED_LANGUAGES,
     type SupportedLanguage,
 } from './config';
@@ -47,6 +48,30 @@ function isSupportedLanguage(lng: unknown): lng is SupportedLanguage {
     );
 }
 
+export function normalizeSupportedLanguage(
+    lng: string | undefined | null,
+): SupportedLanguage {
+    if (!lng) return DEFAULT_LANGUAGE;
+    const base = lng.split('-')[0]?.toLowerCase();
+    return isSupportedLanguage(base) ? base : DEFAULT_LANGUAGE;
+}
+
+function readStoredLanguage(): string | null {
+    try {
+        return localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    } catch {
+        return null;
+    }
+}
+
+function persistLanguage(lng: SupportedLanguage): void {
+    try {
+        localStorage.setItem(LANGUAGE_STORAGE_KEY, lng);
+    } catch {
+        /* storage blocked */
+    }
+}
+
 export async function loadLanguage(lng: SupportedLanguage): Promise<void> {
     if (loadedLanguages.has(lng)) return;
     const existing = inflightLoads.get(lng);
@@ -75,6 +100,7 @@ export async function loadLanguage(lng: SupportedLanguage): Promise<void> {
 export async function switchLanguage(lng: SupportedLanguage): Promise<void> {
     await loadLanguage(lng);
     await i18n.changeLanguage(lng);
+    persistLanguage(lng);
 }
 
 export const i18nReady: Promise<void> = i18n
@@ -84,6 +110,7 @@ export const i18nReady: Promise<void> = i18n
         resources: {},
         supportedLngs: [...SUPPORTED_LANGUAGES],
         fallbackLng: DEFAULT_LANGUAGE,
+        load: 'languageOnly',
         defaultNS: 'common',
         ns: [...NAMESPACES],
         partialBundledLanguages: true,
@@ -96,20 +123,26 @@ export const i18nReady: Promise<void> = i18n
         react: { useSuspense: false },
     })
     .then(async () => {
-        const resolved = i18n.resolvedLanguage;
-        const initial: SupportedLanguage = isSupportedLanguage(resolved)
-            ? resolved
-            : DEFAULT_LANGUAGE;
+        const stored = readStoredLanguage();
+        const initial = normalizeSupportedLanguage(
+            stored ?? i18n.resolvedLanguage ?? i18n.language,
+        );
         const tasks: Array<Promise<void>> = [loadLanguage(initial)];
         if (initial !== DEFAULT_LANGUAGE) {
             tasks.push(loadLanguage(DEFAULT_LANGUAGE));
         }
         await Promise.all(tasks);
+        await i18n.changeLanguage(initial);
+        persistLanguage(initial);
+        document.documentElement.lang = initial;
     });
 
 i18n.on('languageChanged', (lng: string) => {
-    if (isSupportedLanguage(lng)) {
-        void loadLanguage(lng);
+    const normalized = normalizeSupportedLanguage(lng);
+    document.documentElement.lang = normalized;
+    if (isSupportedLanguage(normalized)) {
+        void loadLanguage(normalized);
+        persistLanguage(normalized);
     }
 });
 

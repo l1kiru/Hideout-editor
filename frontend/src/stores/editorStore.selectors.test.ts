@@ -44,8 +44,6 @@ describe('editorStore selectors', () => {
                 opacity: 0.2,
             },
             ui: {
-                drawing_enabled: false,
-                show_template_dots: false,
                 placement_preview_scale: 1.5,
             },
             activeMapDisplayName: 'My map',
@@ -75,9 +73,6 @@ describe('editorStore selectors', () => {
                 opacity: 0.2,
             },
             ui: {
-                ...defaultUi(),
-                drawing_enabled: false,
-                show_template_dots: false,
                 placement_preview_scale: 1.5,
             },
             template_dots_cache: [{ x: 7, y: 8 }],

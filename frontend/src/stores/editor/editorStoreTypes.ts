@@ -288,7 +288,12 @@ export function hydrateEditorDocumentState(
     state.layer0UnlockLocksBackup = null;
     state.layerIdx = layerId(preferredDrawingLayerIndex(nextLayers));
     state.tool = createHydratedTool(scene);
-    state.ui = { ...defaultUi(), ...(scene.ui ?? {}) };
+    const savedUi = scene.ui ?? defaultUi();
+    state.ui = {
+        placement_preview_scale:
+            savedUi.placement_preview_scale
+            ?? defaultUi().placement_preview_scale,
+    };
     state.templateDots =
         scene.template_dots_cache?.map(
             (point): [number, number] => [point.x, point.y],

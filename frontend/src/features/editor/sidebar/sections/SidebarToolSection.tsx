@@ -9,8 +9,6 @@ export type SidebarToolSectionProps = EditorSidebarToolProps;
 export function SidebarToolSection(props: SidebarToolSectionProps) {
     const { t } = useTranslation('editor');
     const {
-        ui,
-        setUi,
         tool,
         setTool,
         rotStep,
@@ -44,34 +42,6 @@ export function SidebarToolSection(props: SidebarToolSectionProps) {
     return (
         <section className="sideSection">
             <h2 className="sideHeading">{t('tools.modeSection')}</h2>
-            <label className="sideCheck">
-                <input
-                    type="checkbox"
-                    checked={ui.drawing_enabled}
-                    disabled={ro}
-                    onChange={(e) =>
-                        setUi((u) => ({
-                            ...u,
-                            drawing_enabled: e.target.checked,
-                        }))
-                    }
-                />
-                {t('tools.allowActions')}
-            </label>
-            <label className="sideCheck">
-                <input
-                    type="checkbox"
-                    checked={ui.show_template_dots}
-                    disabled={ro}
-                    onChange={(e) =>
-                        setUi((u) => ({
-                            ...u,
-                            show_template_dots: e.target.checked,
-                        }))
-                    }
-                />
-                {t('tools.templateDots')}
-            </label>
             <ToolPicker tool={tool} setTool={setTool} disabled={ro} />
             <ToolSettings tool={tool} setTool={setTool} disabled={ro} />
             <SelectionPanel

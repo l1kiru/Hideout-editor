@@ -1431,6 +1431,14 @@
   color: var(--color-text);
 }
 
+.nativeModalMessageCentered {
+  text-align: center;
+}
+
+.nativeModalActionsCentered {
+  justify-content: center;
+}
+
 .nativeModalInput {
   width: 100%;
 }

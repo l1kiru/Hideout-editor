@@ -107,7 +107,6 @@ export function usePlacementAndBgPointerGestures(
         setSelected,
         setCursorView,
         setStatus,
-        ui,
         tool,
         viewBox,
         backgroundRef,
@@ -147,7 +146,6 @@ export function usePlacementAndBgPointerGestures(
         const svg = svgRef.current;
         if (!svg) return;
         if (args.sceneReadOnly) return;
-        if (!ui.drawing_enabled) return;
         if (e.button !== 2 || e.pointerType !== 'mouse') return;
         e.preventDefault();
         const { x, y } = svgClientToMplView(svg, e.clientX, e.clientY, viewBox);

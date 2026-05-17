@@ -40,7 +40,7 @@ export function placementsWithoutBoundaryMarkers(
   )
 }
 
-export function distinctMarkerChoices(rows: PlacementRow[]): MarkerChoice[] {
+export function countPlacementsByName(rows: PlacementRow[]): Map<string, number> {
   const counts = new Map<string, number>()
   for (const r of rows) {
     const n = r.name.trim()
@@ -48,6 +48,26 @@ export function distinctMarkerChoices(rows: PlacementRow[]): MarkerChoice[] {
       continue
     counts.set(n, (counts.get(n) ?? 0) + 1)
   }
+  return counts
+}
+
+export type PlacementNameHint = { name: string; count: number }
+
+export function distinctPlacementNameHints(
+  rows: PlacementRow[],
+): PlacementNameHint[] {
+  const counts = countPlacementsByName(rows)
+  const names = [...counts.keys()].sort((a, b) =>
+    a.localeCompare(b, 'ru', { sensitivity: 'base' }),
+  )
+  return names.map((name) => ({
+    name,
+    count: counts.get(name) ?? 1,
+  }))
+}
+
+export function distinctMarkerChoices(rows: PlacementRow[]): MarkerChoice[] {
+  const counts = countPlacementsByName(rows)
   const names = [...counts.keys()].sort((a, b) =>
     a.localeCompare(b, 'ru', { sensitivity: 'base' }),
   )
@@ -98,17 +118,7 @@ export function mostFrequentPlacementType(
 
 // Unique non-empty doodad names from the file, used as hints for manual marker entry.
 export function distinctPlacementNames(rows: PlacementRow[]): string[] {
-  const seen = new Set<string>()
-  const out: string[] = []
-  for (const r of rows) {
-    const n = r.name.trim()
-    if (!n || seen.has(n))
-      continue
-    seen.add(n)
-    out.push(n)
-  }
-  out.sort((a, b) => a.localeCompare(b, 'ru'))
-  return out
+  return distinctPlacementNameHints(rows).map((h) => h.name)
 }
 
 // Boundary marker by doodad name; hash is not sent to the API (name-only filter).

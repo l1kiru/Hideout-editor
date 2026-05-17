@@ -72,7 +72,6 @@ export function useControllerViewPropsArgs(
             setBackground: documentActions.setBackground,
             setLayerIdx: documentActions.setLayerIdx,
             setTool: documentActions.setTool,
-            setUi: documentActions.setUi,
         },
         interactionActions: {
             setPanDrag: interactionActions.setPanDrag,

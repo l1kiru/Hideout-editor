@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next';
 import type {
     PaintLayer,
     Tool,
-    UiState,
     XYZRPlacement,
 } from '../../../types/scene';
 import {
@@ -248,7 +247,6 @@ export function useEditorClipboard(opts: {
     layersRef: MutableRefObject<PaintLayer[]>;
     layerIdx: LayerId;
     selected: SelectionState;
-    ui: UiState;
     tool: Tool;
     boundaryRef: MutableRefObject<[number, number][]>;
     cameraDegRef: MutableRefObject<number>;
@@ -263,7 +261,6 @@ export function useEditorClipboard(opts: {
         layersRef,
         layerIdx,
         selected,
-        ui,
         tool,
         boundaryRef,
         cameraDegRef,
@@ -353,11 +350,6 @@ export function useEditorClipboard(opts: {
             setStatus(t('status.pasteClipboardNoEligible'));
             return;
         }
-        if (!ui.drawing_enabled) {
-            setStatus(t('status.drawingDisabled'));
-            return;
-        }
-
         const ls = layersRef.current;
 
         let targetIdx = Number(layerIdx);
@@ -470,7 +462,6 @@ export function useEditorClipboard(opts: {
         setStatus,
         tool.fv,
         toolMarginRef,
-        ui.drawing_enabled,
         viewBoxRef,
         appendBatchesToLayer,
         t,

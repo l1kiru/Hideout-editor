@@ -22,7 +22,6 @@ type UseEditorControllerInteractionEffectsArgs = {
         boundary: Parameters<typeof useEditorBackgroundController>[0]['boundary'];
         cameraDeg: Parameters<typeof useEditorBackgroundController>[0]['cameraDeg'];
         layerIdx: Parameters<typeof useEditorClipboard>[0]['layerIdx'];
-        ui: Parameters<typeof useEditorClipboard>[0]['ui'];
         tool: Parameters<typeof useEditorClipboard>[0]['tool'];
     };
     interactionState: {
@@ -73,7 +72,6 @@ export function useEditorControllerInteractionEffects(
         layersRef: refs.layersRef,
         layerIdx: documentState.layerIdx,
         selected: interactionState.selected,
-        ui: documentState.ui,
         tool: documentState.tool,
         boundaryRef: refs.boundaryRef,
         cameraDegRef: refs.cameraDegRef,

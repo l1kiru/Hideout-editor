@@ -61,7 +61,7 @@
     "heuristicFallback": "Fallback non-self-intersecting contour variant has been applied.",
     "ringSelfIntersects": "Contour is self-intersecting — fix vertex order before saving.",
     "needThreeMarkerPoints": "At least 3 points for selected marker are required — check marker name (or all points matched same filter).",
-    "needMapName": "Enter hideout map name",
+    "needMapName": "Enter map name",
     "saved": "Saved: “{{name}}” (map {{id}})",
     "savedAlert": "Map “{{name}}” has been saved successfully",
     "saveError": "Save error: {{error}}",

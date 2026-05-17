@@ -7,7 +7,6 @@ import type {
     Background,
     PaintLayer,
     Tool,
-    UiState,
     XYZRPlacement,
 } from '../../../types/scene';
 
@@ -48,8 +47,6 @@ export type EditorSidebarBackgroundProps = {
 
 export type EditorSidebarToolProps = {
     sceneReadOnly?: boolean;
-    ui: UiState;
-    setUi: Dispatch<SetStateAction<UiState>>;
     tool: Tool;
     setTool: Dispatch<SetStateAction<Tool>>;
     rotStep: number;

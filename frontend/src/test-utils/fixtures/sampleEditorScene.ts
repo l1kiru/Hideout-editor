@@ -81,8 +81,6 @@ export function sampleEditorScene(): Scene {
             locked: false,
         },
         ui: {
-            drawing_enabled: true,
-            show_template_dots: true,
             placement_preview_scale: 1,
         },
         template_dots_cache: [

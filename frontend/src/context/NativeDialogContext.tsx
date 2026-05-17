@@ -11,6 +11,10 @@ import { useTranslation } from 'react-i18next';
 
 /* eslint-disable react-refresh/only-export-components -- Dialog API hooks live next to the provider. */
 
+export type AlertOptions = {
+    centerMessage?: boolean;
+};
+
 export type ConfirmOptions = {
     confirmLabel?: string;
     cancelLabel?: string;
@@ -23,7 +27,12 @@ export type ConfirmOptions = {
 };
 
 type DialogState =
-    | { kind: 'alert'; message: string; resolve: () => void }
+    | {
+          kind: 'alert';
+          message: string;
+          options: AlertOptions;
+          resolve: () => void;
+      }
     | {
           kind: 'confirm';
           message: string;
@@ -39,7 +48,7 @@ type DialogState =
     | null;
 
 export type NativeDialogApi = {
-    alert: (message: string) => Promise<void>;
+    alert: (message: string, options?: AlertOptions) => Promise<void>;
     confirm: (message: string, options?: ConfirmOptions) => Promise<boolean>;
     prompt: (message: string, defaultValue?: string) => Promise<string | null>;
 };
@@ -90,9 +99,9 @@ export function NativeDialogProvider({ children }: { children: ReactNode }) {
     }, [state]);
 
     const alertFn = useCallback(
-        (message: string) =>
+        (message: string, options: AlertOptions = {}) =>
             new Promise<void>((resolve) => {
-                setState({ kind: 'alert', message, resolve });
+                setState({ kind: 'alert', message, options, resolve });
             }),
         [],
     );
@@ -209,7 +218,12 @@ export function NativeDialogProvider({ children }: { children: ReactNode }) {
                     >
                         <p
                             id="native-modal-title"
-                            className="nativeModalMessage"
+                            className={
+                                state.kind === 'alert'
+                                && state.options.centerMessage
+                                    ? 'nativeModalMessage nativeModalMessageCentered'
+                                    : 'nativeModalMessage'
+                            }
                         >
                             {state.message}
                         </p>
@@ -229,7 +243,14 @@ export function NativeDialogProvider({ children }: { children: ReactNode }) {
                                 }}
                             />
                         ) : null}
-                        <div className="nativeModalActions">
+                        <div
+                            className={
+                                state.kind === 'alert'
+                                && state.options.centerMessage
+                                    ? 'nativeModalActions nativeModalActionsCentered'
+                                    : 'nativeModalActions'
+                            }
+                        >
                             {state.kind === 'alert' ? (
                                 <button
                                     type="button"

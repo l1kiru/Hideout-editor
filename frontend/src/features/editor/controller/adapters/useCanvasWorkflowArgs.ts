@@ -90,7 +90,6 @@ export function useCanvasWorkflowArgs(
             toolMarginRef,
             layersRef,
             spaceDownRef,
-            ui,
             tool,
             viewBox,
             layers,

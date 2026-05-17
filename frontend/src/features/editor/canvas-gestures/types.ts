@@ -5,7 +5,7 @@ import type {
     SetStateAction,
 } from 'react';
 
-import type { Background, PaintLayer, Tool, UiState } from '../../../types/scene';
+import type { Background, PaintLayer, Tool } from '../../../types/scene';
 import type { LayerId } from '../lib/editorIds';
 import type { ViewBox } from '../lib/editorViewport';
 import type { SelectionState } from '../model/editorSessionTypes';
@@ -33,7 +33,6 @@ export type UseEditorCanvasGesturesArgs = {
     lineDraftRef: MutableRefObject<{ points: [number, number][] } | null>;
     placeStrokeRef: MutableRefObject<(pts: [number, number][]) => void>;
 
-    ui: UiState;
     tool: Tool;
     viewBox: ViewBox;
     layers: PaintLayer[];

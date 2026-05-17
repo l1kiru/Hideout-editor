@@ -96,7 +96,6 @@ export function useSelectToolMouseGestures(
         boundaryRef,
         toolMarginRef,
         layersRef,
-        ui,
         tool,
         viewBox,
         layers,
@@ -162,8 +161,6 @@ export function useSelectToolMouseGestures(
         if (args.sceneReadOnly) return;
         const { x, y } = svgClientToMplView(svg, e.clientX, e.clientY, viewBox);
         setCursorView([x, y]);
-
-        if (!ui.drawing_enabled && tool.variant !== 'select') return;
 
         if (e.button !== 0) return;
         if (tool.variant === 'select') {
@@ -991,7 +988,6 @@ export function useSelectToolMouseGestures(
             lineBrushActiveRef.current &&
             tool.variant === 'line' &&
             e.buttons & 1 &&
-            ui.drawing_enabled &&
             !panDrag
         ) {
             setLineDraft((d) => {

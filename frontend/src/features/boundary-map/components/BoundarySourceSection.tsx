@@ -9,9 +9,16 @@ import {
   sampleDisplayName,
 } from '../lib/sampleHideouts';
 
+export type UploadHideoutOptions = {
+  prefillMapDisplayName?: string;
+};
+
 export type BoundarySourceSectionProps = {
   parsed: ParsedPayload | null;
-  onUploadHideout: (files: FileList | null) => void | Promise<void>;
+  onUploadHideout: (
+    files: FileList | null,
+    options?: UploadHideoutOptions,
+  ) => void | Promise<void>;
 };
 
 export function BoundarySourceSection({
@@ -39,7 +46,9 @@ export function BoundarySourceSection({
     setSampleBusy(true);
     try {
       const files = await fetchSampleHideoutAsFileList(name);
-      await onUploadHideout(files);
+      await onUploadHideout(files, {
+        prefillMapDisplayName: sampleDisplayName(name),
+      });
     } finally {
       setSampleBusy(false);
       setSampleSelection('');

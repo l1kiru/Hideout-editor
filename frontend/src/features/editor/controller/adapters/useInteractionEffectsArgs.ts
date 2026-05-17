@@ -57,7 +57,6 @@ export function useInteractionEffectsArgs(
             boundary: documentState.boundary,
             cameraDeg: documentState.cameraDeg,
             layerIdx: documentState.layerIdx,
-            ui: documentState.ui,
             tool: documentState.tool,
         },
         interactionState: {

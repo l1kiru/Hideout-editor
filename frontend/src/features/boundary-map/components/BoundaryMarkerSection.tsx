@@ -3,7 +3,7 @@ import { Filter } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 import {
-  distinctPlacementNames,
+  distinctPlacementNameHints,
   type MarkerChoice,
   type ParsedPayload,
 } from '../lib/boundaryMapPure';
@@ -30,7 +30,7 @@ export function BoundaryMarkerSection({
   const { t } = useTranslation('boundary');
   const nameListId = useId();
   const nameSuggestions = useMemo(
-    () => (parsed ? distinctPlacementNames(parsed.placements) : []),
+    () => (parsed ? distinctPlacementNameHints(parsed.placements) : []),
     [parsed],
   );
   const nameListAttr =
@@ -75,8 +75,10 @@ export function BoundaryMarkerSection({
       </label>
       {nameListAttr ? (
         <datalist id={nameListId}>
-          {nameSuggestions.map((n) => (
-            <option key={n} value={n} />
+          {nameSuggestions.map(({ name, count }) => (
+            <option key={name} value={name}>
+              {count > 1 ? `${name} (${count} шт.)` : name}
+            </option>
           ))}
         </datalist>
       ) : null}

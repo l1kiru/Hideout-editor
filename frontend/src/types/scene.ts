@@ -120,8 +120,6 @@ export interface TemplateRef {
 }
 
 export interface UiState {
-    drawing_enabled: boolean;
-    show_template_dots: boolean;
     placement_preview_scale: number;
 }
 

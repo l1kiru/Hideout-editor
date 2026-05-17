@@ -194,8 +194,6 @@ class TemplateRefModel(BaseModel):
 
 
 class UiModel(BaseModel):
-    drawing_enabled: bool = True
-    show_template_dots: bool = True
     placement_preview_scale: float = Field(
         default=1.0,
         ge=0.2,

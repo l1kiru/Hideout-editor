@@ -10,11 +10,13 @@ export type {
 export {
   chainFromSelections,
   distinctMarkerChoices,
+  distinctPlacementNameHints,
   distinctPlacementNames,
   markerFromNameField,
   matchesBoundaryMarker,
   mostFrequentPlacementType,
   placementsWithoutBoundaryMarkers,
+  type PlacementNameHint,
 } from './boundaryMapMarkers'
 
 export {

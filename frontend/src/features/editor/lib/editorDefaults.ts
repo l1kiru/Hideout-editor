@@ -71,8 +71,6 @@ export function defaultBackground(): Background {
 
 export function defaultUi(): UiState {
     return {
-        drawing_enabled: true,
-        show_template_dots: true,
         placement_preview_scale: 1,
     };
 }

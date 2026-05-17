@@ -67,8 +67,6 @@
     "tools": {
         "modeSection": "Mode",
         "modeReadonly": "Tools and scene edits are disabled on base maps. Create a child map to draw and edit objects.",
-        "allowActions": "Allow editing on canvas",
-        "templateDots": "Template points",
         "groupAria": "Editing tool",
         "select": "Select",
         "single": "Single",
@@ -211,7 +209,6 @@
         "copiedOne": "Object copied",
         "copiedPartial": "Copied objects: {{count}}. Skipped: {{skipped}}",
         "clipboardEmpty": "Clipboard is empty",
-        "drawingDisabled": "Enable “Allow placement” to paste",
         "pasteOnTemplateLocked": "Paste unavailable on template layer — unlock a user layer",
         "pasteLayerLocked": "Layer is locked — cannot paste",
         "pasteClipboardNoEligible": "Clipboard contains no objects that can be pasted",
